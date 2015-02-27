@@ -32,6 +32,9 @@ var intro_screen = new Sprite();
 				intro_screen.next.color = "#FFFFFF";
 			}
 		}
+		intro_screen.next.click = function() {
+			changeRoom(level_01_hub);
+		}
 		
 		intro_screen.ret = new TextBox("<< Return  ");
 		intro_screen.ret.font = "Courier";

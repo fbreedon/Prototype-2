@@ -56,6 +56,8 @@ var room_manager = new Sprite();
 /***=============================***/
 /***     Room initialization     ***/
 /***=============================***/
+/* Rooms are individual files declaring sprite objects
+ * with their own static and private variables. */
 
 
 /***============================***/
