@@ -2,6 +2,9 @@
 var level_01_A = new Sprite();
 	// Create this room
 	level_01_A.create = function() {
+		var sway_x = 0;
+		var sway_y = 0;
+		
 		// This room's passive sprites
 		level_01_A.image_background = new Sprite();
 		level_01_A.image_background.width  = 1080;
@@ -10,6 +13,15 @@ var level_01_A = new Sprite();
 		level_01_A.image_background.y = 0;
 		level_01_A.image_background.image = Textures.load
 			("./Common/Textures/Level 01/target A background.png");
+		level_01_A.image_background.i = 0;
+		level_01_A.image_background.update = function() {
+			level_01_A.image_background.y = Math.sin(sway_x) * 20;
+			sway_x += 0.010 * Math.random();
+			level_01_A.image_background.x = Math.sin(sway_y) * 20;
+			sway_y += 0.006 * Math.random();;
+			if(sway_x >= 2*Math.PI) sway_x = 0;
+			if(sway_y >= 2*Math.PI) sway_y = 0;
+		}
 			
 		level_01_A.image_scope = new Sprite();
 		level_01_A.image_scope.width  = 1080;
