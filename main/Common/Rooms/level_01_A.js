@@ -16,9 +16,9 @@ var level_01_A = new Sprite();
 		level_01_A.image_background.i = 0;
 		level_01_A.image_background.update = function() {
 			level_01_A.image_background.y = Math.sin(sway_x) * 20;
-			sway_x += 0.010 * Math.random();
+			sway_x += 0.009 * Math.random();
 			level_01_A.image_background.x = Math.sin(sway_y) * 20;
-			sway_y += 0.006 * Math.random();;
+			sway_y += 0.02 * Math.random();;
 			if(sway_x >= 2*Math.PI) sway_x = 0;
 			if(sway_y >= 2*Math.PI) sway_y = 0;
 		}
@@ -63,5 +63,9 @@ var level_01_A = new Sprite();
 	
 	// Clear this room
 	level_01_A.clear = function() {
-		
+		world.removeChild(level_01_A.image_background);
+		world.removeChild(level_01_A.image_scope);
+		world.removeChild(level_01_A.ret);
+		while(active_sprites.length > 0)
+			active_sprites.pop();
 	}

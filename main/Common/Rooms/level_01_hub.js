@@ -65,6 +65,7 @@ var level_01_hub = new Sprite();
 					("./Common/Textures/a icon up.png");
 			}
 		}
+		level_01_hub.button_iconA.grow = 0;
 		level_01_hub.button_iconA.click = function() {
 			changeRoom(level_01_A);
 		}
