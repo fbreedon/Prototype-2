@@ -31,6 +31,43 @@ var level_01_A = new Sprite();
 		level_01_A.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
 		
+		// Target A sprite
+		level_01_A.image_target_A = new Sprite();
+		level_01_A.image_target_A.width  = 32;
+		level_01_A.image_target_A.height = 64;
+		level_01_A.image_target_A.x = 0;
+		level_01_A.image_target_A.y = 0;
+		level_01_A.image_target_A.image = Textures.load
+			("./Common/Textures/Level 01/target-A-scene-1-prototype.png");
+		// Target A animation
+		level_01_A.image_target_A.frameWidth   = 32;
+		level_01_A.image_target_A.frameHeight  = 64;
+		level_01_A.image_target_A.frameCount   = 5;
+		level_01_A.image_target_A.frameRate    = 0;
+		level_01_A.image_target_A.moveRate     = 0;
+		level_01_A.image_target_A.addAnimations(["idle", "check_phone"], [1,3]);
+		level_01_A.image_target_A.addAnimation("phone_out",2,1);
+		level_01_A.image_target_A.addAnimation("phone_away",3,1);
+		level_01_A.image_target_A.update = function() {
+			// Background sway
+			level_01_A.image_target_A.x = level_01_A.image_background.x + 520;
+			level_01_A.image_target_A.y = level_01_A.image_background.y + 340;
+			// Animations
+			if(level_01_hub.target_loop.value>600 && level_01_hub.target_loop.value<659) {
+				level_01_A.image_target_A.animation = "check_phone";
+				level_01_A.image_target_A.frameRate = 2;
+			}else if(level_01_hub.target_loop.value>660 && level_01_hub.target_loop.value<779) {
+				level_01_A.image_target_A.animation = "phone_out";
+				level_01_A.image_target_A.frameRate = 0;
+			}else if(level_01_hub.target_loop.value>780 && level_01_hub.target_loop.value<809) {
+				level_01_A.image_target_A.animation = "phone_away";
+				level_01_A.image_target_A.frameRate = 0;
+			}else {
+				level_01_A.image_target_A.animation = "idle";
+				level_01_A.image_target_A.frameRate = 0;
+			}
+		};
+		
 		// This room's active sprites
 		level_01_A.ret = new TextBox("<< Return  ");
 		level_01_A.ret.font = "Courier";
@@ -55,6 +92,7 @@ var level_01_A = new Sprite();
 		// Visible sprites at creation time
 		world.addChild(level_01_A.image_background);
 		world.addChild(level_01_A.image_scope);
+		world.addChild(level_01_A.image_target_A);
 		world.addChild(level_01_A.ret);
 		
 		// Active sprites at creation time
