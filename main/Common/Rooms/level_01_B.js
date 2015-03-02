@@ -30,7 +30,51 @@ var level_01_B = new Sprite();
 		level_01_B.image_scope.y = 0;
 		level_01_B.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
-		
+				
+		// Car Sprite
+		level_01_B.image_car = new Sprite();
+		level_01_B.image_car.width  = 220;
+		level_01_B.image_car.height = 137.5;
+		level_01_B.image_car.image = Textures.load
+			("./Common/Textures/general-car-parked.png");
+		level_01_B.image_car.update = function() {
+			// Background sway
+			level_01_B.image_car.x = level_01_B.image_background.x + 370;
+			level_01_B.image_car.y = level_01_B.image_background.y + 340;
+		};
+			
+		// Target B Sprite
+		level_01_B.image_target_B = new Sprite();
+		level_01_B.image_target_B.width  = 36;
+		level_01_B.image_target_B.height = 96;
+		level_01_B.image_target_B.x = 0;
+		level_01_B.image_target_B.y = 0;
+		level_01_B.image_target_B.image = Textures.load
+			("./Common/Textures/Level 01/target-B.png");
+		// Target B Animation
+		level_01_B.image_target_B.frameWidth  = 24;
+		level_01_B.image_target_B.frameHeight = 64;
+		level_01_B.image_target_B.frameCount  = 15;
+		level_01_B.image_target_B.frameRate   = 0;
+		level_01_B.image_target_B.moveRate    = 0;
+		level_01_B.image_target_B.addAnimations
+			(["idle", "check_watch", "look_around"], [1,1,1]);
+		level_01_B.image_target_B.update = function() {
+			// Background sway
+			level_01_B.image_target_B.x = level_01_B.image_background.x + 520;
+			level_01_B.image_target_B.y = level_01_B.image_background.y + 360;
+			// Animations
+			if((level_01_hub.target_loop.value>=180 && level_01_hub.target_loop.value<360)
+				|| (level_01_hub.target_loop.value>=1980 && level_01_hub.target_loop<2160)) {
+				level_01_B.image_target_B.animation = "check_watch";
+			}else if((level_01_hub.target_loop.value>=360 && level_01_hub.target_loop.value<540)
+				|| (level_01_hub.target_loop.value>=2160 && level_01_hub.target_loop<2340)) {
+				level_01_B.image_target_B.animation = "look_around";
+			}else {
+				level_01_B.image_target_B.animation = "idle";
+			}
+		};
+
 		// This room's active sprites
 		level_01_B.ret = new TextBox("<< Return  ");
 		level_01_B.ret.font = "Courier";
@@ -55,6 +99,8 @@ var level_01_B = new Sprite();
 		// Visible sprites at creation time
 		world.addChild(level_01_B.image_background);
 		world.addChild(level_01_B.image_scope);
+		world.addChild(level_01_B.image_car);
+		world.addChild(level_01_B.image_target_B);
 		world.addChild(level_01_B.ret);
 		
 		// Active sprites at creation time
@@ -65,6 +111,8 @@ var level_01_B = new Sprite();
 	level_01_B.clear = function() {
 		world.removeChild(level_01_B.image_background);
 		world.removeChild(level_01_B.image_scope);
+		world.removeChild(level_01_B.image_car);
+		world.removeChild(level_01_B.image_target_B);
 		world.removeChild(level_01_B.ret);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
