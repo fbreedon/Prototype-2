@@ -30,6 +30,28 @@ var level_01_D = new Sprite();
 		level_01_D.image_scope.y = 0;
 		level_01_D.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
+			
+		// Target D Sprite
+		level_01_D.image_target_D = new Sprite();
+		level_01_D.image_target_D.width  = 32;
+		level_01_D.image_target_D.height = 96;
+		level_01_D.image_target_D.x = 0;
+		level_01_D.image_target_D.y = 0;
+		level_01_D.image_target_D.image = Textures.load
+			("./Common/Textures/Level 01/target-D.png");
+		// Target D Animation
+		level_01_D.image_target_D.frameWidth  = 24;
+		level_01_D.image_target_D.frameHeight = 64;
+		level_01_D.image_target_D.frameCount  = 2;
+		level_01_D.image_target_D.frameRate   = 2;
+		level_01_D.image_target_D.addAnimation("idle",0,3); 
+		level_01_D.image_target_D.update = function() {
+			// Background sway
+			level_01_D.image_target_D.x = level_01_D.image_background.x + 520;
+			level_01_D.image_target_D.y = level_01_D.image_background.y + 360;
+			// Animations
+			level_01_D.image_target_D.animation = "idle";
+		};
 		
 		// This room's active sprites
 		level_01_D.ret = new TextBox("<< Return  ");
@@ -54,6 +76,7 @@ var level_01_D = new Sprite();
 		
 		// Visible sprites at creation time
 		world.addChild(level_01_D.image_background);
+		world.addChild(level_01_D.image_target_D);
 		world.addChild(level_01_D.image_scope);
 		world.addChild(level_01_D.ret);
 		
@@ -64,6 +87,7 @@ var level_01_D = new Sprite();
 	// Clear this room
 	level_01_D.clear = function() {
 		world.removeChild(level_01_D.image_background);
+		world.removeChild(level_01_D.image_target_D);
 		world.removeChild(level_01_D.image_scope);
 		world.removeChild(level_01_D.ret);
 		while(active_sprites.length > 0)

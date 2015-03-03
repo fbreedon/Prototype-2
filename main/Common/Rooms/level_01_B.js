@@ -54,9 +54,8 @@ var level_01_B = new Sprite();
 		// Target B Animation
 		level_01_B.image_target_B.frameWidth  = 24;
 		level_01_B.image_target_B.frameHeight = 64;
-		level_01_B.image_target_B.frameCount  = 15;
+		level_01_B.image_target_B.frameCount  = 3;
 		level_01_B.image_target_B.frameRate   = 0;
-		level_01_B.image_target_B.moveRate    = 0;
 		level_01_B.image_target_B.addAnimations
 			(["idle", "check_watch", "look_around"], [1,1,1]);
 		level_01_B.image_target_B.update = function() {
@@ -98,9 +97,9 @@ var level_01_B = new Sprite();
 		
 		// Visible sprites at creation time
 		world.addChild(level_01_B.image_background);
-		world.addChild(level_01_B.image_scope);
 		world.addChild(level_01_B.image_car);
 		world.addChild(level_01_B.image_target_B);
+		world.addChild(level_01_B.image_scope);
 		world.addChild(level_01_B.ret);
 		
 		// Active sprites at creation time
@@ -110,9 +109,9 @@ var level_01_B = new Sprite();
 	// Clear this room
 	level_01_B.clear = function() {
 		world.removeChild(level_01_B.image_background);
-		world.removeChild(level_01_B.image_scope);
 		world.removeChild(level_01_B.image_car);
 		world.removeChild(level_01_B.image_target_B);
+		world.removeChild(level_01_B.image_scope);
 		world.removeChild(level_01_B.ret);
 		while(active_sprites.length > 0)
 			active_sprites.pop();

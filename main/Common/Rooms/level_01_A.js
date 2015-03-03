@@ -44,7 +44,6 @@ var level_01_A = new Sprite();
 		level_01_A.image_target_A.frameHeight  = 64;
 		level_01_A.image_target_A.frameCount   = 5;
 		level_01_A.image_target_A.frameRate    = 0;
-		level_01_A.image_target_A.moveRate     = 0;
 		level_01_A.image_target_A.addAnimations(["idle", "check_phone"], [1,3]);
 		level_01_A.image_target_A.addAnimation("phone_out",2,1);
 		level_01_A.image_target_A.addAnimation("phone_away",3,1);
@@ -91,8 +90,8 @@ var level_01_A = new Sprite();
 		
 		// Visible sprites at creation time
 		world.addChild(level_01_A.image_background);
-		world.addChild(level_01_A.image_scope);
 		world.addChild(level_01_A.image_target_A);
+		world.addChild(level_01_A.image_scope);
 		world.addChild(level_01_A.ret);
 		
 		// Active sprites at creation time
@@ -102,8 +101,8 @@ var level_01_A = new Sprite();
 	// Clear this room
 	level_01_A.clear = function() {
 		world.removeChild(level_01_A.image_background);
-		world.removeChild(level_01_A.image_scope);
 		world.removeChild(level_01_A.image_target_A);
+		world.removeChild(level_01_A.image_scope);
 		world.removeChild(level_01_A.ret);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
