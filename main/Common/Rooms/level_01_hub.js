@@ -48,7 +48,7 @@ var level_01_hub = new Sprite();
 			}
 		}
 		level_01_hub.button_notes.click = function() {
-			level_01_hub.read_notes();
+			level_01_hub.readNotes();
 		}
 		
 		level_01_hub.button_iconA = new Sprite();
@@ -155,7 +155,7 @@ var level_01_hub = new Sprite();
 	}
 	
 	// This function pulls up notes
-	level_01_hub.read_notes = function() {
+	level_01_hub.readNotes = function() {
 		// Clear the sprites array of the buttons behind the notes...
 		level_01_hub.button_notes.mouseOver = false;
 		while(active_sprites.length > 0)
