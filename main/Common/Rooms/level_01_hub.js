@@ -154,6 +154,8 @@ var level_01_hub = new Sprite();
 	// Animation time loop
 	level_01_hub.target_loop = new Sprite();
 	level_01_hub.target_loop.value = 0;
+	level_01_hub.target_x = 0;
+	level_01_hub.target_y = 0;
 	level_01_hub.target_loop.update = function() {
 		//level_01_hub.image_comment.visible = true;
 		level_01_hub.target_loop.value++;
@@ -161,7 +163,21 @@ var level_01_hub = new Sprite();
 		if(level_01_hub.target_loop.value == 3600) { // loop every minute
 			level_01_hub.target_loop.value = 0;
 		}
-	}
+		// Target B position tracker
+		if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
+			|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
+			|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
+			|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
+			level_01_hub.target_x += .25;
+			level_01_hub.target_y -= .25;
+		}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
+				 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
+				 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
+				 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
+			level_01_hub.target_x -= .25;
+			level_01_hub.target_y += .25;
+		}
+	};
 	world.addChild(level_01_hub.target_loop);
 	
 	// Clear this room

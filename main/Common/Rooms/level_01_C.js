@@ -35,10 +35,8 @@ var level_01_C = new Sprite();
 		level_01_C.image_target_C = new Sprite();
 		level_01_C.image_target_C.width  = 24;
 		level_01_C.image_target_C.height = 64;
-		level_01_C.image_target_C.x = 0;
-		level_01_C.image_target_C.y = 0;
-		level_01_C.image_target_C.x_move = 540;
-		level_01_C.image_target_C.y_move = 360;
+		level_01_C.image_target_C.x_move = 0;
+		level_01_C.image_target_C.y_move = 0;
 		level_01_C.image_target_C.image = Textures.load
 			("./Common/Textures/Level 01/target-C.png");
 		// Target C Animation
@@ -52,8 +50,10 @@ var level_01_C = new Sprite();
 			  [5,5,1,1,1,1]);
 		level_01_C.image_target_C.update = function() {
 			// Background sway
-			level_01_C.image_target_C.x = level_01_C.image_background.x + level_01_C.image_target_C.x_move;
-			level_01_C.image_target_C.y = level_01_C.image_background.y + level_01_C.image_target_C.y_move;
+			level_01_C.image_target_C.x = 
+				level_01_C.image_background.x + level_01_C.image_target_C.x_move + 540;
+			level_01_C.image_target_C.y = 
+				level_01_C.image_background.y + level_01_C.image_target_C.y_move + 360;
 			// Animations
 			if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
 				|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
@@ -61,28 +61,32 @@ var level_01_C = new Sprite();
 				|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
 				level_01_C.image_target_C.animation = "walk_back";
 				level_01_C.image_target_C.frameRate = 2;
-				level_01_C.image_target_C.x_move += .25;
-				level_01_C.image_target_C.y_move -= .25;
+				level_01_C.image_target_C.x_move = level_01_hub.target_x;
+				level_01_C.image_target_C.y_move = level_01_hub.target_y;
 			}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
 					 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
 					 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
 					 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
 				level_01_C.image_target_C.animation = "walk_front";
 				level_01_C.image_target_C.frameRate = 2;
-				level_01_C.image_target_C.x_move -= .25;
-				level_01_C.image_target_C.y_move += .25;
+				level_01_C.image_target_C.x_move = level_01_hub.target_x;
+				level_01_C.image_target_C.y_move = level_01_hub.target_y;
 			}else if((level_01_hub.target_loop.value>=300 && level_01_hub.target_loop.value<450)
 					 || (level_01_hub.target_loop.value>=1650 && level_01_hub.target_loop.value<1800)
 					 || (level_01_hub.target_loop.value>=2100 && level_01_hub.target_loop.value<2250)
 					 || (level_01_hub.target_loop.value>=3450 && level_01_hub.target_loop.value<3600)) {
 				level_01_C.image_target_C.animation = "idle_back";
 				level_01_C.image_target_C.frameRate = 0;
+				level_01_C.image_target_C.x_move = level_01_hub.target_x;
+				level_01_C.image_target_C.y_move = level_01_hub.target_y;
 			}else if((level_01_hub.target_loop.value>=750 && level_01_hub.target_loop.value<900)
 					 || (level_01_hub.target_loop.value>=1200 && level_01_hub.target_loop.value<1350)
 					 || (level_01_hub.target_loop.value>=2550 && level_01_hub.target_loop.value<2700)
 					 || (level_01_hub.target_loop.value>=3000 && level_01_hub.target_loop.value<3150)) {
 				level_01_C.image_target_C.animation = "idle_front";
 				level_01_C.image_target_C.frameRate = 0;
+				level_01_C.image_target_C.x_move = level_01_hub.target_x;
+				level_01_C.image_target_C.y_move = level_01_hub.target_y;
 			}
 		};
 		
