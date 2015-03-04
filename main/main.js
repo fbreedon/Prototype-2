@@ -4,10 +4,15 @@
 
 // Use 2D context with Brine.js
 use2D = true;
-world.width = 1080;
+world.width  = 1080;
 world.height = 720;
-world.image = Textures.load
-			("./Common/Textures/black box.png");
+world.image  = Textures.load("./Common/Textures/black box.png");
+		
+var black_screen = new Sprite();
+black_screen.width  = 1080;
+black_screen.height = 720;
+black_screen.alpha  = 0.30;
+black_screen.image  = Textures.load("./Common/Textures/black box.png");
 
 /***===============================***/
 /*** Global objects initialization ***/
@@ -69,7 +74,7 @@ world.addChild(room_manager);
 world.addChild(input_manager);
 
 // Set the first room in the game
-room_manager.curr_room = title_screen;
+room_manager.curr_room = level_01_A;
 room_manager.curr_room.create();
 
 // Event listeners to be used in the game always

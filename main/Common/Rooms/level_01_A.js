@@ -76,7 +76,6 @@ var level_01_A = new Sprite();
 		level_01_A.ret.y = 0;
 		level_01_A.ret.mouseOver = false;
 		level_01_A.ret.bgColor = "#000000";
-		level_01_A.ret.drawBG = true;
 		level_01_A.ret.update = function() {
 			if(level_01_A.ret.mouseOver) {
 				level_01_A.ret.color = "#484848";
@@ -88,14 +87,65 @@ var level_01_A = new Sprite();
 			changeRoom(level_01_hub);
 		}
 		
+		level_01_A.button_call = new TextBox("<< Call >>");
+		level_01_A.button_call.font = "Courier";
+		level_01_A.button_call.color = "Red";
+		level_01_A.button_call.fontSize = 30;
+		level_01_A.button_call.x = 830;
+		level_01_A.button_call.y = 650;
+		level_01_A.button_call.mouseOver = false;
+		level_01_A.button_call.update = function() {
+			if(level_01_A.button_call.mouseOver) {
+				level_01_A.button_call.color = "Lime";
+			}else {
+				level_01_A.button_call.color = "Red";
+			}
+		}
+		level_01_A.button_call.click = function() {
+			world.addChild(black_screen);
+			var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
+			createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+			node.create();
+		}
+		
+		level_01_A.fire = new TextBox("<< Fire >>");
+		level_01_A.fire.font = "Courier";
+		level_01_A.fire.fontSize = 30;
+		level_01_A.fire.color = "Black";
+		level_01_A.fire.x = 500;
+		level_01_A.fire.y = 350;
+		level_01_A.fire.mouseOver = false;
+		
 		// Visible sprites at creation time
 		world.addChild(level_01_A.image_background);
 		world.addChild(level_01_A.image_target_A);
 		world.addChild(level_01_A.image_scope);
 		world.addChild(level_01_A.ret);
+		world.addChild(level_01_A.button_call);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_A.ret);
+		active_sprites.push(level_01_A.button_call);
+	}
+	
+	// Start the dialogue
+	level_01_A.startDialogue = function() {
+		world.removeChild(level_01_A.ret);
+		world.removeChild(level_01_A.button_call);
+		while(active_sprites.length > 0)
+			active_sprites.pop();
+	}
+	
+	// End the dialogue
+	level_01_A.endDialogue = function(ending) {
+		world.removeChild(black_screen);
+		
+		world.addChild(level_01_A.ret);
+		world.addChild(level_01_A.button_call);
+		active_sprites.push(level_01_A.ret);
+		active_sprites.push(level_01_A.button_call);
+		
+		alert("This is the ending you chose: " + ending);
 	}
 	
 	// Clear this room
