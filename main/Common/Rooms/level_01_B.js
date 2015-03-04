@@ -64,13 +64,16 @@ var level_01_B = new Sprite();
 			level_01_B.image_target_B.y = level_01_B.image_background.y + 360;
 			// Animations
 			if((level_01_hub.target_loop.value>=180 && level_01_hub.target_loop.value<360)
-				|| (level_01_hub.target_loop.value>=1980 && level_01_hub.target_loop<2160)) {
+				|| (level_01_hub.target_loop.value>=1980 && level_01_hub.target_loop.value<2160)) {
 				level_01_B.image_target_B.animation = "check_watch";
+				level_01_B.image_target_B.frameRate = 0;
 			}else if((level_01_hub.target_loop.value>=360 && level_01_hub.target_loop.value<540)
-				|| (level_01_hub.target_loop.value>=2160 && level_01_hub.target_loop<2340)) {
+				|| (level_01_hub.target_loop.value>=2160 && level_01_hub.target_loop.value<2340)) {
 				level_01_B.image_target_B.animation = "look_around";
+				level_01_B.image_target_B.frameRate = 0;
 			}else {
 				level_01_B.image_target_B.animation = "idle";
+				level_01_B.image_target_B.frameRate = 0;
 			}
 		};
 

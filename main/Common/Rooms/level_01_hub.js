@@ -141,7 +141,6 @@ var level_01_hub = new Sprite();
 		world.addChild(level_01_hub.button_iconB);
 		world.addChild(level_01_hub.button_iconC);
 		world.addChild(level_01_hub.button_iconD);
-		world.addChild(level_01_hub.target_loop);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_hub.button_notes);
@@ -163,6 +162,7 @@ var level_01_hub = new Sprite();
 			level_01_hub.target_loop.value = 0;
 		}
 	}
+	world.addChild(level_01_hub.target_loop);
 	
 	// Clear this room
 	level_01_hub.clear = function() {
