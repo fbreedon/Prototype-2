@@ -47,6 +47,9 @@ var level_01_hub = new Sprite();
 					("./Common/Textures/notes up.png");
 			}
 		}
+		level_01_hub.button_notes.click = function() {
+			level_01_hub.read_notes();
+		}
 		
 		level_01_hub.button_iconA = new Sprite();
 		level_01_hub.button_iconA.width  = 70;
@@ -149,6 +152,62 @@ var level_01_hub = new Sprite();
 		active_sprites.push(level_01_hub.button_iconC);
 		active_sprites.push(level_01_hub.button_iconD);
 		
+	}
+	
+	// This function pulls up notes
+	level_01_hub.read_notes = function() {
+		// Clear the sprites array of the buttons behind the notes...
+		level_01_hub.button_notes.mouseOver = false;
+		while(active_sprites.length > 0)
+			active_sprites.pop();
+		
+		// The notes' sprites...
+		level_01_hub.notes_page = new Sprite();
+		level_01_hub.notes_page.width  = 1080;
+		level_01_hub.notes_page.height = 720;
+		level_01_hub.notes_page.x = 0;
+		level_01_hub.notes_page.y = 0;
+		level_01_hub.notes_page.image = Textures.load("./Common/Textures/notes page.png");
+		
+		level_01_hub.close_notes = new TextBox("<< Close");
+		level_01_hub.close_notes.font = "Courier";
+		level_01_hub.close_notes.fontSize = 30;
+		level_01_hub.close_notes.color = "White";
+		level_01_hub.close_notes.x = 0;
+		level_01_hub.close_notes.y = 0;
+		level_01_hub.close_notes.update = function() {
+			if(level_01_hub.close_notes.mouseOver) {
+				level_01_hub.close_notes.color = "Red";
+			}else {
+				level_01_hub.close_notes.color = "White";
+			}
+		}
+		level_01_hub.close_notes.click = function() {
+			// Get rid of all the notes stuff...
+			world.removeChild(black_screen);
+			world.removeChild(black_screen);
+			world.removeChild(black_screen);
+			world.removeChild(level_01_hub.close_notes);
+			world.removeChild(level_01_hub.notes_page)
+			while(active_sprites.length > 0) active_sprites.pop();
+			
+			// Put the normal stuff back on...
+			active_sprites.push(level_01_hub.button_notes);
+			active_sprites.push(level_01_hub.button_iconA);
+			active_sprites.push(level_01_hub.button_iconB);
+			active_sprites.push(level_01_hub.button_iconC);
+			active_sprites.push(level_01_hub.button_iconD);
+		}
+
+		// Put the note objects onto the world...
+		world.addChild(black_screen);
+		world.addChild(black_screen);
+		world.addChild(black_screen); // This was called multiple times to darken effect
+		world.addChild(level_01_hub.notes_page);
+		world.addChild(level_01_hub.close_notes);
+		
+		// Push the active sprites onto the array as well...
+		active_sprites.push(level_01_hub.close_notes);
 	}
 			
 	// Animation time loop

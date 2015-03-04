@@ -35,8 +35,8 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 		node.Q.font = "Courier";
 		node.Q.color = colorQ;
 		node.Q.fontSize = 30;
-		node.Q.x = 380;
-		node.Q.y = 300;
+		node.Q.x = 350;
+		node.Q.y = 250;
 		
 	node.ans1 = new TextBox(ans1);
 		node.ans1.font = "Courier";

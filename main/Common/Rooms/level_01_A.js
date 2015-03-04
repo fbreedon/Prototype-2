@@ -87,17 +87,19 @@ var level_01_A = new Sprite();
 			changeRoom(level_01_hub);
 		}
 		
-		level_01_A.button_call = new TextBox("<< Call >>");
+		level_01_A.button_call = new TextBox("  < call phone >  ");
 		level_01_A.button_call.font = "Courier";
 		level_01_A.button_call.color = "Red";
 		level_01_A.button_call.fontSize = 30;
-		level_01_A.button_call.x = 830;
+		level_01_A.button_call.x = 375;
 		level_01_A.button_call.y = 650;
 		level_01_A.button_call.mouseOver = false;
 		level_01_A.button_call.update = function() {
 			if(level_01_A.button_call.mouseOver) {
+				level_01_A.button_call.text = "<<< call phone >>>";
 				level_01_A.button_call.color = "Lime";
 			}else {
+				level_01_A.button_call.text = "  < call phone >  ";
 				level_01_A.button_call.color = "Red";
 			}
 		}
