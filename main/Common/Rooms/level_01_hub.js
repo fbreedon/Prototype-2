@@ -148,7 +148,6 @@ var level_01_hub = new Sprite();
 		level_01_hub.button_iconD.click = function() {
 					changeRoom(level_01_D);
 		}
-		
 		/***===     End of active sprites   ===***/
 		
 		/***===================================***/

@@ -83,6 +83,7 @@ var level_01_A = new Sprite();
 		/***         Active sprites          ***/
 		/***=================================***/
 		// Sprites to be available to input_manager
+
 		// Button to return to the hub
 		level_01_A.ret = new TextBox("<< return  ");
 		level_01_A.ret.font = "Courier";
@@ -149,12 +150,7 @@ var level_01_A = new Sprite();
 			changeRoom(level_01_end);
 		}
 		
-		/***===     End of active sprites   ===***/
-		
-		/***===================================***/
-		/***          World allocating         ***/
-		/***===================================***/
-		// Visible sprites at creation time
+
 		world.addChild(level_01_A.image_background);
 		world.addChild(level_01_A.image_target_A);
 		world.addChild(red_screen);
