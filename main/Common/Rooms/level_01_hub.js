@@ -1,8 +1,18 @@
-/***===   Level 01: "Shadowman"   ===***/
+/***=================================***/
+/***      Level 01: "Shadowman"      ***/
+/***=================================***/
 var level_01_hub = new Sprite();
-	// Create this room
+
+	/***==================================***/
+	/***          room.create()           ***/
+	/***==================================***/
+	// What to do at room creation time
 	level_01_hub.create = function() {
-		// This room's passive sprites
+		
+		/***=================================***/
+		/***         Passive sprites         ***/
+		/***=================================***/
+		// Sprites to be drawn, but without interactivity
 		level_01_hub.image_background = new Sprite();
 		level_01_hub.image_background.width  = 1080;
 		level_01_hub.image_background.height = 720;
@@ -28,8 +38,12 @@ var level_01_hub = new Sprite();
 		level_01_hub.image_comment.update = function() {
 			level_01_hub.image_comment.visible = false;
 		}
+		/***===   End of passive sprites  ===***/
 		
-		// This room's active sprites
+		/***=================================***/
+		/***         Active sprites          ***/
+		/***=================================***/
+		// Sprites to be be available to input_manager
 		level_01_hub.button_notes = new Sprite();
 		level_01_hub.button_notes.width  = 446;
 		level_01_hub.button_notes.height = 182;
@@ -135,6 +149,11 @@ var level_01_hub = new Sprite();
 					changeRoom(level_01_D);
 		}
 		
+		/***===     End of active sprites   ===***/
+		
+		/***===================================***/
+		/***          World allocating         ***/
+		/***===================================***/
 		// Visible sprites at creation time
 		world.addChild(level_01_hub.image_background);
 		world.addChild(level_01_hub.image_sniper);
@@ -154,8 +173,12 @@ var level_01_hub = new Sprite();
 		
 	}
 	
+	/***===============================***/
+	/***        room.readNotes()       ***/
+	/***===============================***/
 	// This function pulls up notes
 	level_01_hub.readNotes = function() {
+		
 		// Clear the sprites array of the buttons behind the notes...
 		level_01_hub.button_notes.mouseOver = false;
 		while(active_sprites.length > 0)
@@ -169,12 +192,12 @@ var level_01_hub = new Sprite();
 		level_01_hub.notes_page.y = 0;
 		level_01_hub.notes_page.image = Textures.load("./Common/Textures/notes page.png");
 		
-		level_01_hub.close_notes = new TextBox("<< Close");
+		level_01_hub.close_notes = new TextBox("<< close");
 		level_01_hub.close_notes.font = "Courier";
 		level_01_hub.close_notes.fontSize = 30;
 		level_01_hub.close_notes.color = "White";
 		level_01_hub.close_notes.x = 0;
-		level_01_hub.close_notes.y = 0;
+		level_01_hub.close_notes.y = 690;
 		level_01_hub.close_notes.update = function() {
 			if(level_01_hub.close_notes.mouseOver) {
 				level_01_hub.close_notes.color = "Red";
@@ -182,6 +205,7 @@ var level_01_hub = new Sprite();
 				level_01_hub.close_notes.color = "White";
 			}
 		}
+		
 		level_01_hub.close_notes.click = function() {
 			// Get rid of all the notes stuff...
 			world.removeChild(black_screen);
@@ -209,12 +233,16 @@ var level_01_hub = new Sprite();
 		// Push the active sprites onto the array as well...
 		active_sprites.push(level_01_hub.close_notes);
 	}
-			
-	// Animation time loop
+	
+	/***=================================***/
+	/***       Animation time loop       ***/
+	/***=================================***/
+	// Timing dependencies for animations
 	level_01_hub.target_loop = new Sprite();
 	level_01_hub.target_loop.value = 0;
 	level_01_hub.target_x = 0;
 	level_01_hub.target_y = 0;
+	
 	level_01_hub.target_loop.update = function() {
 		//level_01_hub.image_comment.visible = true;
 		level_01_hub.target_loop.value++;
@@ -222,6 +250,7 @@ var level_01_hub = new Sprite();
 		if(level_01_hub.target_loop.value == 3600) { // loop every minute
 			level_01_hub.target_loop.value = 0;
 		}
+		
 		// Target B position tracker
 		if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
 			|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
@@ -236,10 +265,13 @@ var level_01_hub = new Sprite();
 			level_01_hub.target_x -= .25;
 			level_01_hub.target_y += .25;
 		}
-	};
+	}
 	world.addChild(level_01_hub.target_loop);
-	
-	// Clear this room
+
+	/***===============================***/
+	/***        Clear this room        ***/
+	/***===============================***/
+	// Remove from the world, un-draw sprites, etc...
 	level_01_hub.clear = function() {
 		world.removeChild(level_01_hub.image_background);
 		world.removeChild(level_01_hub.image_sniper);

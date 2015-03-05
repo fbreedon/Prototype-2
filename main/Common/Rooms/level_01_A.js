@@ -1,11 +1,20 @@
-/***===   Level 01: target A   ===***/
+/***===============================***/
+/***       Level 01: target A      ***/
+/***===============================***/
 var level_01_A = new Sprite();
-	// Create this room
+
+	/***==================================***/
+	/***          room.create()           ***/
+	/***==================================***/
+	// What to do at creation time
 	level_01_A.create = function() {
 		var sway_x = 0;
 		var sway_y = 0;
 		
-		// This room's passive sprites
+		/***=================================***/
+		/***         Passive sprites         ***/
+		/***=================================***/
+		// Sprites to be drawn, but without interactivity
 		level_01_A.image_background = new Sprite();
 		level_01_A.image_background.width  = 1080;
 		level_01_A.image_background.height = 720;
@@ -39,6 +48,7 @@ var level_01_A = new Sprite();
 		level_01_A.image_target_A.y = 0;
 		level_01_A.image_target_A.image = Textures.load
 			("./Common/Textures/Level 01/target-A.png");
+			
 		// Target A animation
 		level_01_A.image_target_A.frameWidth   = 32;
 		level_01_A.image_target_A.frameHeight  = 64;
@@ -67,13 +77,19 @@ var level_01_A = new Sprite();
 			}
 		};
 		
-		// This room's active sprites
+		/***===   End of passive sprites  ===***/
+		
+		/***=================================***/
+		/***         Active sprites          ***/
+		/***=================================***/
+		// Sprites to be available to input_manager
+		// Button to return to the hub
 		level_01_A.ret = new TextBox("<< return  ");
 		level_01_A.ret.font = "Courier";
 		level_01_A.ret.fontSize = 30;
 		level_01_A.ret.color = "#FFFFFF";
 		level_01_A.ret.x = 0;
-		level_01_A.ret.y = 0;
+		level_01_A.ret.y = 690;
 		level_01_A.ret.mouseOver = false;
 		level_01_A.ret.bgColor = "#000000";
 		level_01_A.ret.update = function() {
@@ -87,19 +103,20 @@ var level_01_A = new Sprite();
 			changeRoom(level_01_hub);
 		}
 		
-		level_01_A.button_call = new TextBox("  < call phone >  ");
+		// Button to initiate call target
+		level_01_A.button_call = new TextBox("   <CALL PHONE>   ");
 		level_01_A.button_call.font = "Courier";
 		level_01_A.button_call.color = "Red";
 		level_01_A.button_call.fontSize = 30;
 		level_01_A.button_call.x = 375;
-		level_01_A.button_call.y = 650;
+		level_01_A.button_call.y = 45;
 		level_01_A.button_call.mouseOver = false;
 		level_01_A.button_call.update = function() {
 			if(level_01_A.button_call.mouseOver) {
-				level_01_A.button_call.text = "<<< call phone >>>";
+				level_01_A.button_call.text = "<<< CALL PHONE >>>";
 				level_01_A.button_call.color = "Lime";
 			}else {
-				level_01_A.button_call.text = "  < call phone >  ";
+				level_01_A.button_call.text = "   <CALL PHONE>   ";
 				level_01_A.button_call.color = "Red";
 			}
 		}
@@ -110,6 +127,7 @@ var level_01_A = new Sprite();
 			node.create();
 		}
 		
+		// Button to fire upon target
 		level_01_A.button_fire = new TextBox("<< FIRE >>");
 		level_01_A.button_fire.font = "Courier";
 		level_01_A.button_fire.fontSize = 35;
@@ -131,6 +149,11 @@ var level_01_A = new Sprite();
 			changeRoom(level_01_end);
 		}
 		
+		/***===     End of active sprites   ===***/
+		
+		/***===================================***/
+		/***          World allocating         ***/
+		/***===================================***/
 		// Visible sprites at creation time
 		world.addChild(level_01_A.image_background);
 		world.addChild(level_01_A.image_target_A);
@@ -146,15 +169,22 @@ var level_01_A = new Sprite();
 		active_sprites.push(level_01_A.button_fire);
 	}
 	
-	// Start the dialogue
+	/***==============================***/
+	/***     room.startDialogue()     ***/
+	/***==============================***/
+	// Starting dialogue clears room behind the screen
 	level_01_A.startDialogue = function() {
 		world.removeChild(level_01_A.ret);
 		world.removeChild(level_01_A.button_call);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 	}
-	
-	// End the dialogue
+
+	/***==============================***/
+	/***       room.endDialogue()     ***/
+	/***==============================***/
+	// Ending the dialogue returns the room to the previous state
+	// also updates whatever necessary dependaing on your ending
 	level_01_A.endDialogue = function(ending) {
 		world.removeChild(black_screen);
 		
@@ -167,7 +197,10 @@ var level_01_A = new Sprite();
 		alert("This is the ending you chose: " + ending);
 	}
 	
-	// Clear this room
+	/***===============================***/
+	/***        Clear this room        ***/
+	/***===============================***/
+	// Remove from the world, un-draw sprites, etc...
 	level_01_A.clear = function() {
 		world.removeChild(level_01_A.image_background);
 		world.removeChild(level_01_A.image_target_A);

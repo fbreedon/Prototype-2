@@ -1,4 +1,6 @@
-/***=== This the ending screen for Level 01: "Shadowman" ===***/
+/***========================================================***/
+/***    This the ending screen for Level 01: "Shadowman"    ***/
+/***========================================================***/
 /* Here should go whatever is supposed to happen at the completion
  * of level 01, as of right now, that can be accomplished by 
  * "firing" upon any previous target...

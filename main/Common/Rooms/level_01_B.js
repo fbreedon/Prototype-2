@@ -1,4 +1,6 @@
-/***===   Level 01: target A   ===***/
+/***===============================***/
+/***       Level 01: target B      ***/
+/***===============================***/
 var level_01_B = new Sprite();
 	// Create this room
 	level_01_B.create = function() {
@@ -83,7 +85,7 @@ var level_01_B = new Sprite();
 		level_01_B.ret.fontSize = 30;
 		level_01_B.ret.color = "#FFFFFF";
 		level_01_B.ret.x = 0;
-		level_01_B.ret.y = 0;
+		level_01_B.ret.y = 690;
 		level_01_B.ret.mouseOver = false;
 		level_01_B.ret.bgColor = "#000000";
 		level_01_B.ret.drawBG = true;
@@ -98,19 +100,19 @@ var level_01_B = new Sprite();
 			changeRoom(level_01_hub);
 		}
 		
-		level_01_B.button_call = new TextBox("  < call phone >  ");
+		level_01_B.button_call = new TextBox("   <CALL PHONE>   ");
 		level_01_B.button_call.font = "Courier";
 		level_01_B.button_call.color = "Red";
 		level_01_B.button_call.fontSize = 30;
 		level_01_B.button_call.x = 375;
-		level_01_B.button_call.y = 650;
+		level_01_B.button_call.y = 45;
 		level_01_B.button_call.mouseOver = false;
 		level_01_B.button_call.update = function() {
 			if(level_01_B.button_call.mouseOver) {
-				level_01_B.button_call.text = "<<< call phone >>>";
+				level_01_B.button_call.text = "<<< CALL PHONE >>>";
 				level_01_B.button_call.color = "Lime";
 			}else {
-				level_01_B.button_call.text = "  < call phone >  ";
+				level_01_B.button_call.text = "   <CALL PHONE>   ";
 				level_01_B.button_call.color = "Red";
 			}
 		}
