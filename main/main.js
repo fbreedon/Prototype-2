@@ -14,6 +14,13 @@ black_screen.height = 720;
 black_screen.alpha  = 0.30;
 black_screen.image  = Textures.load("./Common/Textures/black box.png");
 
+var red_screen = new Sprite();
+red_screen.width  = 1080;
+red_screen.height = 720;
+red_screen.alpha  = 0.30;
+red_screen.visible = false;
+red_screen.image  = Textures.load("./Common/Textures/red box.png");
+
 /***===============================***/
 /*** Global objects initialization ***/
 /***===============================***/
@@ -74,7 +81,7 @@ world.addChild(room_manager);
 world.addChild(input_manager);
 
 // Set the first room in the game
-room_manager.curr_room = level_01_hub;
+room_manager.curr_room = level_01_D;
 room_manager.curr_room.create();
 
 // Event listeners to be used in the game always

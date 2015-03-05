@@ -54,7 +54,7 @@ var level_01_D = new Sprite();
 		};
 		
 		// This room's active sprites
-		level_01_D.ret = new TextBox("<< Return  ");
+		level_01_D.ret = new TextBox("<< return  ");
 		level_01_D.ret.font = "Courier";
 		level_01_D.ret.fontSize = 30;
 		level_01_D.ret.color = "#FFFFFF";
@@ -74,14 +74,85 @@ var level_01_D = new Sprite();
 			changeRoom(level_01_hub);
 		}
 		
+		level_01_D.button_call = new TextBox("  < call phone >  ");
+		level_01_D.button_call.font = "Courier";
+		level_01_D.button_call.color = "Red";
+		level_01_D.button_call.fontSize = 30;
+		level_01_D.button_call.x = 375;
+		level_01_D.button_call.y = 650;
+		level_01_D.button_call.mouseOver = false;
+		level_01_D.button_call.update = function() {
+			if(level_01_D.button_call.mouseOver) {
+				level_01_D.button_call.text = "<<< call phone >>>";
+				level_01_D.button_call.color = "Lime";
+			}else {
+				level_01_D.button_call.text = "  < call phone >  ";
+				level_01_D.button_call.color = "Red";
+			}
+		}
+		level_01_D.button_call.click = function() {
+			world.addChild(black_screen);
+			var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
+			createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+			node.create();
+		}
+		
+		level_01_D.button_fire = new TextBox("<< FIRE >>");
+		level_01_D.button_fire.font = "Courier";
+		level_01_D.button_fire.fontSize = 35;
+		level_01_D.button_fire.color = "Black";
+		level_01_D.button_fire.x = 435;
+		level_01_D.button_fire.y = 345;
+		level_01_D.button_fire.visible = false;
+		level_01_D.button_fire.update = function() {
+			if(level_01_D.button_fire.mouseOver) {
+				level_01_D.button_fire.visible = true;
+				red_screen.visible = true;
+			}else {
+				level_01_D.button_fire.visible = false;
+				red_screen.visible = false;
+			}
+		}
+		level_01_D.button_fire.click = function() {
+			world.removeChild(red_screen);
+			changeRoom(level_01_end);
+		}
+		
 		// Visible sprites at creation time
 		world.addChild(level_01_D.image_background);
 		world.addChild(level_01_D.image_target_D);
+		world.addChild(red_screen);
 		world.addChild(level_01_D.image_scope);
 		world.addChild(level_01_D.ret);
+		world.addChild(level_01_D.button_call);
+		world.addChild(level_01_D.button_fire);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_D.ret);
+		active_sprites.push(level_01_D.button_call);
+		active_sprites.push(level_01_D.button_fire);
+	}
+	
+	// Start the dialogue
+	level_01_D.startDialogue = function() {
+		world.removeChild(level_01_D.ret);
+		world.removeChild(level_01_D.button_call);
+		
+		while(active_sprites.length > 0)
+			active_sprites.pop();
+	}
+	
+	// End the dialogue
+	level_01_D.endDialogue = function(ending) {
+		world.removeChild(black_screen);
+		
+		world.addChild(level_01_D.ret);
+		world.addChild(level_01_D.button_call);
+		active_sprites.push(level_01_D.ret);
+		active_sprites.push(level_01_D.button_call);
+		active_sprites.push(level_01_D.button_fire);
+		
+		alert("This is the ending you chose: " + ending);
 	}
 	
 	// Clear this room
@@ -90,6 +161,9 @@ var level_01_D = new Sprite();
 		world.removeChild(level_01_D.image_target_D);
 		world.removeChild(level_01_D.image_scope);
 		world.removeChild(level_01_D.ret);
+		world.removeChild(level_01_D.button_call);
+		world.removeChild(level_01_D.button_fire);
+		world.removeChild(level_01_D.red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 	}
