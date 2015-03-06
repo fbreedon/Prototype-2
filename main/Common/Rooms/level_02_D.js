@@ -86,9 +86,7 @@ var level_02_D = new Sprite();
 		}
 		level_02_D.button_call.click = function() {
 			world.addChild(black_screen);
-			var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
-			createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
-			node.create();
+			level_02_D.startDialogue();
 		}
 		
 		// Button to fire upon target
@@ -135,6 +133,10 @@ var level_02_D = new Sprite();
 		world.removeChild(level_02_D.button_call);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
+		
+		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
+		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+		node.create();
 	}
 
 	/***==============================***/

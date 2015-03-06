@@ -90,7 +90,7 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_iconB.width  = 70;
 		level_02_hub.button_iconB.height = 70;
 		level_02_hub.button_iconB.x = 180;
-		level_02_hub.button_iconB.y = 310;
+		level_02_hub.button_iconB.y = 290;
 		level_02_hub.button_iconB.mouseOver = false;
 		level_02_hub.button_iconB.update = function() {
 			if(level_02_hub.button_iconB.mouseOver) {
