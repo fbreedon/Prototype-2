@@ -40,6 +40,78 @@ var level_02_A = new Sprite();
 		level_02_A.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
 		
+		// Target A sprite
+		level_02_A.image_target_A = new Sprite();
+		level_02_A.image_target_A.width  = 48;
+		level_02_A.image_target_A.height = 128;
+		level_02_A.image_target_A.x_move = 0;
+		level_02_A.image_target_A.y_move = 0;
+		level_02_A.image_target_A.image = Textures.load
+			("./Common/Textures/Level 02/target-A.png");
+		
+		// Target A animation
+		level_02_A.image_target_A.frameWidth  = 24;
+		level_02_A.image_target_A.frameHeight = 64;
+		level_02_A.image_target_A.frameCount  = 19;
+		level_02_A.image_target_A.frameRate   = 0;
+		level_02_A.image_target_A.addAnimations
+			(["walk_front", "walk_back", "smoke_front",
+			 "smoke_back", "phone_front", "phone_back"], 
+			 [5,5,3,3,1,1]);
+		level_02_A.image_target_A.update = function() {
+			// Background sway
+			level_02_A.image_target_A.x = 
+				level_02_A.image_background.x + level_02_A.image_target_A.x_move + 580;
+			level_02_A.image_target_A.y = 
+				level_02_A.image_background.y + level_02_A.image_target_A.y_move + 340;
+			// Animation
+			if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
+				|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
+				level_02_A.image_target_A.animation = "walk_back";
+				level_02_A.image_target_A.frameRate = 2;
+				level_02_A.image_target_A.x_move = level_02_hub.target_x;
+				level_02_A.image_target_A.y_move = level_02_hub.target_y;
+			}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1200)		// 15 to 20 secs
+					 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3000)) {// 45 to 50 secs
+				level_02_A.image_target_A.animation = "walk_front";
+				level_02_A.image_target_A.frameRate = 2;
+				level_02_A.image_target_A.x_move = level_02_hub.target_x;
+				level_02_A.image_target_A.y_move = level_02_hub.target_y;
+			}else if((level_02_hub.target_loop.value>=300 && level_02_hub.target_loop.value<900)		// 5 to 15 secs
+					 || (level_02_hub.target_loop.value>=2100 && level_02_hub.target_loop.value<2700)) {// 25 to 35 secs
+				level_02_A.image_target_A.animation = "smoke_back";
+				level_02_A.image_target_A.frameRate = .75;
+				level_02_A.image_target_A.x_move = level_02_hub.target_x;
+				level_02_A.image_target_A.y_move = level_02_hub.target_y;
+			}else if((level_02_hub.target_loop.value>=1200 && level_02_hub.target_loop.value<1800)		// 20 to 30 secs
+					 || (level_02_hub.target_loop.value>=3000 && level_02_hub.target_loop.value<3600)) {// 50 to 60 secs
+				level_02_A.image_target_A.animation = "smoke_front";
+				level_02_A.image_target_A.frameRate = .75;
+				level_02_A.image_target_A.x_move = level_02_hub.target_x;
+				level_02_A.image_target_A.y_move = level_02_hub.target_y;
+			}
+		};
+		
+		// Target B shadow sprite
+		level_02_A.image_shadow_B = new Sprite();
+		level_02_A.image_shadow_B.width  = 48;
+		level_02_A.image_shadow_B.height = 128;
+		level_02_A.image_shadow_B.image = Textures.load
+			("./Common/Textures/general-man-plain.png");
+		
+		// Target B shadow animation
+		level_02_A.image_shadow_B.frameWidth  = 24;
+		level_02_A.image_shadow_B.frameHeight = 64;
+		level_02_A.image_shadow_B.frameCount  = 25;
+		level_02_A.image_shadow_B.frameRate   = 0;
+		level_02_A.image_shadow_B.addAnimation("stand_LD",20,1);
+		level_02_A.image_shadow_B.animation = "stand_LD";
+		level_02_A.image_shadow_B.update = function() {
+			// Background sway
+			level_02_A.image_shadow_B.x = level_02_A.image_background.x + 780;
+			level_02_A.image_shadow_B.y = level_02_A.image_background.y + 270;
+		};
+		
 		/***===   End of passive sprites  ===***/
 		
 		/***=================================***/
@@ -113,6 +185,8 @@ var level_02_A = new Sprite();
 		
 
 		world.addChild(level_02_A.image_background);
+		world.addChild(level_02_A.image_target_A);
+		world.addChild(level_02_A.image_shadow_B);
 		world.addChild(red_screen);
 		world.addChild(level_02_A.image_scope);
 		world.addChild(level_02_A.ret);
@@ -163,6 +237,8 @@ var level_02_A = new Sprite();
 	// Remove from the world, un-draw sprites, etc...
 	level_02_A.clear = function() {
 		world.removeChild(level_02_A.image_background);
+		world.removeChild(level_02_A.image_target_A);
+		world.removeChild(level_02_A.image_shadow_B);
 		world.removeChild(level_02_A.image_scope);
 		world.removeChild(level_02_A.ret);
 		world.removeChild(level_02_A.button_call);

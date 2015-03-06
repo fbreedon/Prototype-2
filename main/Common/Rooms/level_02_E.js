@@ -41,6 +41,59 @@ var level_02_E = new Sprite();
 		level_02_E.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
 		
+		// Target E sprite
+		level_02_E.image_target_E = new Sprite();
+		level_02_E.image_target_E.width  = 48;
+		level_02_E.image_target_E.height = 128;
+		level_02_E.image_target_E.image  = Textures.load
+			("./Common/Textures/Level 02/target-E.png");
+		
+		// Target E animation
+		level_02_E.image_target_E.frameWidth  = 24;
+		level_02_E.image_target_E.frameHeight = 64;
+		level_02_E.image_target_E.frameCount  = 7;
+		level_02_E.image_target_E.frameRate   = 0;
+		level_02_E.image_target_E.addAnimations
+			(["idle", "phone", "smoking"], [3,1,3]);
+		level_02_E.image_target_E.update = function() {
+			// Background sway
+			level_02_E.image_target_E.x = level_02_E.image_background.x + 540;
+			level_02_E.image_target_E.y = level_02_E.image_background.y + 280;
+			// Animation
+			if((level_02_hub.target_loop.value>=1200 && level_02_hub.target_loop.value<1680)	// 20 to 28 secs
+				|| level_02_hub.target_loop.value>=3000 && level_02_hub.target_loop.value<3480) {	// 50 to 58 secs
+				level_02_E.image_target_E.animation = "smoking";
+				level_02_E.image_target_E.frameRate = .8;
+			}else {
+				level_02_E.image_target_E.animation = "idle";
+				level_02_E.image_target_E.frameRate = .25;
+			}
+		};
+		
+		// Target C shadow sprite
+		level_02_E.image_shadow_C = new Sprite();
+		level_02_E.image_shadow_C.width  = 72;
+		level_02_E.image_shadow_C.height = 96;
+		level_02_E.image_shadow_C.image  = Textures.load
+			("./Common/Textures/Level 02/target-C-shadow.png");
+		level_02_E.image_shadow_C.update = function() {
+			// Background sway
+			level_02_E.image_shadow_C.x = level_02_E.image_background.x + 450;
+			level_02_E.image_shadow_C.y = level_02_E.image_background.y + 220;
+		};
+		
+		// Target D shadow sprite
+		level_02_E.image_shadow_D = new Sprite();
+		level_02_E.image_shadow_D.width  = 48;
+		level_02_E.image_shadow_D.height = 96;
+		level_02_E.image_shadow_D.image  = Textures.load
+			("./Common/Textures/Level 02/target-D-shadow.png");
+		level_02_E.image_shadow_D.update = function() {
+			// Background sway
+			level_02_E.image_shadow_D.x = level_02_E.image_background.x + 690;
+			level_02_E.image_shadow_D.y = level_02_E.image_background.y + 305;
+		};
+		
 		/***===   End of passive sprites  ===***/
 		
 		/***=================================***/
@@ -113,6 +166,9 @@ var level_02_E = new Sprite();
 		}
 
 		world.addChild(level_02_E.image_background);
+		world.addChild(level_02_E.image_target_E);
+		world.addChild(level_02_E.image_shadow_C);
+		world.addChild(level_02_E.image_shadow_D);
 		world.addChild(red_screen);
 		world.addChild(level_02_E.image_scope);
 		world.addChild(level_02_E.ret);
@@ -163,6 +219,9 @@ var level_02_E = new Sprite();
 	// Remove from the world, un-draw sprites, etc...
 	level_02_E.clear = function() {
 		world.removeChild(level_02_E.image_background);
+		world.removeChild(level_02_E.image_target_E);
+		world.removeChild(level_02_E.image_shadow_C);
+		world.removeChild(level_02_E.image_shadow_D);
 		world.removeChild(level_02_E.image_scope);
 		world.removeChild(level_02_E.ret);
 		world.removeChild(level_02_E.button_call);

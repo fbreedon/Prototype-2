@@ -40,6 +40,69 @@ var level_02_C = new Sprite();
 		level_02_C.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
 		
+		// Target C sprite
+		level_02_C.image_target_C = new Sprite();
+		level_02_C.image_target_C.width  = 72;
+		level_02_C.image_target_C.height = 96;
+		level_02_C.image_target_C.image  = Textures.load
+			("./Common/Textures/Level 02/target-C.png");
+		
+		// Target C animation
+		level_02_C.image_target_C.frameWidth  = 48;
+		level_02_C.image_target_C.frameHeight = 64;
+		level_02_C.image_target_C.frameCount  = 5;
+		level_02_C.image_target_C.frameRate   = 0;
+		level_02_C.image_target_C.addAnimation("idle",0,1);
+		level_02_C.image_target_C.addAnimation("drink",1,1);
+		level_02_C.image_target_C.addAnimation("sleep",2,1);
+		level_02_C.image_target_C.addAnimation("phone",3,1);
+		level_02_C.image_target_C.update = function() {
+			// Background sway
+			level_02_C.image_target_C.x = level_02_C.image_background.x + 480;
+			level_02_C.image_target_C.y = level_02_C.image_background.y + 340;
+			// Animation
+			if((level_02_hub.target_loop.value>=300 && level_02_hub.target_loop.value<480)	// 5 to 8 secs
+				|| (level_02_hub.target_loop.value>=2100 && level_02_hub.target_loop.value<2280)) {	// 35 to 38 secs
+				level_02_C.image_target_C.animation = "drink";
+			}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1380)	// 15 to 23 secs
+					 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3180)) {	// 45 to 53 secs
+				level_02_C.image_target_C.animation = "sleep";
+			}else {
+				level_02_C.image_target_C.animation = "idle";
+			}
+		};
+		
+		// Target D shadow sprite
+		level_02_C.image_shadow_D = new Sprite();
+		level_02_C.image_shadow_D.width  = 48;
+		level_02_C.image_shadow_D.height = 96;
+		level_02_C.image_shadow_D.image  = Textures.load
+			("./Common/Textures/Level 02/target-D-shadow.png");
+		level_02_C.image_shadow_D.update = function() {
+			// Background sway
+			level_02_C.image_shadow_D.x = level_02_C.image_background.x + 720;
+			level_02_C.image_shadow_D.y = level_02_C.image_background.y + 420;
+		};
+		
+		// Target E shadow sprite
+		level_02_C.image_shadow_E = new Sprite();
+		level_02_C.image_shadow_E.width  = 48;
+		level_02_C.image_shadow_E.height = 128;
+		level_02_C.image_shadow_E.image  = Textures.load
+			("./Common/Textures/general-man-plain.png");
+		level_02_C.image_shadow_E.update = function() {
+			// Background sway
+			level_02_C.image_shadow_E.x = level_02_C.image_background.x + 570;
+			level_02_C.image_shadow_E.y = level_02_C.image_background.y + 400;
+			// Animation
+			level_02_C.image_shadow_E.frameWidth  = 24;
+			level_02_C.image_shadow_E.frameHeight = 64;
+			level_02_C.image_shadow_E.frameCount  = 25;
+			level_02_C.image_shadow_E.frameRate = 0;
+			level_02_C.image_shadow_E.addAnimation("stand_RU",23,1);
+			level_02_C.image_shadow_E.animation = "stand_RU";
+		};
+		
 		/***===   End of passive sprites  ===***/
 		
 		/***=================================***/
@@ -113,6 +176,9 @@ var level_02_C = new Sprite();
 		
 
 		world.addChild(level_02_C.image_background);
+		world.addChild(level_02_C.image_target_C);
+		world.addChild(level_02_C.image_shadow_D);
+		world.addChild(level_02_C.image_shadow_E);
 		world.addChild(red_screen);
 		world.addChild(level_02_C.image_scope);
 		world.addChild(level_02_C.ret);
@@ -163,6 +229,9 @@ var level_02_C = new Sprite();
 	// Remove from the world, un-draw sprites, etc...
 	level_02_C.clear = function() {
 		world.removeChild(level_02_C.image_background);
+		world.removeChild(level_02_C.image_target_C);
+		world.removeChild(level_02_C.image_shadow_D);
+		world.removeChild(level_02_C.image_shadow_E);
 		world.removeChild(level_02_C.image_scope);
 		world.removeChild(level_02_C.ret);
 		world.removeChild(level_02_C.button_call);

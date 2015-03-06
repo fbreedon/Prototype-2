@@ -268,25 +268,19 @@ var level_02_hub = new Sprite();
 	level_02_hub.target_y = 0;
 	
 	level_02_hub.target_loop.update = function() {
-		//level_02_hub.image_comment.visible = true;
 		level_02_hub.target_loop.value++;
-		//level_02_hub.image_comment.text = level_02_hub.target_loop.value;
 		if(level_02_hub.target_loop.value == 3600) { // loop every minute
 			level_02_hub.target_loop.value = 0;
 		}
 		
-		// Target B position tracker
-		if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)
-			|| (level_02_hub.target_loop.value>=1350 && level_02_hub.target_loop.value<1650)
-			|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)
-			|| (level_02_hub.target_loop.value>=3150 && level_02_hub.target_loop.value<3450)) {
-			level_02_hub.target_x += .25;
+		// Target A position tracker
+		if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
+			|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
+			level_02_hub.target_x -= .5;
 			level_02_hub.target_y -= .25;
-		}else if((level_02_hub.target_loop.value>=450 && level_02_hub.target_loop.value<750)
-				 || (level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1200)
-				 || (level_02_hub.target_loop.value>=2250 && level_02_hub.target_loop.value<2550)
-				 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3000)) {
-			level_02_hub.target_x -= .25;
+		}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1200)		// 15 to 20 secs
+				 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3000)) {// 45 to 50 secs
+			level_02_hub.target_x += .5;
 			level_02_hub.target_y += .25;
 		}
 	}
