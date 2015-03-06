@@ -68,8 +68,8 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_iconA = new Sprite();
 		level_02_hub.button_iconA.width  = 70;
 		level_02_hub.button_iconA.height = 70;
-		level_02_hub.button_iconA.x = 380;
-		level_02_hub.button_iconA.y = 260;
+		level_02_hub.button_iconA.x = 110;
+		level_02_hub.button_iconA.y = 300;
 		level_02_hub.button_iconA.mouseOver = false;
 		level_02_hub.button_iconA.update = function() {
 			if(level_02_hub.button_iconA.mouseOver) {
@@ -86,6 +86,90 @@ var level_02_hub = new Sprite();
 			changeRoom(level_02_A);
 		}
 		
+		level_02_hub.button_iconB = new Sprite();
+		level_02_hub.button_iconB.width  = 70;
+		level_02_hub.button_iconB.height = 70;
+		level_02_hub.button_iconB.x = 180;
+		level_02_hub.button_iconB.y = 310;
+		level_02_hub.button_iconB.mouseOver = false;
+		level_02_hub.button_iconB.update = function() {
+			if(level_02_hub.button_iconB.mouseOver) {
+				level_02_hub.button_iconB.image = Textures.load
+					("./Common/Textures/b icon over.png");
+				level_02_hub.image_comment.visible = true;
+				level_02_hub.image_comment.text = "\"suspect B\"";
+			}else {
+				level_02_hub.button_iconB.image = Textures.load
+					("./Common/Textures/b icon up.png");
+			}
+		}
+		level_02_hub.button_iconB.click = function() {
+			changeRoom(level_02_B);
+		}
+		
+		level_02_hub.button_iconC = new Sprite();
+		level_02_hub.button_iconC.width  = 70;
+		level_02_hub.button_iconC.height = 70;
+		level_02_hub.button_iconC.x = 240;
+		level_02_hub.button_iconC.y = 360;
+		level_02_hub.button_iconC.mouseOver = false;
+		level_02_hub.button_iconC.update = function() {
+			if(level_02_hub.button_iconC.mouseOver) {
+				level_02_hub.button_iconC.image = Textures.load
+					("./Common/Textures/c icon over.png");
+				level_02_hub.image_comment.visible = true;
+				level_02_hub.image_comment.text = "\"suspect C\"";
+			}else {
+				level_02_hub.button_iconC.image = Textures.load
+					("./Common/Textures/c icon up.png");
+			}
+		}
+		level_02_hub.button_iconC.click = function() {
+			changeRoom(level_02_C);
+		}
+		
+		level_02_hub.button_iconD = new Sprite();
+		level_02_hub.button_iconD.width  = 70;
+		level_02_hub.button_iconD.height = 70;
+		level_02_hub.button_iconD.x = 310;
+		level_02_hub.button_iconD.y = 390;
+		level_02_hub.button_iconD.mouseOver = false;
+		level_02_hub.button_iconD.update = function() {
+			if(level_02_hub.button_iconD.mouseOver) {
+				level_02_hub.button_iconD.image = Textures.load
+					("./Common/Textures/d icon over.png");
+				level_02_hub.image_comment.visible = true;
+				level_02_hub.image_comment.text = "\"suspect D\"";
+			}else {
+				level_02_hub.button_iconD.image = Textures.load
+					("./Common/Textures/d icon up.png");
+			}
+		}
+		level_02_hub.button_iconD.click = function() {
+			changeRoom(level_02_D);
+		}
+		
+		level_02_hub.button_iconE = new Sprite();
+		level_02_hub.button_iconE.width  = 70;
+		level_02_hub.button_iconE.height = 70;
+		level_02_hub.button_iconE.x = 240;
+		level_02_hub.button_iconE.y = 435;
+		level_02_hub.button_iconE.mouseOver = false;
+		level_02_hub.button_iconE.update = function() {
+			if(level_02_hub.button_iconE.mouseOver) {
+				level_02_hub.button_iconE.image = Textures.load
+					("./Common/Textures/e icon over.png");
+				level_02_hub.image_comment.visible = true;
+				level_02_hub.image_comment.text = "\"suspect E\"";
+			}else {
+				level_02_hub.button_iconE.image = Textures.load
+					("./Common/Textures/e icon up.png");
+			}
+		}
+		level_02_hub.button_iconE.click = function() {
+			changeRoom(level_02_E);
+		}
+		
 		/***===     End of active sprites   ===***/
 		
 		/***===================================***/
@@ -97,10 +181,18 @@ var level_02_hub = new Sprite();
 		world.addChild(level_02_hub.image_comment);
 		world.addChild(level_02_hub.button_notes);
 		world.addChild(level_02_hub.button_iconA);
+		world.addChild(level_02_hub.button_iconB);
+		world.addChild(level_02_hub.button_iconC);
+		world.addChild(level_02_hub.button_iconD);
+		world.addChild(level_02_hub.button_iconE);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_02_hub.button_notes);
 		active_sprites.push(level_02_hub.button_iconA);
+		active_sprites.push(level_02_hub.button_iconB);
+		active_sprites.push(level_02_hub.button_iconC);
+		active_sprites.push(level_02_hub.button_iconD);
+		active_sprites.push(level_02_hub.button_iconE);
 		
 	}
 	
@@ -149,6 +241,10 @@ var level_02_hub = new Sprite();
 			// Put the normal stuff back on...
 			active_sprites.push(level_02_hub.button_notes);
 			active_sprites.push(level_02_hub.button_iconA);
+			active_sprites.push(level_02_hub.button_iconB);
+			active_sprites.push(level_02_hub.button_iconC);
+			active_sprites.push(level_02_hub.button_iconD);
+			active_sprites.push(level_02_hub.button_iconE);
 		}
 
 		// Put the note objects onto the world...
@@ -206,6 +302,10 @@ var level_02_hub = new Sprite();
 		world.removeChild(level_02_hub.image_comment);
 		world.removeChild(level_02_hub.button_notes);
 		world.removeChild(level_02_hub.button_iconA);
+		world.removeChild(level_02_hub.button_iconB);
+		world.removeChild(level_02_hub.button_iconC);
+		world.removeChild(level_02_hub.button_iconD);
+		world.removeChild(level_02_hub.button_iconE);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		

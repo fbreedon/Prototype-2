@@ -161,7 +161,6 @@ var level_02_A = new Sprite();
 	// Remove from the world, un-draw sprites, etc...
 	level_02_A.clear = function() {
 		world.removeChild(level_02_A.image_background);
-		world.removeChild(level_02_A.image_target_A);
 		world.removeChild(level_02_A.image_scope);
 		world.removeChild(level_02_A.ret);
 		world.removeChild(level_02_A.button_call);
