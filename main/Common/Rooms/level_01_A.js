@@ -2,6 +2,8 @@
 /***       Level 01: target A      ***/
 /***===============================***/
 var level_01_A = new Sprite();
+	// Is the BGM playing?
+	level_01_A.bgm = false;
 
 	/***==================================***/
 	/***          room.create()           ***/
@@ -108,6 +110,8 @@ var level_01_A = new Sprite();
 			}
 		}
 		level_01_A.ret.click = function() {
+			level_01_hub.sound_background.volume = 0.5;
+			level_01_A.stopAudio();
 			changeRoom(level_01_hub);
 		}
 		
@@ -151,6 +155,7 @@ var level_01_A = new Sprite();
 			}
 		}
 		level_01_A.button_fire.click = function() {
+			level_01_A.stopAudio();
 			world.removeChild(red_screen);
 			changeRoom(level_01_end);
 		}
@@ -168,6 +173,10 @@ var level_01_A = new Sprite();
 		active_sprites.push(level_01_A.ret);
 		active_sprites.push(level_01_A.button_call);
 		active_sprites.push(level_01_A.button_fire);
+		
+		// Play this room's background audio if it isn't yet playing
+		if(!level_01_A.bgm)
+			level_01_A.playAudio();
 	}
 	
 	/***==============================***/
@@ -208,6 +217,42 @@ var level_01_A = new Sprite();
 		active_sprites.push(level_01_A.button_fire);
 		
 		alert("This is the ending you chose: " + ending);
+	}
+	
+	/***===================================***/
+	/***         room.playAudio()          ***/
+	/***===================================***/
+	// Play special audio for this room
+	level_01_A.playAudio = function() {
+ 		// Audio objects for this room
+ 		level_01_A.sound_background = new Audio("./Common/Sounds/scope_ambiance01.wav");
+		level_01_A.sound_background.volume = 0.5;
+		
+		
+		// Play and loop room ambiance
+		level_01_A.sound_background.addEventListener('ended', function() {
+			this.currentTime = 0;
+			this.play();
+		});
+		level_01_A.sound_background.play();
+		
+		level_01_A.bgm = true;
+	}
+	
+	/***=================================***/
+	/***         room.stopAudio()        ***/
+	/***=================================***/
+	// Stop all audio emitting from this room
+	level_01_A.stopAudio = function() {
+		// Stop city ambiance
+		level_01_A.sound_background.pause();
+		level_01_A.sound_background.currentTime = 0;
+		level_01_A.sound_background.removeEventListener('ended', function() {
+			this.pause();
+			this.currentTime = 0;
+		});
+		
+		level_01_A.bgm = false;
 	}
 	
 	/***===============================***/

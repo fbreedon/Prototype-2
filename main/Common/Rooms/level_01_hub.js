@@ -2,13 +2,14 @@
 /***      Level 01: "Shadowman"      ***/
 /***=================================***/
 var level_01_hub = new Sprite();
-
+	// Is the BGM playing?
+	level_01_hub.bgm = false;
+	
 	/***==================================***/
 	/***          room.create()           ***/
 	/***==================================***/
 	// What to do at room creation time
 	level_01_hub.create = function() {
-		
 		/***=================================***/
 		/***         Passive sprites         ***/
 		/***=================================***/
@@ -83,6 +84,7 @@ var level_01_hub = new Sprite();
 			}
 		}
 		level_01_hub.button_iconA.click = function() {
+			level_01_hub.sound_background.volume = 0.2;
 			changeRoom(level_01_A);
 		}
 		
@@ -104,6 +106,7 @@ var level_01_hub = new Sprite();
 			}
 		}
 		level_01_hub.button_iconB.click = function() {
+			level_01_hub.sound_background.volume = 0.2;
 			changeRoom(level_01_B);
 		}
 		
@@ -125,6 +128,7 @@ var level_01_hub = new Sprite();
 			}
 		}
 		level_01_hub.button_iconC.click = function() {
+			level_01_hub.sound_background.volume = 0.2;
 			changeRoom(level_01_C);
 		}
 		
@@ -146,6 +150,7 @@ var level_01_hub = new Sprite();
 			}
 		}
 		level_01_hub.button_iconD.click = function() {
+					level_01_hub.sound_background.volume = 0.2;
 					changeRoom(level_01_D);
 		}
 		/***===     End of active sprites   ===***/
@@ -169,6 +174,10 @@ var level_01_hub = new Sprite();
 		active_sprites.push(level_01_hub.button_iconB);
 		active_sprites.push(level_01_hub.button_iconC);
 		active_sprites.push(level_01_hub.button_iconD);
+		
+		// Play this room's background audio if it isn't yet playing
+		if(!level_01_hub.bgm)
+			level_01_hub.playAudio();
 		
 	}
 	
@@ -231,6 +240,40 @@ var level_01_hub = new Sprite();
 		
 		// Push the active sprites onto the array as well...
 		active_sprites.push(level_01_hub.close_notes);
+	}
+	
+	/***===================================***/
+	/***         room.playAudio()          ***/
+	/***===================================***/
+	// Play special audio for this room
+	level_01_hub.playAudio = function() {
+ 		// Audio objects for this room
+ 		level_01_hub.sound_background = new Audio("./Common/Sounds/ambiance01.wav");
+		level_01_hub.sound_background.volume = 0.5;
+		
+		
+		// Play and loop room ambiance
+		level_01_hub.sound_background.addEventListener('ended', function() {
+			this.currentTime = 0;
+			this.play();
+		});
+		level_01_hub.sound_background.play();
+		
+		level_01_hub.bgm = true;
+	}
+	
+	/***=================================***/
+	/***         room.stopAudio()        ***/
+	/***=================================***/
+	// Stop all audio emitting from this room
+	level_01_hub.stopAudio = function() {
+		// Stop city ambiance
+		level_01_hub.sound_background.pause();
+		level_01_hub.sound_background.currentTime = 0;
+		level_01_hub.sound_background.removeEventListener('ended', function() {
+			this.pause();
+			this.currentTime = 0;
+		});
 	}
 	
 	/***=================================***/

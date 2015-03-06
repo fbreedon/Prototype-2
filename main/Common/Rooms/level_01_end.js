@@ -13,6 +13,8 @@ var level_01_end = new Sprite();
 	/***==============================***/
 	// What to do at creation time
 	level_01_end.create = function() {
+		// Stop the audio coming from level 01
+		level_01_hub.stopAudio();
 		
 		/***==============================***/
 		/***       Passive sprites        ***/
