@@ -200,6 +200,16 @@ var level_01_hub = new Sprite();
 		level_01_hub.notes_page.y = 0;
 		level_01_hub.notes_page.image = Textures.load("./Common/Textures/notes page.png");
 		
+		level_01_hub.notes_page.notes = new TextBox("this is default /n");
+		level_01_hub.notes_page.notes.font = "Courier";
+		level_01_hub.notes_page.notes.fontSize = 30;
+		level_01_hub.notes_page.notes.color = "White";
+		level_01_hub.notes_page.notes.x = 100;
+		level_01_hub.notes_page.notes.y = 100;
+		if(true) level_01_hub.notes_page.notes.text += "this is a note";
+		if(false) level_01_hub.notes_page.notes += "this should not be here";
+		
+		
 		level_01_hub.close_notes = new TextBox("<< close");
 		level_01_hub.close_notes.font = "Courier";
 		level_01_hub.close_notes.fontSize = 30;
@@ -220,6 +230,7 @@ var level_01_hub = new Sprite();
 			world.removeChild(black_screen);
 			world.removeChild(black_screen);
 			world.removeChild(level_01_hub.close_notes);
+			world.removeChild(level_01_hub.close_notes.notes);
 			world.removeChild(level_01_hub.notes_page)
 			while(active_sprites.length > 0) active_sprites.pop();
 			
@@ -236,6 +247,7 @@ var level_01_hub = new Sprite();
 		world.addChild(black_screen);
 		world.addChild(black_screen); // This was called multiple times to darken effect
 		world.addChild(level_01_hub.notes_page);
+		world.addChild(level_01_hub.notes_page.notes);
 		world.addChild(level_01_hub.close_notes);
 		
 		// Push the active sprites onto the array as well...

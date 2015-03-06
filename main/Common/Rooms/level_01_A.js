@@ -198,8 +198,45 @@ var level_01_A = new Sprite();
 		
 		createNode     // Index: 1
 			("What? N-no, I'm just... \nwho are you again?",
-			 "Who I am is of no importance, \nthe question is who are you?", 5,
-			 "I am a friend. I am aware of the \nsituation you are in.", 6);
+			 "Who I am is of no importance, \nthe question is who are you?", 4,
+			 "I am a friend. I am aware of the \nsituation you are in.", 5,
+			 "Tell me... why are you standing on that ledge then?", 6);
+	    
+		createNode   //Index: 2
+			("Who? I wasn't expecting anyone to come here... When are you going to get here?",
+			"I'll be there soon, friend, do not \nworry and sit tight and do not\n draw any unnecessary attention\n", 7,
+			"Soon... soon... In the mean time, you stay safe, I hear they are on to us.\n", 8,
+			"I don't know. I might have to just send one \nof my cronies to give you this instead. \nThis shit ain't worth my time", 9);
+		
+		createNode	//Index: 3
+			("I think you have the wrong person entirely",
+			"No... I definitely have the right person.", 10,
+			"My mistake, I must have dailed incorrectly when calling a colleague of mine", 11, 
+			"-end call", -9) //ending 9 (sorry it's out of order 
+		
+		createNode //Index: 4
+			("I'm... I don't know who I am anymore \nwI... I don't want to... \n Just nevermind. \nForget about me \n","-End call", -1);//ending 1
+			
+		createNode //Index: 5
+			("What!? How do you know? \nI haven't told anyone... Wh-who told you? \nI don't need anyone... Just leave me.\n", "-End call", -2);//ending 2
+		
+		createNode //Index: 6
+			("I'm.. I'm... I don't know \nwhy I'm here... Wait!? \nYou can see me!? \nHow do you know me!?\n", "-End call", -3);//ending 3
+
+		createNode //Index: 7
+			("Don't do anything to...? I... \nI think you have the wrong \nperson. I knew it...\n", -4);//ending 4
+		
+		createNode //Index: 8
+			("On to \"us\"? what \"us\"? \nThere IS no us! There's only\n me and you--\n...and you aren't who I thought \nyou were... Just. Forget all of that.\n",-5);//ending 6
+		
+		createNode //Index: 9
+			("Woah. You... you have the wrong \nperson completely... but don't... \nJust. Look, I never heard \nanything okay?\n", -6);//ending 6
+		
+		createNode //Index:10
+			("I... don't know what you mean. \nI have enough on my mind... \njust... leave me be\n", -7);//ending 7
+		
+		createNode //Index:11
+			("That's fine. Its not like \nI wanted anyone to call me anyways... \nGood luck with your partner and all. \nI didn't have any of that\n", -8")//ending 8
 	}
 
 	/***==============================***/
