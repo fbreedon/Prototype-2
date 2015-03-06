@@ -180,10 +180,17 @@ var level_01_A = new Sprite();
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		
-		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
+		var node = createNode  // Index: 0
+			("H-Hello?", 
+			 "Expecting someone?", 1, 
+			 "I'm running a little late", 2,
+			 "Shit's gone down, I need you to \nstay right where you are", 3);
 		node.create();
-		createNode("You clicked index 1", "Go to index 2", 2, "Go to ending 4", -4);
-		createNode("You clicked index 2", "Go to ending 3", -3, "Go to ending 4", -4, "Go to ending 5", -5);
+		
+		createNode     // Index: 1
+			("What? N-no, I'm just... \nwho are you again?",
+			 "Who I am is of no importance, \nthe question is who are you?", 5,
+			 "I am a friend. I am aware of the \nsituation you are in.", 6);
 	}
 
 	/***==============================***/

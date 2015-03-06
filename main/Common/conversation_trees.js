@@ -23,7 +23,7 @@
 var nodes = [];
 
 function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
-	var space_y = 40;
+	var space_y = 80;
 	var space_x = 0;
 	
 	var colorQ = "White";
