@@ -209,34 +209,34 @@ var level_01_A = new Sprite();
 			"I don't know. I might have to just send one \nof my cronies to give you this instead. \nThis shit ain't worth my time", 9);
 		
 		createNode	//Index: 3
-			("I think you have the wrong person entirely",
-			"No... I definitely have the right person.", 10,
-			"My mistake, I must have dailed incorrectly when calling a colleague of mine", 11, 
-			"-end call", -9) //ending 9 (sorry it's out of order 
+			("I think you have the wrong person entirely\n",
+			"No... I definitely have the right person.\n", 10,
+			"My mistake, I must have dailed \nincorrectly when calling a colleague of mine\n", 11, 
+			"-End call\n", -9) //ending 9 (sorry it's out of order 
 		
 		createNode //Index: 4
-			("I'm... I don't know who I am anymore \nwI... I don't want to... \n Just nevermind. \nForget about me \n","-End call", -1);//ending 1
+			("I'm... I don't know who I am anymore \nwI... I don't want to... \n Just nevermind. \nForget about me \n","-End call\n", -1);//ending 1
 			
 		createNode //Index: 5
-			("What!? How do you know? \nI haven't told anyone... Wh-who told you? \nI don't need anyone... Just leave me.\n", "-End call", -2);//ending 2
+			("What!? How do you know? \nI haven't told anyone... Wh-who told you? \nI don't need anyone... Just leave me.\n", "-End call\n", -2);//ending 2
 		
 		createNode //Index: 6
-			("I'm.. I'm... I don't know \nwhy I'm here... Wait!? \nYou can see me!? \nHow do you know me!?\n", "-End call", -3);//ending 3
+			("I'm.. I'm... I don't know \nwhy I'm here... Wait!? \nYou can see me!? \nHow do you know me!?\n", "-End call\n", -3);//ending 3
 
 		createNode //Index: 7
-			("Don't do anything to...? I... \nI think you have the wrong \nperson. I knew it...\n", -4);//ending 4
+			("Don't do anything to...? I... \nI think you have the wrong \nperson. I knew it...\n", "End call\n",-4);//ending 4
 		
 		createNode //Index: 8
-			("On to \"us\"? what \"us\"? \nThere IS no us! There's only\n me and you--\n...and you aren't who I thought \nyou were... Just. Forget all of that.\n",-5);//ending 6
+			("On to \"us\"? what \"us\"? \nThere IS no us! There's only\n me and you--\n...and you aren't who I thought \nyou were... Just. Forget all of that.\n","-End call\n"-5);//ending 6
 		
 		createNode //Index: 9
-			("Woah. You... you have the wrong \nperson completely... but don't... \nJust. Look, I never heard \nanything okay?\n", -6);//ending 6
+			("Woah. You... you have the wrong \nperson completely... but don't... \nJust. Look, I never heard \nanything okay?\n", "End call\n",-6);//ending 6
 		
 		createNode //Index:10
-			("I... don't know what you mean. \nI have enough on my mind... \njust... leave me be\n", -7);//ending 7
+			("I... don't know what you mean. \nI have enough on my mind... \njust... leave me be\n","-End call\n", -7);//ending 7
 		
 		createNode //Index:11
-			("That's fine. Its not like \nI wanted anyone to call me anyways... \nGood luck with your partner and all. \nI didn't have any of that\n", -8")//ending 8
+			("That's fine. Its not like \nI wanted anyone to call me anyways... \nGood luck with your partner and all. \nI didn't have any of that\n", "End call\n", -8);//ending 8
 	}
 
 	/***==============================***/
