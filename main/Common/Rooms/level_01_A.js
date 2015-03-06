@@ -8,6 +8,8 @@ var level_01_A = new Sprite();
 	/***==================================***/
 	// What to do at creation time
 	level_01_A.create = function() {
+		var info_count = 0;
+		
 		var sway_x = 0;
 		var sway_y = 0;
 		
@@ -68,6 +70,11 @@ var level_01_A = new Sprite();
 			}else if(level_01_hub.target_loop.value>=660 && level_01_hub.target_loop.value<780) {
 				level_01_A.image_target_A.animation = "phone_out";
 				level_01_A.image_target_A.frameRate = 0;
+				info_count++;
+				if(!level_01_A.target1_has_seen && info_count == 60) {
+					level_01_A.target1_seen_info = "some info";
+					level_01_A.target1_has_seen = true;
+				}
 			}else if(level_01_hub.target_loop.value>=780 && level_01_hub.target_loop.value<810) {
 				level_01_A.image_target_A.animation = "phone_away";
 				level_01_A.image_target_A.frameRate = 0;

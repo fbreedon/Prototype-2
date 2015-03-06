@@ -4,6 +4,8 @@
 var level_01_C = new Sprite();
 	// Create this room
 	level_01_C.create = function() {
+		var info_count = 0;
+		
 		var sway_x = 0;
 		var sway_y = 0;
 		

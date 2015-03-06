@@ -268,6 +268,21 @@ var level_01_hub = new Sprite();
 	world.addChild(level_01_hub.target_loop);
 
 	/***===============================***/
+	/***       Information seen        ***/
+	/***===============================***/
+	level_01_hub.target1_has_seen = false;
+	level_01_hub.target1_seen_info = "";
+	
+	level_01_hub.target2_has_seen = false;
+	level_01_hub.target2_seen_info = "";
+	
+	level_01_hub.target3_has_seen = false;
+	level_01_hub.target3_seen_info = "";
+	
+	level_01_hub.target4_has_seen = false;
+	level_01_hub.target4_seen_info = "";
+	
+	/***===============================***/
 	/***        Clear this room        ***/
 	/***===============================***/
 	// Remove from the world, un-draw sprites, etc...
