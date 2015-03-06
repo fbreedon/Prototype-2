@@ -71,6 +71,7 @@ var level_01_hub = new Sprite();
 		level_01_hub.button_iconA.height = 70;
 		level_01_hub.button_iconA.x = 380;
 		level_01_hub.button_iconA.y = 260;
+		level_01_hub.button_iconA.soundoff = true;
 		level_01_hub.button_iconA.mouseOver = false;
 		level_01_hub.button_iconA.update = function() {
 			if(level_01_hub.button_iconA.mouseOver) {
@@ -78,7 +79,12 @@ var level_01_hub = new Sprite();
 					("./Common/Textures/a icon over.png");
 				level_01_hub.image_comment.visible = true;
 				level_01_hub.image_comment.text = "\"suspect A\"";
+				if(level_01_hub.button_iconA.soundoff) {
+					level_01_hub.sound_boop01.play();
+					level_01_hub.button_iconA.soundoff = false;
+				}
 			}else {
+				level_01_hub.button_iconA.soundoff = true;
 				level_01_hub.button_iconA.image = Textures.load
 					("./Common/Textures/a icon up.png");
 			}
@@ -93,6 +99,7 @@ var level_01_hub = new Sprite();
 		level_01_hub.button_iconB.height = 70;
 		level_01_hub.button_iconB.x = 500;
 		level_01_hub.button_iconB.y = 340;
+		level_01_hub.button_iconB.soundoff = true;
 		level_01_hub.button_iconB.mouseOver = false;
 		level_01_hub.button_iconB.update = function() {
 			if(level_01_hub.button_iconB.mouseOver) {
@@ -100,7 +107,12 @@ var level_01_hub = new Sprite();
 					("./Common/Textures/b icon over.png");
 				level_01_hub.image_comment.visible = true;
 				level_01_hub.image_comment.text = "\"suspect B\"";
+				if(level_01_hub.button_iconB.soundoff) {
+					level_01_hub.sound_boop01.play();
+					level_01_hub.button_iconB.soundoff = false;
+				}
 			}else {
+				level_01_hub.button_iconB.soundoff = true;
 				level_01_hub.button_iconB.image = Textures.load
 					("./Common/Textures/b icon up.png");
 			}
@@ -115,6 +127,7 @@ var level_01_hub = new Sprite();
 		level_01_hub.button_iconC.height = 70;
 		level_01_hub.button_iconC.x = 140;
 		level_01_hub.button_iconC.y = 320;
+		level_01_hub.button_iconC.soundoff = true;
 		level_01_hub.button_iconC.mouseOver = false;
 		level_01_hub.button_iconC.update = function() {
 			if(level_01_hub.button_iconC.mouseOver) {
@@ -122,7 +135,12 @@ var level_01_hub = new Sprite();
 					("./Common/Textures/c icon over.png");
 				level_01_hub.image_comment.visible = true;
 				level_01_hub.image_comment.text = "\"suspect C\"";
+				if(level_01_hub.button_iconC.soundoff) {
+					level_01_hub.sound_boop01.play();
+					level_01_hub.button_iconC.soundoff = false;
+				}
 			}else {
+				level_01_hub.button_iconC.soundoff = true;
 				level_01_hub.button_iconC.image = Textures.load
 					("./Common/Textures/c icon up.png");
 			}
@@ -137,6 +155,7 @@ var level_01_hub = new Sprite();
 		level_01_hub.button_iconD.height = 70;
 		level_01_hub.button_iconD.x = 330;
 		level_01_hub.button_iconD.y = 430;
+		level_01_hub.button_iconD.soundoff = true;
 		level_01_hub.button_iconD.mouseOver = false;
 		level_01_hub.button_iconD.update = function() {
 			if(level_01_hub.button_iconD.mouseOver) {
@@ -144,7 +163,12 @@ var level_01_hub = new Sprite();
 					("./Common/Textures/d icon over.png");
 				level_01_hub.image_comment.visible = true;
 				level_01_hub.image_comment.text = "\"suspect D\"";
+				if(level_01_hub.button_iconD.soundoff) {
+					level_01_hub.sound_boop01.play();
+					level_01_hub.button_iconD.soundoff = false;
+				}
 			}else {
+				level_01_hub.button_iconD.soundoff = true;
 				level_01_hub.button_iconD.image = Textures.load
 					("./Common/Textures/d icon up.png");
 			}
@@ -154,6 +178,14 @@ var level_01_hub = new Sprite();
 					changeRoom(level_01_D);
 		}
 		/***===     End of active sprites   ===***/
+		
+		/***===================================***/
+		/***           Audio objects           ***/
+		/***===================================***/
+		// This room's audio objects		
+		level_01_hub.sound_boop01 = new Audio("./Common/Sounds/boop01.wav");
+		
+		/***===     End of audio objects    ===***/
 		
 		/***===================================***/
 		/***          World allocating         ***/
@@ -259,10 +291,9 @@ var level_01_hub = new Sprite();
 	/***===================================***/
 	// Play special audio for this room
 	level_01_hub.playAudio = function() {
- 		// Audio objects for this room
- 		level_01_hub.sound_background = new Audio("./Common/Sounds/ambiance01.wav");
+		// Room ambiance
+		level_01_hub.sound_background = new Audio("./Common/Sounds/ambiance01.wav");
 		level_01_hub.sound_background.volume = 0.5;
-		
 		
 		// Play and loop room ambiance
 		level_01_hub.sound_background.addEventListener('ended', function() {
