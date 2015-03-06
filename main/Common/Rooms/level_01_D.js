@@ -153,7 +153,7 @@ var level_01_D = new Sprite();
 //Start #0
 var node = createNode("Woah. Its like my phone. And it started ringing. Oh. I clicked the button already. Yo?", 
 "Are you waiting for your drop?", 1,
-"I ran into some trouble, I’ll be there soon though.", 3,
+"I ran into some trouble, I’ll be there soon though.", 5,
 "Hi, I’m from the neighborhood watch here in town, I was wondering if you could help me with questions?", 9);
 node.create();
 
@@ -164,13 +164,13 @@ createNode("drop? I ran out of drops, like, forever ago dude. I wouldn't mind ha
 "So are you waiting for anyone in particular?", 4);
 
 //A1 #2
-createNode("Brehhh, You can get them anywhere man. I have this hook up who like, always just brings me my drops wherever and whenever I want them man! It’s like, the fucken postal service! I’m actually, like, expecting a drop soon bro. Wait…. dude…. why are we talking about drops again? Are you giving me a drop? Drops." -1);
+createNode("Brehhh, You can get them anywhere man. I have this hook up who like, always just brings me my drops wherever and whenever I want them man! It’s like, the fucken postal service! I’m actually, like, expecting a drop soon bro. Wait…. dude…. why are we talking about drops again? Are you giving me a drop? Drops.","End call\n", -1);
 
 //A2 #3
-createNode("Duuuude! You don’t know about them? They’re like the tightest shit evaaaa. Like, I dont even know whats in them! Alls I know is that they are the best thing i’ve had since, like… that one time I took a roadtrip down to like Santa…. Santa… Santa something.... Shit when was that? Breh. You need these drops. We need to go get some fucking drops. I need these drops." -2);
+createNode("Duuuude! You don’t know about them? They’re like the tightest shit evaaaa. Like, I dont even know whats in them! Alls I know is that they are the best thing i’ve had since, like… that one time I took a roadtrip down to like Santa…. Santa… Santa something.... Shit when was that? Breh. You need these drops. We need to go get some fucking drops. I need these drops.","End call\n", -2);
 
 //A3 #4
-createNode("Me? Naaaaaa I’m good man I’m good. Like, I have everything i need just where I am. Other people just make things, like, complicated. I don’t like, like, complications man. Ya feel me breh? Yeah." -3);
+createNode("Me? Naaaaaa I’m good man I’m good. Like, I have everything i need just where I am. Other people just make things, like, complicated. I don’t like, like, complications man. Ya feel me breh? Yeah.","End call\n", -3);
 
 //B #5
 createNode("Woah man I’m not expecting no one here. Like… hold up a bit, man. Give me some time… Let me take this all in. Then, like, then… Then ill go find you man. Don’t you worry about that. I have everything you could possibly need to keep you going for the night, bro.", 
@@ -179,13 +179,13 @@ createNode("Woah man I’m not expecting no one here. Like… hold up a bit, man
 "Do you know who I am?", 8);
 
 //B1 #6
-createNode("Only the finest product in this here city. I swear every time I take some of this it feels like I’m walking with, like, that one guy… In like the sky. You know. The one with the book about him. What’s his name….Like… Whatever man. I have anything you want. Just drop on by… just later. Not now. I’m busy now….", -4);
+createNode("Only the finest product in this here city. I swear every time I take some of this it feels like I’m walking with, like, that one guy… In like the sky. You know. The one with the book about him. What’s his name….Like… Whatever man. I have anything you want. Just drop on by… just later. Not now. I’m busy now….","End call\n", -4);
 
 //B2 #7
-createNode("Bro. I wasn’t expecting anybody. All I was doing was minding my own business here. I’m having a little fun, ya know? I’m not really in the state of mind to be conversationaling with people of you, comprende? Yeah you do. Next time though… I’ll make sure to get you whatever you want though...", -5);
+createNode("Bro. I wasn’t expecting anybody. All I was doing was minding my own business here. I’m having a little fun, ya know? I’m not really in the state of mind to be conversationaling with people of you, comprende? Yeah you do. Next time though… I’ll make sure to get you whatever you want though...","End call\n", -5);
 
 //B3 #8
-createNode("Yeah of course I do man! You’re, like… That one guy I met the other day. On the… no… It was near the, like, uhh…. Yeah. You’re that one dude I met at that party in…. That one chick’s place….. Bro I’m drawing a blank. I’ll just ask that chick again. Yeah. I’ll catch you later I’m off to go ask her who you are.", -6);
+createNode("Yeah of course I do man! You’re, like… That one guy I met the other day. On the… no… It was near the, like, uhh…. Yeah. You’re that one dude I met at that party in…. That one chick’s place….. Bro I’m drawing a blank. I’ll just ask that chick again. Yeah. I’ll catch you later I’m off to go ask her who you are.","End call\n", -6);
 
 //C #9
 createNode("Nuh uh! Noooo Way! I’m, like, not helping you watch anything man. Don’t you, like, get that you’re part of the problem? You are the, like, long arm of the law just like drying to be a downer on us! Like, What would I even be watching anyways?", 
@@ -194,13 +194,13 @@ createNode("Nuh uh! Noooo Way! I’m, like, not helping you watch anything man. 
 "You know what? You’re right. I didn’t want to do this anyways. Agh but first I need to at least finish this shift, mind helping out? ……. Bro.", 12);
 
 //C1 #10
-createNode("I don’t know. I see deals going down all the time! I mean they’re usually the one’s giving me stuff but, like, I see them. In, like, first person bro. Kind of like those games with the guns. Where you look at other people with their eyes. Yeah…. I’ll tell you the next time I ever get any drops okay? Alright. Catch you then.", -7);
+createNode("I don’t know. I see deals going down all the time! I mean they’re usually the one’s giving me stuff but, like, I see them. In, like, first person bro. Kind of like those games with the guns. Where you look at other people with their eyes. Yeah…. I’ll tell you the next time I ever get any drops okay? Alright. Catch you then.","End call\n", -7);
 
 //C2 #11
-createNode("Me? Hide anything? Na man. I’m an open book. You know. Like those books with the red dog. Or, like, the ones with the pop ups! Yeah man… Those are my favorite books to read whenever I’m H….. nice try mister Night Stalker… Trying to get me to admit to illegal activities. Nice try!", -8);
+createNode("Me? Hide anything? Na man. I’m an open book. You know. Like those books with the red dog. Or, like, the ones with the pop ups! Yeah man… Those are my favorite books to read whenever I’m H….. nice try mister Night Stalker… Trying to get me to admit to illegal activities. Nice try!","End call\n", -8);
 
 //C3 #12
-createNode("Right on, Bro! So, like, I know this area pretty well And like… I haven’t seen anything today from where i’ve been. So, like, hurry up and get off that chain of yours and HMU if you’re ever in need of anything…. you know. Like, fun.", -9);
+createNode("Right on, Bro! So, like, I know this area pretty well And like… I haven’t seen anything today from where i’ve been. So, like, hurry up and get off that chain of yours and HMU if you’re ever in need of anything…. you know. Like, fun.","End call\n", -9);
 	}
 	
 	// End the dialogue

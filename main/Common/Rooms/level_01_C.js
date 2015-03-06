@@ -203,11 +203,11 @@ createNode("What the hell? Who the fuck are you to call me and ask me these thin
 "Hah, you really thought I meant any of that? You’re a funny guy.", 4);
 
 //1A #2
-createNode("Fuck you man. I don’t have to answer to you or anyone. Now sod off.", -1);
+createNode("Fuck you man. I don’t have to answer to you or anyone. Now sod off.","End call\n", -1);
 //1B #3
-createNode("Woah woah woah! Gee, where are my manners….. Let me answer your question right quick. No need to do anything rash now. So uhhh like… I’m not expecting any packages i'm just here walking around. So I’ll just ", -2);
+createNode("Woah woah woah! Gee, where are my manners….. Let me answer your question right quick. No need to do anything rash now. So uhhh like… I’m not expecting any packages i'm just here walking around. So I’ll just ","End call\n", -2);
 //1C #4
-createNode("Joking little shit aren’t ya?  Ya better not do this shit again. You don’t know what some people might do. Fucking package? The fuck would I want a package here….", -3);
+createNode("Joking little shit aren’t ya?  Ya better not do this shit again. You don’t know what some people might do. Fucking package? The fuck would I want a package here….","End call\n", -3);
 
 //2 #5
 createNode("Well what do we have ‘ere? Seems you got the wrong number mate.", 
@@ -217,13 +217,13 @@ createNode("Well what do we have ‘ere? Seems you got the wrong number mate.",
 
 
 //2A #6
-createNode("I ain’t jokin'. Now sod off before I decide to find whoever’s on the other end of this. Trust me you don’t want that to happen.", -4);
+createNode("I ain’t jokin'. Now sod off before I decide to find whoever’s on the other end of this. Trust me you don’t want that to happen.","End call\n", -4);
 
 //2B #7
-createNode("I hear ya. Women sometimes, get pissed at you for no reason. Mine is always finding a reason to be mad at me. First its the cooking, next it’s I don’t walk to much..Better call her soon, mate, best not mess around with that.", -5);
+createNode("I hear ya. Women sometimes, get pissed at you for no reason. Mine is always finding a reason to be mad at me. First its the cooking, next it’s I don’t walk to much..Better call her soon, mate, best not mess around with that.","End call\n", -5);
 
 //2C #8
-createNode("I’m the guy who picked up his phone for an idiot who doesn’t know how to dial a number correctly. I have too much on my plate and I don’t have to explain myself to you or anyone else...sod will ya?", -6);
+createNode("I’m the guy who picked up his phone for an idiot who doesn’t know how to dial a number correctly. I have too much on my plate and I don’t have to explain myself to you or anyone else...sod will ya?","End call\n", -6);
 
 //3 #9
 createNode("Neighborhood watch you say? Anything to do to help, mate.", 
@@ -232,13 +232,13 @@ createNode("Neighborhood watch you say? Anything to do to help, mate.",
 "Are you familiar with this area?", 12);
 
 //3A #10
-createNode("Shady? Do I…. I mean, does he really look shady? Maybe he’s just there thinking over some stuff enjoying the view...  How do you know he’s really a shady person. Well… I have to go now.. Sorry I couldn’t help more, mate.", -7);
+createNode("Shady? Do I…. I mean, does he really look shady? Maybe he’s just there thinking over some stuff enjoying the view...  How do you know he’s really a shady person. Well… I have to go now.. Sorry I couldn’t help more, mate.","End call\n", -7);
 
 //3B #11
-createNode("Packages? This would be a weird place for packages… I’ll keep a look out if I’m in the area. Don’t worry about it, mate. I’ll alert the appropriate people If i see anything", -8);
+createNode("Packages? This would be a weird place for packages… I’ll keep a look out if I’m in the area. Don’t worry about it, mate. I’ll alert the appropriate people If i see anything","End call\n", -8);
 
 //3C #12
-createNode("Familiar with the area? Not so much, I recently settled down here with my wife. We don’t know the area very much but we’ve heard good things about the neighborhood. It’s probably because of you guys right? Maybe I might volunteer one day…. But for now I still have much to think about, mate.", -9);
+createNode("Familiar with the area? Not so much, I recently settled down here with my wife. We don’t know the area very much but we’ve heard good things about the neighborhood. It’s probably because of you guys right? Maybe I might volunteer one day…. But for now I still have much to think about, mate.","End call\n", -9);
 
 	}
 	
