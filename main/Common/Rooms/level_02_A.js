@@ -21,7 +21,7 @@ var level_02_A = new Sprite();
 		level_02_A.image_background.x = 0;
 		level_02_A.image_background.y = 0;
 		level_02_A.image_background.image = Textures.load
-			("./Common/Textures/Level 01/target A background.png");
+			("./Common/Textures/Level 02/target A background.png");
 		level_02_A.image_background.i = 0;
 		level_02_A.image_background.update = function() {
 			level_02_A.image_background.y = Math.sin(sway_x) * 20;
@@ -39,43 +39,6 @@ var level_02_A = new Sprite();
 		level_02_A.image_scope.y = 0;
 		level_02_A.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
-		
-		// Target A sprite
-		level_02_A.image_target_A = new Sprite();
-		level_02_A.image_target_A.width  = 32;
-		level_02_A.image_target_A.height = 64;
-		level_02_A.image_target_A.x = 0;
-		level_02_A.image_target_A.y = 0;
-		level_02_A.image_target_A.image = Textures.load
-			("./Common/Textures/Level 01/target-A.png");
-			
-		// Target A animation
-		level_02_A.image_target_A.frameWidth   = 32;
-		level_02_A.image_target_A.frameHeight  = 64;
-		level_02_A.image_target_A.frameCount   = 5;
-		level_02_A.image_target_A.frameRate    = 0;
-		level_02_A.image_target_A.addAnimations(["idle", "check_phone"], [1,3]);
-		level_02_A.image_target_A.addAnimation("phone_out",2,1);
-		level_02_A.image_target_A.addAnimation("phone_away",3,1);
-		level_02_A.image_target_A.update = function() {
-			// Background sway
-			level_02_A.image_target_A.x = level_02_A.image_background.x + 520;
-			level_02_A.image_target_A.y = level_02_A.image_background.y + 340;
-			// Animations
-			if(level_01_hub.target_loop.value>=600 && level_01_hub.target_loop.value<660) {
-				level_02_A.image_target_A.animation = "check_phone";
-				level_02_A.image_target_A.frameRate = 2;
-			}else if(level_01_hub.target_loop.value>=660 && level_01_hub.target_loop.value<780) {
-				level_02_A.image_target_A.animation = "phone_out";
-				level_02_A.image_target_A.frameRate = 0;
-			}else if(level_01_hub.target_loop.value>=780 && level_01_hub.target_loop.value<810) {
-				level_02_A.image_target_A.animation = "phone_away";
-				level_02_A.image_target_A.frameRate = 0;
-			}else {
-				level_02_A.image_target_A.animation = "idle";
-				level_02_A.image_target_A.frameRate = 0;
-			}
-		};
 		
 		/***===   End of passive sprites  ===***/
 		
@@ -152,7 +115,6 @@ var level_02_A = new Sprite();
 		
 
 		world.addChild(level_02_A.image_background);
-		world.addChild(level_02_A.image_target_A);
 		world.addChild(red_screen);
 		world.addChild(level_02_A.image_scope);
 		world.addChild(level_02_A.ret);

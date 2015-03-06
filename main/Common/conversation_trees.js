@@ -130,9 +130,7 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 			}
 		}
 
-	node.create  = function(){
-		room_manager.curr_room.startDialogue();
-		
+	node.create  = function() {	
 		world.addChild(node.Q);
 		world.addChild(node.ans1);
 		world.addChild(node.ans2);
@@ -144,7 +142,8 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 		active_sprites.push(node.ans3);	
 		active_sprites.push(node.ans4);	
 	}
-	node.clear  = function(){
+
+	node.clear  = function() {
 		world.removeChild(node.Q);
 		world.removeChild(node.ans1);
 		world.removeChild(node.ans2);
