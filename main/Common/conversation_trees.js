@@ -23,7 +23,7 @@
 var nodes = [];
 
 function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
-	var space_y = 80;
+	var space_y = 150;
 	var space_x = 0;
 	
 	var colorQ = "White";
@@ -34,14 +34,14 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 	node.Q = new TextBox(Q);
 		node.Q.font = "Courier";
 		node.Q.color = colorQ;
-		node.Q.fontSize = 30;
-		node.Q.x = 350;
-		node.Q.y = 250;
+		node.Q.fontSize = 20;
+		node.Q.x = 250;
+		node.Q.y = 50;
 		
 	node.ans1 = new TextBox(ans1);
 		node.ans1.font = "Courier";
 		node.ans1.color = colorA;
-		node.ans1.fontSize = 30;
+		node.ans1.fontSize = 20;
 		node.ans1.x = node.Q.x;
 		node.ans1.y = node.Q.y + space_y;
 		node.ans1.update = function() {
@@ -64,7 +64,7 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 	node.ans2 = new TextBox(ans2);
 		node.ans2.font = "Courier";
 		node.ans2.color = colorA;
-		node.ans2.fontSize = 30;
+		node.ans2.fontSize = 20;
 		node.ans2.x = node.Q.x;
 		node.ans2.y = node.ans1.y + space_y;
 		node.ans2.update = function() {
@@ -87,7 +87,7 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 	node.ans3 = new TextBox(ans3);
 		node.ans3.font = "Courier";
 		node.ans3.color = colorA;
-		node.ans3.fontSize = 30;
+		node.ans3.fontSize = 20;
 		node.ans3.x = node.Q.x;
 		node.ans3.y = node.ans2.y + space_y;
 		node.ans3.update = function() {
@@ -110,7 +110,7 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 	node.ans4 = new TextBox(ans4);
 		node.ans4.font = "Courier";
 		node.ans4.color = colorA;
-		node.ans4.fontSize = 30;
+		node.ans4.fontSize = 20;
 		node.ans4.x = node.Q.x;
 		node.ans4.y = node.ans2.y + space_y;
 		node.ans4.update = function() {

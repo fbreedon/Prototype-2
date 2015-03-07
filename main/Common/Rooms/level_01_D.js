@@ -180,10 +180,10 @@ createNode
 	("Me? Naaaaaa I’m good man I’m good. Like, I have everything i need just where I am. Other people just make things, like, complicated. I don’t like, like, complications man. Ya feel me breh? Yeah.","End call\n", -3);
 
 //B #5
-createNode("Woah man I’m not expecting no one here. Like… hold up a bit, man. Give me some time… Let me take this all in. Then, like, then… Then ill go find you man. Don’t you worry about that. I have everything you could possibly need to keep you going for the night, bro.", 
-"What do you have?", 6,
-"Like, you were expecting me weren’t you?", 7,
-"Do you know who I am?", 8);
+createNode("Woah man I’m not expecting no one here. Like… hold up a \mbit, man. Give me some time… Let me take this all in. \nThen, like, then… Then ill go find you man. Don’t you \nworry about that. I have everything you could possibly \mneed to keep you going for the night, bro.\n", 
+	"What do you have?\n", 6,
+	"Like, you were expecting me weren’t you?\n", 7,
+	"Do you know who I am?\n", 8);
 
 //B1 #6
 createNode("Only the finest product in this here city. I swear every time I take some of this it feels like I’m walking with, like, that one guy… In like the sky. You know. The one with the book about him. What’s his name….Like… Whatever man. I have anything you want. Just drop on by… just later. Not now. I’m busy now….","End call\n", -4);
