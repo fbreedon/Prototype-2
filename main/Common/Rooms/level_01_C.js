@@ -275,7 +275,42 @@ createNode
 		active_sprites.push(level_01_C.button_call);
 		active_sprites.push(level_01_C.button_fire);
 		
-		alert("This is the ending you chose: " + ending);
+		level_01_hub.targetC_has_called = true;
+		level_01_C.pickEnding(ending);
+		
+		alert("Notepad: " + level_01_hub.targetC_ending_info);
+	}
+	
+	level_01_C.pickEnding = function(ending) {
+		switch(ending){
+			case 1:
+				level_01_hub.targetC_ending_info += "\nDoesn’t have to answer to anyone";
+				break;
+			case 2: 
+				level_01_hub.targetC_ending_info += "\nHe say’s he’s not waiting for a package…. and he seems to have listened to me. ";
+				break;
+			case 3:
+				level_01_hub.targetC_ending_info += "\nDoes he really not know about a pakage?";
+				break;
+			case 4:
+				level_01_hub.targetC_ending_info += "\nSeems very aggressive.";
+				break;
+			case 5:
+				level_01_hub.targetC_ending_info += "\nHis wife told him to walk?.";
+				break;
+			case 6:
+				level_01_hub.targetC_ending_info += "\nHe has a lot on his plate? Doesn’t have to explain himself?";
+				break;
+			case 7:
+				level_01_hub.targetC_ending_info += "\nIs he really just enjoying the view?";
+				break;
+			case 8:
+				level_01_hub.targetC_ending_info += "";
+				break;
+			case 9:
+				level_01_hub.targetC_ending_info += "\nHe has a wife. He’s new to the Area?";
+				break;
+				}
 	}
 	
 	/***===================================***/

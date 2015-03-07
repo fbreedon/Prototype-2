@@ -221,8 +221,41 @@ createNode("Right on, Bro! So, like, I know this area pretty well And like… I 
 		active_sprites.push(level_01_D.button_call);
 		active_sprites.push(level_01_D.button_fire);
 		
-		alert("This is the ending you chose: " + ending);
+		level_01_hub.targetD_has_called = true;
+		level_01_D.pickEnding(ending);
+		alert("Notepad: " + level_01_hub.targetD_ending_info);
 	}
+	
+	level_01_D.pickEnding = function(ending) {
+		switch(ending){
+			case 1:
+				level_01_hub.targetD_ending_info += "\nIs he really just enjoying the view?";
+				break;
+			case 2: 
+				level_01_hub.targetD_ending_info += "";
+				break;
+			case 3:
+				level_01_hub.targetD_ending_info += "\nHe has a wife. He’s new to the Area?";
+				break;
+			case 4:
+				level_01_hub.targetD_ending_info += "\nReally into drops. Expecting one soon?";
+				break;
+			case 5:
+				level_01_hub.targetD_ending_info += "\nReally, really into drops. \nHe doesn’t know what’s in them?";
+				break;
+			case 6:
+				level_01_hub.targetD_ending_info += "\nSays he doesn’t have a partner he’s waiting for.";
+				break;
+			case 7:
+				level_01_hub.targetD_ending_info += "\n\“Drop on by?\”, He’s either a genius or an Idiot. Maybe both?";
+				break;
+			case 8:
+				level_01_hub.targetD_ending_info += "";
+				break;
+			case 9:
+				level_01_hub.targetD_ending_info += "\n\“Is this guy for real? Can he REALLY be it?\"";
+				break;
+	}}
 	
 	/***===================================***/
 	/***         room.playAudio()          ***/
