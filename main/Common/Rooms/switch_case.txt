@@ -1,0 +1,29 @@
+		switch(ending){
+			case 1:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 2:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 3:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 4:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 5:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 6:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 7:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 8:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 9:
+				level_01_hub.targetA_ending_info + "";
+				break;
+	}

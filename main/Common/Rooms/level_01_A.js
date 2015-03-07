@@ -254,8 +254,43 @@ var level_01_A = new Sprite();
 		active_sprites.push(level_01_A.button_call);
 		active_sprites.push(level_01_A.button_fire);
 		
+		level_01_hub.targetA_has_called = true;
+		level_01_A.pickEnding(ending);
 		alert("This is the ending you chose: " + ending);
 	}
+	
+		level_01_A.pickEnding = function(ending) {
+		switch(ending){
+			case 1:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 2:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 3:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 4:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 5:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 6:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 7:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 8:
+				level_01_hub.targetA_ending_info + "";
+				break;
+			case 9:
+				level_01_hub.targetA_ending_info + "";
+				break;
+	}
+	
+	
 	
 	/***===================================***/
 	/***         room.playAudio()          ***/
