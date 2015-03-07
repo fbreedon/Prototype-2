@@ -16,14 +16,44 @@ var level_01_end = new Sprite();
 		// Stop the audio coming from level 01
 		level_01_hub.stopAudio();
 		
+		switch(level_01_hub.ending_state){
+			case 1:
+				level_01_end.string = "\"RECENTLY DIVORCED MAN FOUND SHOT\"\n" +
+					"This week has not been kind to poor local \nresident Johnathan Shmitt.\n"+
+					"... He was fired from his job last Friday only \nto come home to divorce papers...\n" +
+					"...His ex-wife had this to say. \"Serves him right for \nnot being able to provide for our needs...\"\n"+
+					"\n\n In other news.... ";
+				break;
+			case 2:
+				level_01_end.string = "\"MAN FOUND SHOT NEAR CAR ON THE HIGHWAY OVERPASS\"\n"+
+				"...The weird thing is that no one knew who he was. \nThis man has no record of ever even existing..."+
+				"\n\n In other news....";
+				break;
+			case 3:
+				level_01_end.string = "\"WOMAN LEFT WIDOWED AFTER HER HUSBAND WAS SHOT\"\n" +
+				"\"They killed my husband!\" his wife screamed as \nreporters tried to get a statement from her\n" +
+				"... Dylan Smith recently moved into our little community \nonly to be brutally gunned down weeks later.\n"+
+				"... His wife eventually told us that they had moved \nhere to get away from gang violence elsewhere...";
+				break;
+			case 4:
+				level_01_end.string = "\"LOCAL JUNKIE FOUND DEAD IN UNDERPASS \"\n"+
+				"His identity is still disputed as no one has \nclaimed to know him...\n" +
+				"... Could this be part of a deal gone bad, or was this guy involved in \nstuff he shouldn't have been involved in..."
+				"\n\nIn other news...";
+				break;
+		}
+				
+		
 		/***==============================***/
 		/***       Passive sprites        ***/
 		/***==============================***/
 		// Sprites to be drawn, but without interactivity
-		level_01_end.some_text = new TextBox("This is the end of level 01... \nHow did you do?");
+		level_01_end.some_text = new TextBox(level_01_end.string);
 		level_01_end.some_text.font = "Courier";
 		level_01_end.some_text.color = "White";
 		level_01_end.some_text.fontSize = 30;
+		level_01_end.some_text.x = 100;
+		level_01_end.some_text.y = 150;
 		
 		/***=== End of passive sprites ===***/
 		

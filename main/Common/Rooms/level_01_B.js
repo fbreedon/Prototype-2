@@ -154,7 +154,7 @@ var level_01_B = new Sprite();
 		level_01_B.button_fire.click = function() {
 			level_01_B.stopAudio();
 			world.removeChild(red_screen);
-			level_01_hub.ending_state = 'B';
+			level_01_hub.ending_state = 2;
 			changeRoom(level_01_end);
 		}
 		

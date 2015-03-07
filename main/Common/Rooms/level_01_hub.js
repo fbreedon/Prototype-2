@@ -5,7 +5,7 @@ var level_01_hub = new Sprite();
 	// Is the BGM playing?
 	level_01_hub.bgm = false;
 	
-	level_01_hub.ending_condition;
+	level_01_hub.ending_state = '';
 	
 	level_01_hub.targetA_killed = false;
 	level_01_hub.targetB_killed = false;
@@ -245,8 +245,8 @@ var level_01_hub = new Sprite();
 		level_01_hub.notes_page.notes.color = "White";
 		level_01_hub.notes_page.notes.x = 100;
 		level_01_hub.notes_page.notes.y = 100;
-		if(true) level_01_hub.notes_page.notes.text += "this is a note";
-		if(false) level_01_hub.notes_page.notes += "this should not be here";
+		if(true) level_01_hub.notes_page.notes.text += "this is a note\n";
+		if(false) level_01_hub.notes_page.notes += "this should not be here\n";
 		
 		
 		level_01_hub.close_notes = new TextBox("<< close");
