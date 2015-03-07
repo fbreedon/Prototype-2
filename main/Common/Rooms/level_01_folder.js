@@ -163,6 +163,7 @@ var level_01_folder = new Sprite();
 		world.removeChild(black_screen);
 		world.removeChild(black_screen);
 		world.removeChild(level_01_folder.image_openfolder);
+		world.removeChild(level_01_folder.image_text);
 		world.removeChild(level_01_folder.text);
 		world.removeChild(level_01_folder.button_prev);
 		world.removeChild(level_01_folder.button_continue);
