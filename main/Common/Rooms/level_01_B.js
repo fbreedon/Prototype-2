@@ -73,18 +73,18 @@ var level_01_B = new Sprite();
 			if((level_01_hub.target_loop.value>=180 && level_01_hub.target_loop.value<360)
 				|| (level_01_hub.target_loop.value>=1980 && level_01_hub.target_loop.value<2160)) {
 				info_count++;
-				if(level_01_hub.target2_has_seen && info_count == 120){
+				if(level_01_hub.targetB_has_seen && info_count == 120){
 						level_01_hub.seen_info = "some info";
-						level_01_hub.target2_has_seen = true;
+						level_01_hub.targetB_has_seen = true;
 				}
 			}else if((level_01_hub.target_loop.value>=360 && level_01_hub.target_loop.value<540)
 				|| (level_01_hub.target_loop.value>=2160 && level_01_hub.target_loop.value<2340)) {
 				level_01_B.image_target_B.animation = "look_around";
 				level_01_B.image_target_B.frameRate = 0;
 				info_count++;
-				if(level_01_hub.target2_has_seen && info_count == 120){
-						level_01_hub.target2_seen_info = "some info";
-						level_01_hub.target2_has_seen = true;
+				if(level_01_hub.targetB_has_seen && info_count == 120){
+						level_01_hub.targetB_seen_info = "some info";
+						level_01_hub.targetB_has_seen = true;
 				}
 				level_01_B.image_target_B.animation = "idle";
 				level_01_B.image_target_B.frameRate = 0;
@@ -154,6 +154,7 @@ var level_01_B = new Sprite();
 		level_01_B.button_fire.click = function() {
 			level_01_B.stopAudio();
 			world.removeChild(red_screen);
+			level_01_hub.ending_state = 'B';
 			changeRoom(level_01_end);
 		}
 		

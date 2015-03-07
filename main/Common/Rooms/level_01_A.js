@@ -73,9 +73,9 @@ var level_01_A = new Sprite();
 				level_01_A.image_target_A.animation = "phone_out";
 				level_01_A.image_target_A.frameRate = 0;
 				info_count++;
-				if(!level_01_A.target1_has_seen && info_count == 60) {
-					level_01_A.target1_seen_info = "some info";
-					level_01_A.target1_has_seen = true;
+				if(!level_01_A.targetA_has_seen && info_count == 60) {
+					level_01_A.targetA_seen_info = "some info";
+					level_01_A.targetA_has_seen = true;
 				}
 			}else if(level_01_hub.target_loop.value>=780 && level_01_hub.target_loop.value<810) {
 				level_01_A.image_target_A.animation = "phone_away";
@@ -157,6 +157,7 @@ var level_01_A = new Sprite();
 		level_01_A.button_fire.click = function() {
 			level_01_A.stopAudio();
 			world.removeChild(red_screen);
+			level_01_hub.ending_state = 'A';
 			changeRoom(level_01_end);
 		}
 		

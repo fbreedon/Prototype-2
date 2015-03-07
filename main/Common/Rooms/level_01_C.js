@@ -160,6 +160,7 @@ var level_01_C = new Sprite();
 		level_01_C.button_fire.click = function() {
 			level_01_C.stopAudio();
 			world.removeChild(red_screen);
+			level_01_hub.ending_state = 'C';
 			changeRoom(level_01_end);
 		}
 		

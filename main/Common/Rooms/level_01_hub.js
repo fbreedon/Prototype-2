@@ -5,6 +5,13 @@ var level_01_hub = new Sprite();
 	// Is the BGM playing?
 	level_01_hub.bgm = false;
 	
+	level_01_hub.ending_condition;
+	
+	level_01_hub.targetA_killed = false;
+	level_01_hub.targetB_killed = false;
+	level_01_hub.targetC_killed = false;
+	level_01_hub.targetD_killed = false;
+	
 	/***==================================***/
 	/***          room.create()           ***/
 	/***==================================***/
@@ -356,17 +363,25 @@ var level_01_hub = new Sprite();
 	/***===============================***/
 	/***       Information seen        ***/
 	/***===============================***/
-	level_01_hub.target1_has_seen = false;
-	level_01_hub.target1_seen_info = "";
+	level_01_hub.targetA_has_seen = false;
+	level_01_hub.targetA_seen_info = "Target A: Pulls out his phone frequently...\n";
+	level_01_hub.targetA_has_called = false;
+	level_01_hub.targetA_ending_info = ""; 
 	
-	level_01_hub.target2_has_seen = false;
-	level_01_hub.target2_seen_info = "";
+	level_01_hub.targetB_has_seen = false;
+	level_01_hub.targetB_seen_info = "";
+	level_01_hub.targetB_has_called = false;
+	level_01_hub.targetB_ending_info = "";
 	
-	level_01_hub.target3_has_seen = false;
-	level_01_hub.target3_seen_info = "";
+	level_01_hub.targetC_has_seen = false;
+	level_01_hub.targetC_seen_info = "";
+	level_01_hub.targetC_has_called = false;
+	level_01_hub.targetC_ending_info = "";
 	
-	level_01_hub.target4_has_seen = false;
-	level_01_hub.target4_seen_info = "";
+	level_01_hub.targetD_has_seen = false;
+	level_01_hub.targetD_seen_info = "";
+	level_01_hub.targetD_has_called = false;
+	level_01_hub.targetD_ending_info = "";
 	
 	/***===============================***/
 	/***        Clear this room        ***/
