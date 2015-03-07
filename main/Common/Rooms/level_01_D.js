@@ -151,26 +151,33 @@ var level_01_D = new Sprite();
 			active_sprites.pop();
 		
 //Start #0
-var node = createNode("Woah. Its like my phone. And it started ringing. Oh. I clicked the button already. Yo?", 
-"Are you waiting for your drop?", 1,
-"I ran into some trouble, I’ll be there soon though.", 5,
-"Hi, I’m from the neighborhood watch here in town, I was wondering if you could help me with questions?", 9);
+var node = createNode
+	("Woah. Its like my phone. And it started ringing. \nOh. I clicked the button already. Yo?\n", 
+	"Are you waiting for your drop?\n", 1,
+	"I ran into some trouble, I’ll be \nthere soon though.\n", 5,
+	"Hi, I’m from the neighborhood watch \nhere in town, I was wondering \nif you could help me with some \nquestionsn", 9);
 node.create();
 
 //A #1
-createNode("drop? I ran out of drops, like, forever ago dude. I wouldn't mind having a couple of drops. How good are these drops man. I've had some pretty fucking good drops. Sent me flying, man.", 
-"So, like, bro. Where did you, like, get these drops?", 2,
-"So like… whats with these drops? What are they about?", 3,
-"So are you waiting for anyone in particular?", 4);
+createNode
+	("Drop? I ran out of drops, like, \nforever ago dude. I wouldn't mind \nhaving a couple of drops. How good \nare these drops man. I've had some \npretty fucking good drops. \nSent me flying, man.\n", 
+	"So, like, bro. Where did you, like, \nget these drops?\n", 2,
+	"So like… whats with these drops? What are \nthey about?\n", 3,
+	"So are you waiting for anyone in particular?\n", 4);
 
 //A1 #2
-createNode("Brehhh, You can get them anywhere man. I have this hook up who like, always just brings me my drops wherever and whenever I want them man! It’s like, the fucken postal service! I’m actually, like, expecting a drop soon bro. Wait…. dude…. why are we talking about drops again? Are you giving me a drop? Drops.","End call\n", -1);
+createNode
+	("Brehhh, You can get them anywhere man. \nI have this hook up who like, always \njust brings me my drops wherever and whenever \nI want them man! It’s like, the \npostal service! I’m actually, like, expecting \na drop soon bro. Wait… dude… why are we \ntalking about drops again? \nAre you giving me a drop? Drops.\n",
+	"End call\n", -1);
 
 //A2 #3
-createNode("Duuuude! You don’t know about them? They’re like the tightest shit evaaaa. Like, I dont even know whats in them! Alls I know is that they are the best thing i’ve had since, like… that one time I took a roadtrip down to like Santa…. Santa… Santa something.... Shit when was that? Breh. You need these drops. We need to go get some fucking drops. I need these drops.","End call\n", -2);
+createNode
+	("Duuuude! You don’t know about them? \nThey’re like the tightest shit evaaaa. \nLike, I dont even know whats in them! \nAlls I know is that they are the best thing \nI’ve had since, like… that one time \nI took a roadtrip down to like Santa… \nSanta… Santa something.... \nShit when was that? Breh. You need \nthese drops. We need to go get some \nfucking drops. I need these drops.\n",
+	"End call\n", -2);
 
 //A3 #4
-createNode("Me? Naaaaaa I’m good man I’m good. Like, I have everything i need just where I am. Other people just make things, like, complicated. I don’t like, like, complications man. Ya feel me breh? Yeah.","End call\n", -3);
+createNode
+	("Me? Naaaaaa I’m good man I’m good. Like, I have everything i need just where I am. Other people just make things, like, complicated. I don’t like, like, complications man. Ya feel me breh? Yeah.","End call\n", -3);
 
 //B #5
 createNode("Woah man I’m not expecting no one here. Like… hold up a bit, man. Give me some time… Let me take this all in. Then, like, then… Then ill go find you man. Don’t you worry about that. I have everything you could possibly need to keep you going for the night, bro.", 

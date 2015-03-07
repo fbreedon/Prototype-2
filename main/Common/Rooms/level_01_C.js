@@ -190,55 +190,77 @@ var level_01_C = new Sprite();
 			active_sprites.pop();
 		
 		//Start #0
-var node = createNode("Hello? Who is this?", 
-"Are you nervous about your drop? Is that why you pace so much?", 1,
-"I’m running late but I’ll be there soon.", 5,
-"Hello I’m from the neighborhood watch and we’re calling around the local area looking for some information on what is potentially going on in our very own little city", 9);
+var node = createNode
+	("Hello? Who is this?\n", 
+	"Are you nervous about your drop? \nIs that why you pace so much\n?", 1,
+	"I’m running late but I’ll be there soon.", 5,
+	"Hello I’m from the neighborhood \nwatch and we’re calling around \nthe local area looking for some \ninformation on what is potentially going \non in our very own little city\n", 9);
 node.create();
 
 //1 #1
-createNode("What the hell? Who the fuck are you to call me and ask me these things.", 
-"You didn’t answer my question…. Why are you pacing?", 2,
-"I have a track on your movements do you really want to make me angry? Answer my questions and keep doing what you’re doing. Are you waiting for your package?", 3,
-"Hah, you really thought I meant any of that? You’re a funny guy.", 4);
+createNode
+	("What the hell? Who the \nfuck are you to call me \nand ask me these things.\n", 
+	"You didn’t answer my question… \nWhy are you pacing?\n", 2,
+	"I have a track on your movements \ndo you really want to make me angry? \nAnswer my questions and keep doing \nwhat you’re doing. Are you waiting \nfor your package?\n", 3,
+	"Hah, you really thought I meant \nany of that? You’re a funny guy.\n", 4);
 
 //1A #2
-createNode("Fuck you man. I don’t have to answer to you or anyone. Now sod off.","End call\n", -1);
+createNode
+	("Fuck you man. I don’t have \nto answer to you or anyone. \nNow sod off.\n",
+	"End call\n", -1);
 //1B #3
-createNode("Woah woah woah! Gee, where are my manners….. Let me answer your question right quick. No need to do anything rash now. So uhhh like… I’m not expecting any packages i'm just here walking around. So I’ll just ","End call\n", -2);
+createNode
+	("Woah woah woah! Gee, where \nare my manners… Let me answer your \nquestion right quick. No need to \ndo anything rash now. \nSo uhhh like… I’m not expecting any \npackages I'm just here walking around. \nSo I’ll just... \n",
+	"End call\n", -2);
 //1C #4
-createNode("Joking little shit aren’t ya?  Ya better not do this shit again. You don’t know what some people might do. Fucking package? The fuck would I want a package here….","End call\n", -3);
+createNode
+	("Joking little shit aren’t ya? \nYa better not do this shit again. \nNever know what some people might do. \nFucking package? The fuck would I want \na package here…\n",
+	"End call\n", -3);
 
 //2 #5
-createNode("Well what do we have ‘ere? Seems you got the wrong number mate.", 
-"You’re a funny guy. No really. I need an update as to what you’re doing. I've run into some shit here.", 6,
-"My bad man. I must have clicked the wrong number when calling my wife. Man is she going to be pissed.", 7,
-"So then who are you?", 8);
+createNode
+	("Well what do we have ‘ere? \n Seems you got the wrong number, mate.\n", 
+	"You’re a funny guy. \nNo really. I need an update \nas to what you’re doing. I've \nrun into some shit here.\n", 6,
+	"My bad man. I must have clicked \nthe wrong number when calling my wife. \nMan is she going to be pissed.\n", 7,
+	"So then who are you?\n", 8);
 
 
 //2A #6
-createNode("I ain’t jokin'. Now sod off before I decide to find whoever’s on the other end of this. Trust me you don’t want that to happen.","End call\n", -4);
+createNode
+	("I ain’t jokin'. Now sod off before \nI decide to find whoever’s on the \nother end of this. Trust me you don’t \nwant that to happen.\n",
+	"End call\n", -4);
 
 //2B #7
-createNode("I hear ya. Women sometimes, get pissed at you for no reason. Mine is always finding a reason to be mad at me. First its the cooking, next it’s I don’t walk to much..Better call her soon, mate, best not mess around with that.","End call\n", -5);
+createNode
+	("I hear ya. Women sometimes, \nget pissed at you for no reason. \nMine is always finding a reason \nto be mad at me. First its the cooking, \nnext it’s I don’t walk enough... \nCall her soon, mate, best not mess \naround with that.\n",
+	"End call\n", -5);
 
 //2C #8
-createNode("I’m the guy who picked up his phone for an idiot who doesn’t know how to dial a number correctly. I have too much on my plate and I don’t have to explain myself to you or anyone else...sod will ya?","End call\n", -6);
+createNode
+	("I’m the guy who picked up \nhis phone for an idiot who doesn’t know how \nto dial a number correctly. I have \ntoo much on my plate and I don’t \nhave to explain myself to you or anyone \nelse...sod will ya?\n",
+	"End call\n", -6);
 
 //3 #9
-createNode("Neighborhood watch you say? Anything to do to help, mate.", 
-"We have reports of a shady looking individual loitering around the area, walking back and forth. He seems to be scoping out the area. Do you have any information about him?", 10,
-"We’ve been told that this area is a place that some dealings happen to go down, like exchanging drops. Do you know anything about this?", 11,
-"Are you familiar with this area?", 12);
+createNode
+	("Neighborhood watch you say? \nAnything to do to help, mate.\n", 
+	"We have reports of a shady looking \nindividual loitering around the \narea, seemingly walking back and forth. \nPeople feel he's scoping out the area. \nDo you have any information about him?\n", 10,
+	"We’ve been told that this area \nis a place that some dealings \nhappen to go down, like exchanging drops. \nDo you know anything about this?\n", 11,
+	"Are you familiar with this area?\n", 12);
 
 //3A #10
-createNode("Shady? Do I…. I mean, does he really look shady? Maybe he’s just there thinking over some stuff enjoying the view...  How do you know he’s really a shady person. Well… I have to go now.. Sorry I couldn’t help more, mate.","End call\n", -7);
+createNode
+	("Shady? Do I…. I mean, does he really \nlook shady? Maybe he’s just there \nthinking over some stuff enjoying the \nview...  How do you know he’s really \nup to anything? Well… I have to go \nnow... Sorry I couldn’t help more, mate.\n",
+	"End call\n", -7);
 
 //3B #11
-createNode("Packages? This would be a weird place for packages… I’ll keep a look out if I’m in the area. Don’t worry about it, mate. I’ll alert the appropriate people If i see anything","End call\n", -8);
+createNode
+	("Packages? This would be a weird \nplace for packages… I’ll keep a \nlook out if I’m in the area. \nDon’t worry about it, mate. I’ll alert \nthe appropriate people If I see anything\n",
+	"End call\n", -8);
 
 //3C #12
-createNode("Familiar with the area? Not so much, I recently settled down here with my wife. We don’t know the area very much but we’ve heard good things about the neighborhood. It’s probably because of you guys right? Maybe I might volunteer one day…. But for now I still have much to think about, mate.","End call\n", -9);
+createNode
+("Familiar with the area? Not so much, \nI recently settled down here with my wife. \nWe don’t know the area very much \nbut we’ve heard good things about \nthe neighborhood. It’s probably because of \nyou guys right? Maybe I might volunteer \none day…. But for now I still \nhave a lot on my mind, mate.\n",
+"End call\n", -9);
 
 	}
 	
