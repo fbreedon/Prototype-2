@@ -2,6 +2,8 @@
 /***      Level 01: "Shadowman"      ***/
 /***=================================***/
 var level_02_hub = new Sprite();
+	// Is the BGM playing?
+	level_02_hub.bgm = false;
 
 	/***==================================***/
 	/***          room.create()           ***/
@@ -71,18 +73,25 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_iconA.x = 110;
 		level_02_hub.button_iconA.y = 300;
 		level_02_hub.button_iconA.mouseOver = false;
+		level_02_hub.button_iconA.soundoff = true;;
 		level_02_hub.button_iconA.update = function() {
 			if(level_02_hub.button_iconA.mouseOver) {
 				level_02_hub.button_iconA.image = Textures.load
 					("./Common/Textures/a icon over.png");
 				level_02_hub.image_comment.visible = true;
 				level_02_hub.image_comment.text = "\"suspect A\"";
+				if(level_02_hub.button_iconA.soundoff) {
+					level_02_hub.sound_boop01.play();
+					level_02_hub.button_iconA.soundoff = false;
+				}
 			}else {
+				level_02_hub.button_iconA.soundoff = true;
 				level_02_hub.button_iconA.image = Textures.load
 					("./Common/Textures/a icon up.png");
 			}
 		}
 		level_02_hub.button_iconA.click = function() {
+			level_02_hub.sound_background.volume = 0.2;
 			changeRoom(level_02_A);
 		}
 		
@@ -92,18 +101,25 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_iconB.x = 180;
 		level_02_hub.button_iconB.y = 290;
 		level_02_hub.button_iconB.mouseOver = false;
+		level_02_hub.button_iconB.soundoff = true;
 		level_02_hub.button_iconB.update = function() {
 			if(level_02_hub.button_iconB.mouseOver) {
 				level_02_hub.button_iconB.image = Textures.load
 					("./Common/Textures/b icon over.png");
 				level_02_hub.image_comment.visible = true;
 				level_02_hub.image_comment.text = "\"suspect B\"";
+				if(level_02_hub.button_iconB.soundoff) {
+					level_02_hub.sound_boop01.play();
+					level_02_hub.button_iconB.soundoff = false;
+				}
 			}else {
+				level_02_hub.button_iconB.soundoff = true;
 				level_02_hub.button_iconB.image = Textures.load
 					("./Common/Textures/b icon up.png");
 			}
 		}
 		level_02_hub.button_iconB.click = function() {
+			level_02_hub.sound_background.volume = 0.2;
 			changeRoom(level_02_B);
 		}
 		
@@ -113,18 +129,25 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_iconC.x = 240;
 		level_02_hub.button_iconC.y = 360;
 		level_02_hub.button_iconC.mouseOver = false;
+		level_02_hub.button_iconC.soundoff = true;
 		level_02_hub.button_iconC.update = function() {
 			if(level_02_hub.button_iconC.mouseOver) {
 				level_02_hub.button_iconC.image = Textures.load
 					("./Common/Textures/c icon over.png");
 				level_02_hub.image_comment.visible = true;
 				level_02_hub.image_comment.text = "\"suspect C\"";
+				if(level_02_hub.button_iconC.soundoff) {
+					level_02_hub.sound_boop01.play();
+					level_02_hub.button_iconC.soundoff = false;
+				}
 			}else {
+				level_02_hub.button_iconC.soundoff = true;
 				level_02_hub.button_iconC.image = Textures.load
 					("./Common/Textures/c icon up.png");
 			}
 		}
 		level_02_hub.button_iconC.click = function() {
+			level_02_hub.sound_background.volume = 0.2;
 			changeRoom(level_02_C);
 		}
 		
@@ -133,19 +156,25 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_iconD.height = 70;
 		level_02_hub.button_iconD.x = 310;
 		level_02_hub.button_iconD.y = 390;
-		level_02_hub.button_iconD.mouseOver = false;
+		level_02_hub.button_iconD.mouseOver = true;
 		level_02_hub.button_iconD.update = function() {
 			if(level_02_hub.button_iconD.mouseOver) {
 				level_02_hub.button_iconD.image = Textures.load
 					("./Common/Textures/d icon over.png");
 				level_02_hub.image_comment.visible = true;
 				level_02_hub.image_comment.text = "\"suspect D\"";
+				if(level_02_hub.button_iconD.soundoff) {
+					level_02_hub.sound_boop01.play();
+					level_02_hub.button_iconD.soundoff = false;
+				}
 			}else {
+				level_02_hub.button_iconD.soundoff = true;
 				level_02_hub.button_iconD.image = Textures.load
 					("./Common/Textures/d icon up.png");
 			}
 		}
 		level_02_hub.button_iconD.click = function() {
+			level_02_hub.sound_background.volume = 0.2;
 			changeRoom(level_02_D);
 		}
 		
@@ -155,22 +184,37 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_iconE.x = 240;
 		level_02_hub.button_iconE.y = 435;
 		level_02_hub.button_iconE.mouseOver = false;
+		level_02_hub.button_iconE.soundoff = true;
 		level_02_hub.button_iconE.update = function() {
 			if(level_02_hub.button_iconE.mouseOver) {
 				level_02_hub.button_iconE.image = Textures.load
 					("./Common/Textures/e icon over.png");
 				level_02_hub.image_comment.visible = true;
 				level_02_hub.image_comment.text = "\"suspect E\"";
+				if(level_02_hub.button_iconE.soundoff) {
+					level_02_hub.sound_boop01.play();
+					level_02_hub.button_iconE.soundoff = false;
+				}
 			}else {
+				level_02_hub.button_iconE.soundoff = true;
 				level_02_hub.button_iconE.image = Textures.load
 					("./Common/Textures/e icon up.png");
 			}
 		}
 		level_02_hub.button_iconE.click = function() {
+			level_02_hub.sound_background.volume = 0.2;
 			changeRoom(level_02_E);
 		}
 		
 		/***===     End of active sprites   ===***/
+		
+		/***===================================***/
+		/***           Audio objects           ***/
+		/***===================================***/
+		// This room's audio objects		
+		level_02_hub.sound_boop01 = new Audio("./Common/Sounds/boop01.wav");
+		
+		/***===     End of audio objects    ===***/
 		
 		/***===================================***/
 		/***          World allocating         ***/
@@ -193,6 +237,10 @@ var level_02_hub = new Sprite();
 		active_sprites.push(level_02_hub.button_iconC);
 		active_sprites.push(level_02_hub.button_iconD);
 		active_sprites.push(level_02_hub.button_iconE);
+		
+		// Play this room's background audio if it isn't yet playing
+		if(!level_02_hub.bgm)
+			level_02_hub.playAudio();
 		
 	}
 	
@@ -285,6 +333,39 @@ var level_02_hub = new Sprite();
 		}
 	}
 	world.addChild(level_02_hub.target_loop);
+	
+	/***===================================***/
+	/***         room.playAudio()          ***/
+	/***===================================***/
+	// Play special audio for this room
+	level_02_hub.playAudio = function() {
+		// Room ambiance
+		level_02_hub.sound_background = new Audio("./Common/Sounds/ambiance01.wav");
+		level_02_hub.sound_background.volume = 0.5;
+		
+		// Play and loop room ambiance
+		level_02_hub.sound_background.addEventListener('ended', function() {
+			this.currentTime = 0;
+			this.play();
+		});
+		level_02_hub.sound_background.play();
+		
+		level_02_hub.bgm = true;
+	}
+	
+	/***=================================***/
+	/***         room.stopAudio()        ***/
+	/***=================================***/
+	// Stop all audio emitting from this room
+	level_02_hub.stopAudio = function() {
+		// Stop city ambiance
+		level_02_hub.sound_background.pause();
+		level_02_hub.sound_background.currentTime = 0;
+		level_02_hub.sound_background.removeEventListener('ended', function() {
+			this.pause();
+			this.currentTime = 0;
+		});
+	}
 
 	/***===============================***/
 	/***        Clear this room        ***/

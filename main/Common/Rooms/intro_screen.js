@@ -33,7 +33,7 @@ var intro_screen = new Sprite();
 			}
 		}
 		intro_screen.next.click = function() {
-			changeRoom(level_01_hub);
+			changeRoom(level_01_folder);
 		}
 		
 		intro_screen.ret = new TextBox("<< Return  ");
