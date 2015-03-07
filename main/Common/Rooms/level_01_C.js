@@ -40,8 +40,8 @@ var level_01_C = new Sprite();
 			
 		// Target C Sprite
 		level_01_C.image_target_C = new Sprite();
-		level_01_C.image_target_C.width  = 24;
-		level_01_C.image_target_C.height = 64;
+		level_01_C.image_target_C.width  = 32;
+		level_01_C.image_target_C.height = 96;
 		level_01_C.image_target_C.x_move = 0;
 		level_01_C.image_target_C.y_move = 0;
 		level_01_C.image_target_C.image = Textures.load
