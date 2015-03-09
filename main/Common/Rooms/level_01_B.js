@@ -200,7 +200,7 @@ var level_01_B = new Sprite();
 		active_sprites.push(level_01_B.button_call);
 		active_sprites.push(level_01_B.button_fire);
 		
-		alert("This is the ending you chose: " + ending);
+		//alert("This is the ending you chose: " + ending);
 	}
 	
 	/***===================================***/

@@ -256,7 +256,7 @@ var level_01_A = new Sprite();
 		
 		level_01_hub.targetA_has_called = true;
 		level_01_A.pickEnding(ending);
-		alert("Notepad: " + level_01_hub.targetA_ending_info);
+		//alert("Notepad: " + level_01_hub.targetA_ending_info);
 	}
 	
 	level_01_A.pickEnding = function(ending) {

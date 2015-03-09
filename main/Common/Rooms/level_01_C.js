@@ -278,7 +278,7 @@ createNode
 		level_01_hub.targetC_has_called = true;
 		level_01_C.pickEnding(ending);
 		
-		alert("Notepad: " + level_01_hub.targetC_ending_info);
+		//alert("Notepad: " + level_01_hub.targetC_ending_info);
 	}
 	
 	level_01_C.pickEnding = function(ending) {
