@@ -165,7 +165,7 @@ var level_01_B = new Sprite();
 		world.addChild(red_screen);
 		world.addChild(level_01_B.image_scope);
 		world.addChild(level_01_B.ret);
-		//world.addChild(level_01_B.button_call);
+		world.addChild(level_01_B.button_call);
 		world.addChild(level_01_B.button_fire);
 		
 		// Active sprites at creation time
@@ -179,7 +179,7 @@ var level_01_B = new Sprite();
 	}
 	
 	// Start the dialogue
-	/*level_01_B.startDialogue = function() {
+	level_01_B.startDialogue = function() {
 		world.removeChild(level_01_B.ret);
 		world.removeChild(level_01_B.button_call);
 		while(active_sprites.length > 0)
@@ -188,7 +188,7 @@ var level_01_B = new Sprite();
 		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
 		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
 		node.create();
-	}*/
+	}
 	
 	// End the dialogue
 	level_01_B.endDialogue = function(ending) {
