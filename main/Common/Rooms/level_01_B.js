@@ -70,15 +70,17 @@ var level_01_B = new Sprite();
 			level_01_B.image_target_B.x = level_01_B.image_background.x + 520;
 			level_01_B.image_target_B.y = level_01_B.image_background.y + 360;
 			// Animations
-			if((level_01_hub.target_loop.value>=180 && level_01_hub.target_loop.value<360)
-				|| (level_01_hub.target_loop.value>=1980 && level_01_hub.target_loop.value<2160)) {
+			if((level_01_hub.target_loop.value>=180 && level_01_hub.target_loop.value<360)	// 3 to 6 secs
+				|| (level_01_hub.target_loop.value>=1380 && level_01_hub.target_loop.value<1560)	// 23 to 26 secs
+				|| (level_01_hub.target_loop.value>=2580 && level_01_hub.target_loop.value<2760)) {	// 43 to 46 secs
 				info_count++;
 				if(level_01_hub.targetB_has_seen && info_count == 120){
 						level_01_hub.seen_info = "some info";
 						level_01_hub.targetB_has_seen = true;
 				}
-			}else if((level_01_hub.target_loop.value>=360 && level_01_hub.target_loop.value<540)
-				|| (level_01_hub.target_loop.value>=2160 && level_01_hub.target_loop.value<2340)) {
+			}else if((level_01_hub.target_loop.value>=360 && level_01_hub.target_loop.value<540)	// 6 to 9 secs
+				|| (level_01_hub.target_loop.value>=1560 && level_01_hub.target_loop.value<1740)	// 26 to 29 secs
+				|| (level_01_hub.target_loop.value>=2760 && level_01_hub.target_loop.value<2940)) {	// 46 to 49 secs
 				level_01_B.image_target_B.animation = "look_around";
 				level_01_B.image_target_B.frameRate = 0;
 				info_count++;

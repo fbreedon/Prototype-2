@@ -221,7 +221,7 @@ createNode("Right on, Bro! So, like, I know this area pretty well And like… I 
 		active_sprites.push(level_01_D.button_call);
 		active_sprites.push(level_01_D.button_fire);
 		
-		level_01_hub.targetD_has_called = true;
+		level_01_hub.targetD_in_call = false;
 		level_01_D.pickEnding(ending);
 		//alert("Notepad: " + level_01_hub.targetD_ending_info);
 	}

@@ -62,34 +62,49 @@ var level_01_C = new Sprite();
 			level_01_C.image_target_C.y = 
 				level_01_C.image_background.y + level_01_C.image_target_C.y_move + 360;
 			// Animations
-			if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
-				|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
-				|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
-				|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
+			if(level_01_hub.targetC_in_call == true) {
+				if(level_01_C.image_target_C.animation == "walk_back"
+					|| level_01_C.image_target_C.animation == "idle_back") {
+					level_01_C.image_target_C.animation = "phone_back";
+					level_01_C.image_target_C.frameRate = 0;
+					level_01_C.image_target_C.x_move = level_01_hub.target_x;
+					level_01_C.image_target_C.y_move = level_01_hub.target_y;
+				}
+				if(level_01_C.image_target_C.animation == "walk_front"
+					|| level_01_C.image_target_C.animation == "idle_front") {
+					level_01_C.image_target_C.animation = "phone_front";
+					level_01_C.image_target_C.frameRate = 0;
+					level_01_C.image_target_C.x_move = level_01_hub.target_x;
+					level_01_C.image_target_C.y_move = level_01_hub.target_y;
+				}
+			}else if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)	// 0 to 5 secs
+				|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)	// 22.5 to 27.5 secs
+				|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)	// 30 to 35 secs
+				|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {	// 52.5 to 57.5 secs
 				level_01_C.image_target_C.animation = "walk_back";
 				level_01_C.image_target_C.frameRate = 2;
 				level_01_C.image_target_C.x_move = level_01_hub.target_x;
 				level_01_C.image_target_C.y_move = level_01_hub.target_y;
-			}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
-					 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
-					 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
-					 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
+			}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)	// 7.5 to 12.5 secs
+					 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)	// 15 to 20 secs
+					 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)	// 37.5 to 42.5 secs
+					 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {	// 45 to 50 secs
 				level_01_C.image_target_C.animation = "walk_front";
 				level_01_C.image_target_C.frameRate = 2;
 				level_01_C.image_target_C.x_move = level_01_hub.target_x;
 				level_01_C.image_target_C.y_move = level_01_hub.target_y;
-			}else if((level_01_hub.target_loop.value>=300 && level_01_hub.target_loop.value<450)
-					 || (level_01_hub.target_loop.value>=1650 && level_01_hub.target_loop.value<1800)
-					 || (level_01_hub.target_loop.value>=2100 && level_01_hub.target_loop.value<2250)
-					 || (level_01_hub.target_loop.value>=3450 && level_01_hub.target_loop.value<3600)) {
+			}else if((level_01_hub.target_loop.value>=300 && level_01_hub.target_loop.value<450)	// 5 to 7.5 secs
+					 || (level_01_hub.target_loop.value>=1650 && level_01_hub.target_loop.value<1800)	// 27.5 to 30 secs
+					 || (level_01_hub.target_loop.value>=2100 && level_01_hub.target_loop.value<2250)	// 35 to 37.5 secs
+					 || (level_01_hub.target_loop.value>=3450 && level_01_hub.target_loop.value<3600)) {	// 57.5 to 60 secs
 				level_01_C.image_target_C.animation = "idle_back";
 				level_01_C.image_target_C.frameRate = 0;
 				level_01_C.image_target_C.x_move = level_01_hub.target_x;
 				level_01_C.image_target_C.y_move = level_01_hub.target_y;
-			}else if((level_01_hub.target_loop.value>=750 && level_01_hub.target_loop.value<900)
-					 || (level_01_hub.target_loop.value>=1200 && level_01_hub.target_loop.value<1350)
-					 || (level_01_hub.target_loop.value>=2550 && level_01_hub.target_loop.value<2700)
-					 || (level_01_hub.target_loop.value>=3000 && level_01_hub.target_loop.value<3150)) {
+			}else if((level_01_hub.target_loop.value>=750 && level_01_hub.target_loop.value<900)	// 12.5 to 15 secs
+					 || (level_01_hub.target_loop.value>=1200 && level_01_hub.target_loop.value<1350)	// 20 to 22.5 secs
+					 || (level_01_hub.target_loop.value>=2550 && level_01_hub.target_loop.value<2700)	// 42.5 to 45 secs
+					 || (level_01_hub.target_loop.value>=3000 && level_01_hub.target_loop.value<3150)) {	// 50 to 52.5 secs
 				level_01_C.image_target_C.animation = "idle_front";
 				level_01_C.image_target_C.frameRate = 0;
 				level_01_C.image_target_C.x_move = level_01_hub.target_x;
@@ -139,6 +154,7 @@ var level_01_C = new Sprite();
 		level_01_C.button_call.click = function() {
 			world.addChild(black_screen);
 			level_01_C.startDialogue();
+			level_01_hub.targetC_in_call = true;
 		}
 		
 		level_01_C.button_fire = new TextBox("<< FIRE >>");
@@ -275,7 +291,7 @@ createNode
 		active_sprites.push(level_01_C.button_call);
 		active_sprites.push(level_01_C.button_fire);
 		
-		level_01_hub.targetC_has_called = true;
+		level_01_hub.targetC_in_call = false;
 		level_01_C.pickEnding(ending);
 		
 		//alert("Notepad: " + level_01_hub.targetC_ending_info);

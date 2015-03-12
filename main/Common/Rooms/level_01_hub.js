@@ -336,26 +336,28 @@ var level_01_hub = new Sprite();
 	level_01_hub.target_y = 0;
 	
 	level_01_hub.target_loop.update = function() {
-		//level_01_hub.image_comment.visible = true;
-		level_01_hub.target_loop.value++;
-		//level_01_hub.image_comment.text = level_01_hub.target_loop.value;
-		if(level_01_hub.target_loop.value == 3600) { // loop every minute
-			level_01_hub.target_loop.value = 0;
+		if(level_01_hub.targetC_in_call == false) { // stops when in call
+			level_01_hub.target_loop.value++;
+			if(level_01_hub.target_loop.value == 3600) { // loop every minute
+				level_01_hub.target_loop.value = 0;
+			}
 		}
 		
-		// Target B position tracker
-		if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
-			|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
-			|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
-			|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
-			level_01_hub.target_x += .25;
-			level_01_hub.target_y -= .25;
-		}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
-				 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
-				 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
-				 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
-			level_01_hub.target_x -= .25;
-			level_01_hub.target_y += .25;
+		// Target C position tracker
+		if(level_01_hub.targetC_in_call == false) {
+			if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
+				|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
+				|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
+				|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
+				level_01_hub.target_x += .25;
+				level_01_hub.target_y -= .25;
+			}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
+					 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
+					 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
+					 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
+				level_01_hub.target_x -= .25;
+				level_01_hub.target_y += .25;
+			}
 		}
 	}
 	world.addChild(level_01_hub.target_loop);
@@ -365,22 +367,22 @@ var level_01_hub = new Sprite();
 	/***===============================***/
 	level_01_hub.targetA_has_seen = false;
 	level_01_hub.targetA_seen_info = "Target A: Pulls out his phone frequently...\n";
-	level_01_hub.targetA_has_called = false;
+	level_01_hub.targetA_in_call = false;
 	level_01_hub.targetA_ending_info = ""; 
 	
 	level_01_hub.targetB_has_seen = false;
 	level_01_hub.targetB_seen_info = "";
-	level_01_hub.targetB_has_called = false;
+	level_01_hub.targetB_in_call = false;
 	level_01_hub.targetB_ending_info = "";
 	
 	level_01_hub.targetC_has_seen = false;
 	level_01_hub.targetC_seen_info = "";
-	level_01_hub.targetC_has_called = false;
+	level_01_hub.targetC_in_call = false;
 	level_01_hub.targetC_ending_info = "";
 	
 	level_01_hub.targetD_has_seen = false;
 	level_01_hub.targetD_seen_info = "";
-	level_01_hub.targetD_has_called = false;
+	level_01_hub.targetD_in_call = false;
 	level_01_hub.targetD_ending_info = "";
 	
 	/***===============================***/

@@ -66,10 +66,17 @@ var level_01_A = new Sprite();
 			level_01_A.image_target_A.x = level_01_A.image_background.x + 520;
 			level_01_A.image_target_A.y = level_01_A.image_background.y + 340;
 			// Animations
-			if(level_01_hub.target_loop.value>=600 && level_01_hub.target_loop.value<660) {
+			if(level_01_hub.targetA_in_call == true) {
+				level_01_A.image_target_A.animation = "phone_out";
+				level_01_A.image_target_A.frameRate = 0;
+			}else if((level_01_hub.target_loop.value>=600 && level_01_hub.target_loop.value<660)	// 10 to 11 secs
+				|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<1860)	// 30 to 31 secs
+				|| (level_01_hub.target_loop.value>=3000 && level_01_hub.target_loop.value<3060)) {	// 50 to 51 secs
 				level_01_A.image_target_A.animation = "check_phone";
 				level_01_A.image_target_A.frameRate = 2;
-			}else if(level_01_hub.target_loop.value>=660 && level_01_hub.target_loop.value<780) {
+			}else if((level_01_hub.target_loop.value>=660 && level_01_hub.target_loop.value<840)	// 11 to 14 secs
+					 || (level_01_hub.target_loop.value>=1860 && level_01_hub.target_loop.value<2040)	// 31 to 34 secs
+					 || (level_01_hub.target_loop.value>=3060 && level_01_hub.target_loop.value<3240)) {	// 51 to 54 secs
 				level_01_A.image_target_A.animation = "phone_out";
 				level_01_A.image_target_A.frameRate = 0;
 				info_count++;
@@ -77,7 +84,9 @@ var level_01_A = new Sprite();
 					level_01_A.targetA_seen_info = "some info";
 					level_01_A.targetA_has_seen = true;
 				}
-			}else if(level_01_hub.target_loop.value>=780 && level_01_hub.target_loop.value<810) {
+			}else if((level_01_hub.target_loop.value>=840 && level_01_hub.target_loop.value<900)	// 14 to 15 secs
+					 || (level_01_hub.target_loop.value>=2040 && level_01_hub.target_loop.value<2100)	// 34 to 35 secs
+					 || (level_01_hub.target_loop.value>=3240 && level_01_hub.target_loop.value<3300)) {	// 54 to 55 secs
 				level_01_A.image_target_A.animation = "phone_away";
 				level_01_A.image_target_A.frameRate = 0;
 			}else {
@@ -135,6 +144,7 @@ var level_01_A = new Sprite();
 		level_01_A.button_call.click = function() {
 			world.addChild(black_screen);
 			room_manager.curr_room.startDialogue();
+			level_01_hub.targetA_in_call = true;
 		}
 		
 		// Button to fire upon target
@@ -254,7 +264,7 @@ var level_01_A = new Sprite();
 		active_sprites.push(level_01_A.button_call);
 		active_sprites.push(level_01_A.button_fire);
 		
-		level_01_hub.targetA_has_called = true;
+		level_01_hub.targetA_in_call = false;
 		level_01_A.pickEnding(ending);
 		//alert("Notepad: " + level_01_hub.targetA_ending_info);
 	}
