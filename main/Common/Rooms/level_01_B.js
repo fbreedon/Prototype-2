@@ -187,22 +187,21 @@ var level_01_B = new Sprite();
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		
-		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
-		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+		var node = createNode("The number you have reached is currently unavailable, \nplease hang up and try again.", 
+			"\n\n\n\n\n\n\End call", -1);
 		node.create();
 	}
-	
+		
 	// End the dialogue
 	level_01_B.endDialogue = function(ending) {
 		world.removeChild(black_screen);
 		
 		world.addChild(level_01_B.ret);
-		world.addChild(level_01_B.button_call);
-		active_sprites.push(level_01_B.ret);
-		active_sprites.push(level_01_B.button_call);
 		active_sprites.push(level_01_B.button_fire);
+		active_sprites.push(level_01_B.ret);
 		
-		//alert("This is the ending you chose: " + ending);
+		level_01_hub.targetB_has_called = true;
+		clear_array();
 	}
 	
 	/***===================================***/

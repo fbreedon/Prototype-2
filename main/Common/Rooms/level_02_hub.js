@@ -328,7 +328,11 @@ var level_02_hub = new Sprite();
 		}
 		
 		// Target A position tracker
-		if(level_02_hub.targetA_in_call == false) {
+		if(level_02_hub.targetA_in_call == false
+			&& level_02_hub.targetB_in_call == false
+			&& level_02_hub.targetC_in_call == false
+			&& level_02_hub.targetD_in_call == false
+			&& level_02_hub.targetE_in_call == false) {
 			if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
 				|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
 				level_02_hub.target_x -= .5;

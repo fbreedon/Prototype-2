@@ -239,15 +239,16 @@ var level_01_hub = new Sprite();
 		level_01_hub.notes_page.y = 0;
 		level_01_hub.notes_page.image = Textures.load("./Common/Textures/notes page.png");
 		
-		level_01_hub.notes_page.notes = new TextBox("this is default /n");
+		level_01_hub.notes_page.notes = new TextBox("Notes on targets:\n\n" +
+		level_01_hub.targetA_ending_info + "\n" +
+		level_01_hub.targetB_ending_info + "\n" +
+		level_01_hub.targetC_ending_info + "\n" +
+		level_01_hub.targetD_ending_info + "\n");
 		level_01_hub.notes_page.notes.font = "Courier";
 		level_01_hub.notes_page.notes.fontSize = 30;
 		level_01_hub.notes_page.notes.color = "White";
 		level_01_hub.notes_page.notes.x = 100;
 		level_01_hub.notes_page.notes.y = 100;
-		if(true) level_01_hub.notes_page.notes.text += "this is a note\n";
-		if(false) level_01_hub.notes_page.notes += "this should not be here\n";
-		
 		
 		level_01_hub.close_notes = new TextBox("<< close");
 		level_01_hub.close_notes.font = "Courier";
@@ -270,7 +271,8 @@ var level_01_hub = new Sprite();
 			world.removeChild(black_screen);
 			world.removeChild(level_01_hub.close_notes);
 			world.removeChild(level_01_hub.close_notes.notes);
-			world.removeChild(level_01_hub.notes_page)
+			world.removeChild(level_01_hub.notes_page);
+			world.removeChild(level_01_hub.notes_page.notes);
 			while(active_sprites.length > 0) active_sprites.pop();
 			
 			// Put the normal stuff back on...
@@ -347,7 +349,10 @@ var level_01_hub = new Sprite();
 		}
 		
 		// Target C position tracker
-		if(level_01_hub.targetC_in_call == false) {
+		if(level_01_hub.targetA_in_call == false
+			&& level_01_hub.targetB_in_call == false
+			&& level_01_hub.targetC_in_call == false
+			&& level_01_hub.targetD_in_call == false) {
 			if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
 				|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
 				|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
@@ -370,21 +375,25 @@ var level_01_hub = new Sprite();
 	/***===============================***/
 	level_01_hub.targetA_has_seen = false;
 	level_01_hub.targetA_seen_info = "Target A: Pulls out his phone frequently...\n";
+	level_01_hub.targetA_has_called = false;
 	level_01_hub.targetA_in_call = false;
 	level_01_hub.targetA_ending_info = ""; 
 	
 	level_01_hub.targetB_has_seen = false;
 	level_01_hub.targetB_seen_info = "";
+	level_01_hub.targetB_has_called = false;
 	level_01_hub.targetB_in_call = false;
 	level_01_hub.targetB_ending_info = "";
 	
 	level_01_hub.targetC_has_seen = false;
 	level_01_hub.targetC_seen_info = "";
+	level_01_hub.targetC_has_called = false;
 	level_01_hub.targetC_in_call = false;
 	level_01_hub.targetC_ending_info = "";
 	
 	level_01_hub.targetD_has_seen = false;
 	level_01_hub.targetD_seen_info = "";
+	level_01_hub.targetD_has_called = false;
 	level_01_hub.targetD_in_call = false;
 	level_01_hub.targetD_ending_info = "";
 	

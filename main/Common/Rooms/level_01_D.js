@@ -162,7 +162,7 @@ var node = createNode
 	("Woah. Its like my phone. And it started ringing. \nOh. I clicked the button already. Yo?\n", 
 	"Are you waiting for your drop?\n", 1,
 	"I ran into some trouble, I’ll be \nthere soon though.\n", 5,
-	"Hi, I’m from the neighborhood watch \nhere in town, I was wondering \nif you could help me with some \nquestionsn", 9);
+	"Hi, I’m from the neighborhood watch \nhere in town, I was wondering \nif you could help me with some \nquestionsn", 9);  
 node.create();
 
 //A #1
@@ -174,47 +174,54 @@ createNode
 
 //A1 #2
 createNode
-	("Brehhh, You can get them anywhere man. \nI have this hook up who like, always \njust brings me my drops wherever and whenever \nI want them man! It’s like, the \npostal service! I’m actually, like, expecting \na drop soon bro. Wait… dude… why are we \ntalking about drops again? \nAre you giving me a drop? Drops.\n",
-	"End call\n", -1);
+	("Brehhh, You can get them anywhere man. \nI have this hook up who like, always \njust brings me my drops wherever and \nwhenever I want them man! It’s like, the \npostal service! I’m actually, like, \nexpecting a drop soon bro. Wait… dude… \nwhy are we talking about drops again? \nAre you giving me a drop? Drops.\n",
+	"\n\n\n\n\n\n\nEnd call\n", -1);
 
 //A2 #3
 createNode
 	("Duuuude! You don’t know about them? \nThey’re like the tightest shit evaaaa. \nLike, I dont even know whats in them! \nAlls I know is that they are the best thing \nI’ve had since, like… that one time \nI took a roadtrip down to like Santa… \nSanta… Santa something.... \nShit when was that? Breh. You need \nthese drops. We need to go get some \nfucking drops. I need these drops.\n",
-	"End call\n", -2);
+	"\n\n\n\n\n\n\End call\n", -2);
 
 //A3 #4
 createNode
-	("Me? Naaaaaa I’m good man I’m good. Like, I have everything i need just where I am. Other people just make things, like, complicated. I don’t like, like, complications man. Ya feel me breh? Yeah.","End call\n", -3);
+	("Me? Naaaaaa I’m good man I’m good. \nLike, I have everything I need just where I am. \nOther people just make things, like, \ncomplicated. I don’t, like, like complications \nman. Ya feel me breh? Yeah.",
+	"\n\n\n\n\n\n\End call\n", -3);
 
 //B #5
-createNode("Woah man I’m not expecting no one here. Like… hold up a \mbit, man. Give me some time… Let me take this all in. \nThen, like, then… Then ill go find you man. Don’t you \nworry about that. I have everything you could possibly \mneed to keep you going for the night, bro.\n", 
+createNode("Woah man I’m not expecting no one here. \nLike… hold up a bit, man. Give me some time… \nLet me take this all in. \nThen, like, then… Then ill go find you man. \nDon’t you worry about that. I have everything \nyou could possibly \mneed to keep you going for the night, bro.\n", 
 	"What do you have?\n", 6,
 	"Like, you were expecting me weren’t you?\n", 7,
 	"Do you know who I am?\n", 8);
 
 //B1 #6
-createNode("Only the finest product in this here city. I swear every time I take some of this it feels like I’m walking with, like, that one guy… In like the sky. You know. The one with the book about him. What’s his name….Like… Whatever man. I have anything you want. Just drop on by… just later. Not now. I’m busy now….","End call\n", -4);
+createNode("Only the finest product in this here city. \nI swear every time I take some of this \nit feels like I’m walking with, \nlike, that one guy… In like the sky. \nYou know. The one with \nthe book about him. What’s his name… \nLike… Whatever man. I have anything \nyou want. Just drop on by… just later. \nNot now. I’m busy now….\n",
+	"\n\n\n\n\n\n\End call\n", -4);
 
 //B2 #7
-createNode("Bro. I wasn’t expecting anybody. All I was doing was minding my own business here. I’m having a little fun, ya know? I’m not really in the state of mind to be conversationaling with people of you, comprende? Yeah you do. Next time though… I’ll make sure to get you whatever you want though...","End call\n", -5);
+createNode("Bro. I wasn’t expecting anybody. \nAll I was doing was minding my own business \nhere. I’m having a little fun, ya know? \nI’m not really in the state of mind \nto be conversationaling with people of you, comprende? \nYeah you do. Next time though… \nI’ll make sure to get you whatever \nyou want though...\n",
+	"\n\n\n\n\n\n\End call\n", -5);
 
 //B3 #8
-createNode("Yeah of course I do man! You’re, like… That one guy I met the other day. On the… no… It was near the, like, uhh…. Yeah. You’re that one dude I met at that party in…. That one chick’s place….. Bro I’m drawing a blank. I’ll just ask that chick again. Yeah. I’ll catch you later I’m off to go ask her who you are.","End call\n", -6);
+createNode("Yeah of course I do man! You’re, like… \nThat one guy I met the other day. \nOn the… no… It was near the, like, uhh…. Yeah. \nYou’re that one dude I met at that party in…. \nThat one chick’s place….. Bro I’m drawing a blank. \nI’ll just ask that chick again. Yeah. \nI’ll catch you later. \nI’m off to go ask her who you are.\n",
+	"\n\n\n\n\n\n\End call\n", -6);
 
 //C #9
-createNode("Nuh uh! Noooo Way! I’m, like, not helping you watch anything man. Don’t you, like, get that you’re part of the problem? You are the, like, long arm of the law just like drying to be a downer on us! Like, What would I even be watching anyways?", 
-"Well you would be watching out for anything you might consider out of place. Perhaps a deal of some sort going down. Like someone out of place. ", 10,
-"Well… Is that what you want to go with? I feel like you might have something to hide...", 11,
-"You know what? You’re right. I didn’t want to do this anyways. Agh but first I need to at least finish this shift, mind helping out? ……. Bro.", 12);
+createNode("Nuh uh! Noooo Way! I’m, like, \nnot helping you watch anything man. Don’t you, \nlike, get that you’re part of the problem? \nYou are the, like, long arm of the law \njust like drying to be a downer on us! \nLike, What would I even be watching anyways?\n", 
+	"Well you would be watching out for \nanything you might consider out \nof place. Perhaps a deal of some sort \ngoing down. Anything like that?\n", 10,
+	"Well… Is that what you want to go with? \nI feel like you might have something to hide...", 11,
+	"You know what? You’re right. \nI didn’t want to do this anyway. \nAgh but first I need to at least finish this shift, \nmind helping out? ……. Bro.\n", 12);
 
 //C1 #10
-createNode("I don’t know. I see deals going down all the time! I mean they’re usually the one’s giving me stuff but, like, I see them. In, like, first person bro. Kind of like those games with the guns. Where you look at other people with their eyes. Yeah…. I’ll tell you the next time I ever get any drops okay? Alright. Catch you then.","End call\n", -7);
+createNode("I don’t know. I see deals going down \nall the time! I mean they’re \nusually the one’s giving \nme stuff but, like, I see them. \nIn, like, first person bro. Kind of like those \ngames with the guns. Where you look at \nother people with their eyes. \nYeah…. I’ll tell you the next time I ever get \nany drops okay? Alright. Catch you then.\n",
+	"\n\n\n\n\n\n\End call\n", -7);
 
 //C2 #11
-createNode("Me? Hide anything? Na man. I’m an open book. You know. Like those books with the red dog. Or, like, the ones with the pop ups! Yeah man… Those are my favorite books to read whenever I’m H….. nice try mister Night Stalker… Trying to get me to admit to illegal activities. Nice try!","End call\n", -8);
+createNode("Me? Hide anything? Na man. I’m an open book. \nYou know. Like those books with the red dog. \nOr, like, the ones with the pop ups! \nYeah man… Those are my favorite books to read \nwhenever I’m hi… nice try mister Night Stalker… \nTrying to get me to admit to illegal activities. \nNice try!\n",
+	"\n\n\n\n\n\n\End call\n", -8);
 
 //C3 #12
-createNode("Right on, Bro! So, like, I know this area pretty well And like… I haven’t seen anything today from where i’ve been. So, like, hurry up and get off that chain of yours and HMU if you’re ever in need of anything…. you know. Like, fun.","End call\n", -9);
+createNode("Right on, Bro! So, like, I know this \narea pretty well And like… I haven’t \nseen anything today from where I’ve been. \nSo, like, hurry up and get off that chain of yours \nand HMU if you’re ever in need of anything…. \nyou know. Like, fun.",
+	"\n\n\n\n\n\n\End call\n", -9);
 	}
 	
 	// End the dialogue
@@ -222,47 +229,45 @@ createNode("Right on, Bro! So, like, I know this area pretty well And like… I 
 		world.removeChild(black_screen);
 		
 		world.addChild(level_01_D.ret);
-		world.addChild(level_01_D.button_call);
 		active_sprites.push(level_01_D.ret);
-		active_sprites.push(level_01_D.button_call);
 		active_sprites.push(level_01_D.button_fire);
 		
 		level_01_hub.targetD_in_call = false;
 		level_01_D.pickEnding(ending);
-		//alert("Notepad: " + level_01_hub.targetD_ending_info);
+		clear_array();
 	}
 	
 	level_01_D.pickEnding = function(ending) {
 		switch(ending){
 			case 1:
-				level_01_hub.targetD_ending_info += "\nIs he really just enjoying the view?";
+				level_01_hub.targetD_ending_info += "\nTarget D:Is he really just enjoying the view?";
 				break;
 			case 2: 
-				level_01_hub.targetD_ending_info += "";
+				level_01_hub.targetD_ending_info += "\nTarget D: something";
 				break;
 			case 3:
-				level_01_hub.targetD_ending_info += "\nHe has a wife. He’s new to the Area?";
+				level_01_hub.targetD_ending_info += "\nTarget D:He has a wife. He’s new to the Area?";
 				break;
 			case 4:
-				level_01_hub.targetD_ending_info += "\nReally into drops. Expecting one soon?";
+				level_01_hub.targetD_ending_info += "\nTarget D:Really into drops. Expecting one soon?";
 				break;
 			case 5:
-				level_01_hub.targetD_ending_info += "\nReally, really into drops. \nHe doesn’t know what’s in them?";
+				level_01_hub.targetD_ending_info += "\nTarget D:Really, really into drops. \nHe doesn’t know what’s in them?";
 				break;
 			case 6:
-				level_01_hub.targetD_ending_info += "\nSays he doesn’t have a partner he’s waiting for.";
+				level_01_hub.targetD_ending_info += "\nTarget D:Says he doesn’t have a partner he’s waiting for.";
 				break;
 			case 7:
-				level_01_hub.targetD_ending_info += "\n\“Drop on by?\”, He’s either a genius or an Idiot. Maybe both?";
+				level_01_hub.targetD_ending_info += "\nTarget D:\“Drop on by?\”, He’s either a genius or an Idiot. Maybe both?";
 				break;
 			case 8:
-				level_01_hub.targetD_ending_info += "";
+				level_01_hub.targetD_ending_info += "\nTarget D: something";
 				break;
 			case 9:
-				level_01_hub.targetD_ending_info += "\n\“Is this guy for real? Can he REALLY be it?\"";
+				level_01_hub.targetD_ending_info += "\nTarget D:\“Is this guy for real? Can he REALLY be it?\"";
 				break;
 	}}
-	
+		
 	/***===================================***/
 	/***         room.playAudio()          ***/
 	/***===================================***/

@@ -155,6 +155,10 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 		active_sprites.pop();
 		active_sprites.pop();
 	}
+	
+	clear_array = function() {
+		nodes = [];
+	}
 	nodes.push(node);
 	return node;
 }

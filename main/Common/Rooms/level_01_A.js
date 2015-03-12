@@ -247,9 +247,8 @@ var level_01_A = new Sprite();
 			("I... don't know what you mean. \nI have enough on my mind... \njust... leave me be\n","-End call\n", -7);//ending 7
 		
 		createNode //Index:11
-			("That's fine. Its not like \nI wanted anyone to call me anyways... \nGood luck with your partner and all. \nI didn't have any of that\n", "End call\n", -8);//ending 8
+			("That's fine. Its not like \nI wanted anyone to call me any ways... \nGood luck with your partner and all. \nI didn't have any of that\n", "End call\n", -8);//ending 8
 	}
-
 	/***==============================***/
 	/***       room.endDialogue()     ***/
 	/***==============================***/
@@ -259,44 +258,42 @@ var level_01_A = new Sprite();
 		world.removeChild(black_screen);
 		
 		world.addChild(level_01_A.ret);
-		world.addChild(level_01_A.button_call);
 		active_sprites.push(level_01_A.ret);
-		active_sprites.push(level_01_A.button_call);
 		active_sprites.push(level_01_A.button_fire);
 		
 		level_01_hub.targetA_in_call = false;
 		level_01_A.pickEnding(ending);
-		//alert("Notepad: " + level_01_hub.targetA_ending_info);
+		clear_array();
 	}
 	
 	level_01_A.pickEnding = function(ending) {
 		switch(ending){
 			case 1:
-				level_01_hub.targetA_ending_info += "\nAppear to sound timid. \nDoes this sound like a hardened criminal?";
+				level_01_hub.targetA_ending_info += "\n Target A:Does this sound like a hardened criminal?";
 				break;
 			case 2: //He doesn’t need anyone?\nWhat could he mean by that?
-				level_01_hub.targetA_ending_info += "\nHe doesn’t need anyone?\nWhat could he mean by that?";
+				level_01_hub.targetA_ending_info += "\nTarget A:He doesn’t need anyone?\nWhat could he mean by that?";
 				break;
 			case 3:
-				level_01_hub.targetA_ending_info += "\nHe doesn’t know what he’s here for? \nIs he feigning ignorance?";
+				level_01_hub.targetA_ending_info += "\nTarget A:He doesn’t know what he’s here for? \nIs he feigning ignorance?";
 				break;
 			case 4:
-				level_01_hub.targetA_ending_info += "\nI thought most members of the mob used that…Maybe not.";
+				level_01_hub.targetA_ending_info += "\nTarget A:I thought most members of the mob used that…Maybe not.";
 				break;
 			case 5:
-				level_01_hub.targetA_ending_info += "\nWas he expecting someone else?";
+				level_01_hub.targetA_ending_info += "\nTarget A:Was he expecting someone else?";
 				break;
 			case 6:
-				level_01_hub.targetA_ending_info += "\nDid I blow my cover? Possibly but…";
+				level_01_hub.targetA_ending_info += "\nTarget A:Did I blow my cover? Possibly but…";
 				break;
 			case 7:
-				level_01_hub.targetA_ending_info += "\n";
+				level_01_hub.targetA_ending_info += "\nTarget A:";
 				break;
 			case 8:
-				level_01_hub.targetA_ending_info += "\n";
+				level_01_hub.targetA_ending_info += "\nTarget A:";
 				break;
 			case 9:
-				level_01_hub.targetA_ending_info += "\n";
+				level_01_hub.targetA_ending_info += "\nTarget A:";
 				break;
 				}
 	}
