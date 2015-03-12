@@ -17,6 +17,78 @@ var level_01_hub = new Sprite();
 	/***==================================***/
 	// What to do at room creation time
 	level_01_hub.create = function() {
+			
+		/***=================================***/
+		/***           Level timer           ***/
+		/***=================================***/
+		// Time limit for the level
+		level_01_hub.level_timer = new Sprite();
+		level_01_hub.level_timer.value = 14400;
+		level_01_hub.level_timer.update = function() {
+			level_01_hub.level_timer.value--;
+			if(level_01_hub.level_timer.value < 0) {
+				level_01_hub.level_timer.value = 14400;
+				alert("game over!!!! fuck franz");
+				room_manager.curr_room.stopAudio();
+				world.removeChild(level_01_hub.level_timer);
+				world.removeChild(level_01_hub.target_loop);
+				changeRoom(title_screen);
+			}
+		};
+		
+		// Timer text box
+		level_01_hub.timer_text = new TextBox("Time: ");
+		level_01_hub.timer_text.font = "Courier";
+		level_01_hub.timer_text.fontSize = 30;
+		level_01_hub.timer_text.color = "White";
+		level_01_hub.timer_text.x = 860;
+		level_01_hub.timer_text.y = 4;
+		level_01_hub.timer_text.update = function() {
+			level_01_hub.timer_text.text = "Time: " + Math.round(level_01_hub.level_timer.value/60);
+		};
+		
+		/***=================================***/
+		/***       Animation time loop       ***/
+		/***=================================***/
+		// Timing dependencies for animations
+		level_01_hub.target_loop = new Sprite();
+		level_01_hub.target_loop.value = 0;
+		level_01_hub.target_x = 0;
+		level_01_hub.target_y = 0;
+		
+		level_01_hub.target_loop.update = function() {
+			if(level_01_hub.targetA_in_call == false
+				&& level_01_hub.targetB_in_call == false
+				&& level_01_hub.targetC_in_call == false
+				&& level_01_hub.targetD_in_call == false) { // stops when in call
+				level_01_hub.target_loop.value++;
+				if(level_01_hub.target_loop.value == 3600) { // loop every minute
+					level_01_hub.target_loop.value = 0;
+				}
+			}
+			
+			// Target C position tracker
+			if(level_01_hub.targetA_in_call == false
+				&& level_01_hub.targetB_in_call == false
+				&& level_01_hub.targetC_in_call == false
+				&& level_01_hub.targetD_in_call == false) {
+				if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
+					|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
+					|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
+					|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
+					level_01_hub.target_x += .25;
+					level_01_hub.target_y -= .25;
+				}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
+						 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
+						 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
+						 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
+					level_01_hub.target_x -= .25;
+					level_01_hub.target_y += .25;
+				}
+			}
+		}
+		world.addChild(level_01_hub.target_loop);
+	
 		/***=================================***/
 		/***         Passive sprites         ***/
 		/***=================================***/
@@ -206,6 +278,8 @@ var level_01_hub = new Sprite();
 		world.addChild(level_01_hub.button_iconB);
 		world.addChild(level_01_hub.button_iconC);
 		world.addChild(level_01_hub.button_iconD);
+		world.addChild(level_01_hub.level_timer);
+		world.addChild(level_01_hub.timer_text);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_hub.button_notes);
@@ -328,48 +402,6 @@ var level_01_hub = new Sprite();
 		});
 	}
 	
-	/***=================================***/
-	/***       Animation time loop       ***/
-	/***=================================***/
-	// Timing dependencies for animations
-	level_01_hub.target_loop = new Sprite();
-	level_01_hub.target_loop.value = 0;
-	level_01_hub.target_x = 0;
-	level_01_hub.target_y = 0;
-	
-	level_01_hub.target_loop.update = function() {
-		if(level_01_hub.targetA_in_call == false
-			&& level_01_hub.targetB_in_call == false
-			&& level_01_hub.targetC_in_call == false
-			&& level_01_hub.targetD_in_call == false) { // stops when in call
-			level_01_hub.target_loop.value++;
-			if(level_01_hub.target_loop.value == 3600) { // loop every minute
-				level_01_hub.target_loop.value = 0;
-			}
-		}
-		
-		// Target C position tracker
-		if(level_01_hub.targetA_in_call == false
-			&& level_01_hub.targetB_in_call == false
-			&& level_01_hub.targetC_in_call == false
-			&& level_01_hub.targetD_in_call == false) {
-			if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
-				|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
-				|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
-				|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
-				level_01_hub.target_x += .25;
-				level_01_hub.target_y -= .25;
-			}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
-					 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
-					 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
-					 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
-				level_01_hub.target_x -= .25;
-				level_01_hub.target_y += .25;
-			}
-		}
-	}
-	world.addChild(level_01_hub.target_loop);
-
 	/***===============================***/
 	/***       Information seen        ***/
 	/***===============================***/

@@ -175,6 +175,9 @@ var level_01_C = new Sprite();
 		}
 		level_01_C.button_fire.click = function() {
 			level_01_C.stopAudio();
+			world.removeChild(level_01_hub.level_timer);
+			world.removeChild(level_01_hub.target_loop);
+			world.removeChild(level_01_hub.timer_text);
 			world.removeChild(red_screen);
 			level_01_hub.ending_state = 3;
 			changeRoom(level_01_end);
