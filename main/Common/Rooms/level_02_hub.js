@@ -229,6 +229,7 @@ var level_02_hub = new Sprite();
 		world.addChild(level_02_hub.button_iconC);
 		world.addChild(level_02_hub.button_iconD);
 		world.addChild(level_02_hub.button_iconE);
+		world.addChild(level_02_hub.timer_text);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_02_hub.button_notes);
@@ -243,6 +244,99 @@ var level_02_hub = new Sprite();
 			level_02_hub.playAudio();
 		
 	}
+	
+	/***=================================***/
+	/***           Level timer           ***/
+	/***=================================***/
+	// Time limit for the level
+	level_02_hub.level_timer = new Sprite();
+	level_02_hub.level_timer.value = 14400;
+	level_02_hub.level_timer.update = function() {
+		if(room_manager.curr_room == level_02_hub
+			|| room_manager.curr_room == level_02_A
+			|| room_manager.curr_room == level_02_B
+			|| room_manager.curr_room == level_02_C
+			|| room_manager.curr_room == level_02_D
+			|| room_manager.curr_room == level_02_E) {
+			level_02_hub.level_timer.value--;
+			if(level_02_hub.level_timer.value < 0) {
+				level_02_hub.level_timer.value = 14400;
+				alert("Game Over");
+				room_manager.curr_room.stopAudio();
+				world.removeChild(level_02_hub.level_timer);
+				world.removeChild(level_02_hub.target_loop);
+				changeRoom(title_screen);
+			}
+		}
+	};
+	
+	world.addChild(level_02_hub.level_timer);
+	
+	// Timer text box
+	level_02_hub.timer_text = new TextBox("Time: ");
+	level_02_hub.timer_text.font = "Courier";
+	level_02_hub.timer_text.fontSize = 30;
+	level_02_hub.timer_text.color = "White";
+	level_02_hub.timer_text.x = 860;
+	level_02_hub.timer_text.y = 4;
+	level_02_hub.timer_text.update = function() {
+		level_02_hub.timer_text.text = "Time: " + Math.round(level_02_hub.level_timer.value/60);
+	};
+	
+	/***=================================***/
+	/***       Animation time loop       ***/
+	/***=================================***/
+	// Timing dependencies for animations
+	level_02_hub.target_loop = new Sprite();
+	level_02_hub.target_loop.value = 0;
+	level_02_hub.target_x = 0;
+	level_02_hub.target_y = 0;
+	
+	level_02_hub.target_loop.update = function() {
+		if(room_manager.curr_room == level_02_hub
+			|| room_manager.curr_room == level_02_A
+			|| room_manager.curr_room == level_02_B
+			|| room_manager.curr_room == level_02_C
+			|| room_manager.curr_room == level_02_D
+			|| room_manager.curr_room == level_02_E) {
+			if(level_02_hub.targetA_in_call == false
+				&& level_02_hub.targetB_in_call == false
+				&& level_02_hub.targetC_in_call == false
+				&& level_02_hub.targetD_in_call == false
+				&& level_02_hub.targetE_in_call == false) { // stops when in call
+				level_02_hub.target_loop.value++;
+				if(level_02_hub.target_loop.value == 3600) { // loop every minute
+					level_02_hub.target_loop.value = 0;
+				}
+			}
+		}
+		
+		// Target A position tracker
+		if(room_manager.curr_room == level_02_hub
+			|| room_manager.curr_room == level_02_A
+			|| room_manager.curr_room == level_02_B
+			|| room_manager.curr_room == level_02_C
+			|| room_manager.curr_room == level_02_D
+			|| room_manager.curr_room == level_02_E) {
+			if(level_02_hub.targetA_in_call == false
+				&& level_02_hub.targetB_in_call == false
+				&& level_02_hub.targetC_in_call == false
+				&& level_02_hub.targetD_in_call == false
+				&& level_02_hub.targetE_in_call == false) {
+				if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
+					|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
+					level_02_hub.target_x -= .5;
+					level_02_hub.target_y -= .25;
+				}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1200)		// 15 to 20 secs
+						 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3000)) {// 45 to 50 secs
+					level_02_hub.target_x += .5;
+					level_02_hub.target_y += .25;
+				}
+			}
+		}
+	};
+	
+	world.addChild(level_02_hub.target_loop);
 	
 	/***===============================***/
 	/***        room.readNotes()       ***/
@@ -305,47 +399,7 @@ var level_02_hub = new Sprite();
 		// Push the active sprites onto the array as well...
 		active_sprites.push(level_02_hub.close_notes);
 	}
-	
-	/***=================================***/
-	/***       Animation time loop       ***/
-	/***=================================***/
-	// Timing dependencies for animations
-	level_02_hub.target_loop = new Sprite();
-	level_02_hub.target_loop.value = 0;
-	level_02_hub.target_x = 0;
-	level_02_hub.target_y = 0;
-	
-	level_02_hub.target_loop.update = function() {
-		if(level_02_hub.targetA_in_call == false
-			&& level_02_hub.targetB_in_call == false
-			&& level_02_hub.targetC_in_call == false
-			&& level_02_hub.targetD_in_call == false
-			&& level_02_hub.targetE_in_call == false) { // stops when in call
-			level_02_hub.target_loop.value++;
-			if(level_02_hub.target_loop.value == 3600) { // loop every minute
-				level_02_hub.target_loop.value = 0;
-			}
-		}
 		
-		// Target A position tracker
-		if(level_02_hub.targetA_in_call == false
-			&& level_02_hub.targetB_in_call == false
-			&& level_02_hub.targetC_in_call == false
-			&& level_02_hub.targetD_in_call == false
-			&& level_02_hub.targetE_in_call == false) {
-			if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
-				|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
-				level_02_hub.target_x -= .5;
-				level_02_hub.target_y -= .25;
-			}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1200)		// 15 to 20 secs
-					 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3000)) {// 45 to 50 secs
-				level_02_hub.target_x += .5;
-				level_02_hub.target_y += .25;
-			}
-		}
-	}
-	world.addChild(level_02_hub.target_loop);
-	
 	/***===================================***/
 	/***         room.playAudio()          ***/
 	/***===================================***/
@@ -406,6 +460,7 @@ var level_02_hub = new Sprite();
 		world.removeChild(level_02_hub.button_iconC);
 		world.removeChild(level_02_hub.button_iconD);
 		world.removeChild(level_02_hub.button_iconE);
+		world.removeChild(level_02_hub.timer_text);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		

@@ -143,6 +143,7 @@ var level_01_D = new Sprite();
 		world.addChild(level_01_D.ret);
 		world.addChild(level_01_D.button_call);
 		world.addChild(level_01_D.button_fire);
+		world.addChild(level_01_hub.timer_text);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_D.ret);
@@ -315,6 +316,7 @@ createNode("Right on, Bro! So, like, I know this \narea pretty well And like… 
 		world.removeChild(level_01_D.ret);
 		world.removeChild(level_01_D.button_call);
 		world.removeChild(level_01_D.button_fire);
+		world.removeChild(level_01_hub.timer_text);
 		world.removeChild(level_01_D.red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();

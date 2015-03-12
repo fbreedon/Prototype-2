@@ -172,6 +172,7 @@ var level_01_B = new Sprite();
 		world.addChild(level_01_B.ret);
 		world.addChild(level_01_B.button_call);
 		world.addChild(level_01_B.button_fire);
+		world.addChild(level_01_hub.timer_text);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_B.ret);
@@ -252,6 +253,7 @@ var level_01_B = new Sprite();
 		world.removeChild(level_01_B.ret);
 		world.removeChild(level_01_B.button_call);
 		world.removeChild(level_01_B.button_fire);
+		world.removeChild(level_01_hub.timer_text);
 		world.removeChild(red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();

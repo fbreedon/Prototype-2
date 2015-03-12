@@ -200,6 +200,9 @@ var level_02_A = new Sprite();
 		}
 		level_02_A.button_fire.click = function() {
 			world.removeChild(red_screen);
+			world.removeChild(level_02_hub.level_timer);
+			world.removeChild(level_02_hub.target_loop);
+			world.removeChild(level_02_hub.timer_text);
 			level_02_A.stopAudio();
 			changeRoom(level_02_end);
 		}
@@ -213,6 +216,7 @@ var level_02_A = new Sprite();
 		world.addChild(level_02_A.ret);
 		world.addChild(level_02_A.button_call);
 		world.addChild(level_02_A.button_fire);
+		world.addChild(level_02_hub.timer_text);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_02_A.ret);
@@ -305,6 +309,7 @@ var level_02_A = new Sprite();
 		world.removeChild(level_02_A.ret);
 		world.removeChild(level_02_A.button_call);
 		world.removeChild(level_02_A.button_fire);
+		world.removeChild(level_02_hub.timer_text);
 		world.removeChild(red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
