@@ -61,7 +61,11 @@ var level_02_D = new Sprite();
 			level_02_D.image_target_D.x = level_02_D.image_background.x + 500;
 			level_02_D.image_target_D.y = level_02_D.image_background.y + 320;
 			// Animation
-			if(level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2160) {	// 30 to 36 secs
+			if(level_02_hub.targetD_in_call == true) {
+				level_02_D.image_target_D.animation = "phone";
+				level_02_D.image_target_D.frameRate = 0;
+			}else if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<360)	// 0 to 6 secs
+					 || (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2160)) {	// 30 to 36 secs
 				level_02_D.image_target_D.animation = "drink";
 				level_02_D.image_target_D.frameRate = .5;
 			}else {
@@ -150,6 +154,7 @@ var level_02_D = new Sprite();
 		level_02_D.button_call.click = function() {
 			world.addChild(black_screen);
 			level_02_D.startDialogue();
+			level_02_hub.targetD_in_call = true;
 		}
 		
 		// Button to fire upon target
@@ -224,6 +229,7 @@ var level_02_D = new Sprite();
 		active_sprites.push(level_02_D.button_call);
 		active_sprites.push(level_02_D.button_fire);
 		
+		level_02_hub.targetD_in_call = false;
 		alert("This is the ending you chose: " + ending);
 	}
 	

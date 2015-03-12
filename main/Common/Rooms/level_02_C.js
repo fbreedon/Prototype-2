@@ -63,8 +63,10 @@ var level_02_C = new Sprite();
 			level_02_C.image_target_C.x = level_02_C.image_background.x + 480;
 			level_02_C.image_target_C.y = level_02_C.image_background.y + 340;
 			// Animation
-			if((level_02_hub.target_loop.value>=300 && level_02_hub.target_loop.value<480)	// 5 to 8 secs
-				|| (level_02_hub.target_loop.value>=2100 && level_02_hub.target_loop.value<2280)) {	// 35 to 38 secs
+			if(level_02_hub.targetC_in_call == true) {
+				level_02_C.image_target_C.animation = "phone";
+			}else if((level_02_hub.target_loop.value>=300 && level_02_hub.target_loop.value<480)	// 5 to 8 secs
+					 || (level_02_hub.target_loop.value>=2100 && level_02_hub.target_loop.value<2280)) {	// 35 to 38 secs
 				level_02_C.image_target_C.animation = "drink";
 			}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1380)	// 15 to 23 secs
 					 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3180)) {	// 45 to 53 secs
@@ -154,6 +156,7 @@ var level_02_C = new Sprite();
 		level_02_C.button_call.click = function() {
 			world.addChild(black_screen);
 			level_02_C.startDialogue(0);
+			level_02_hub.targetC_in_call = true;
 		}
 		
 		// Button to fire upon target
@@ -229,6 +232,7 @@ var level_02_C = new Sprite();
 		active_sprites.push(level_02_C.button_call);
 		active_sprites.push(level_02_C.button_fire);
 		
+		level_02_hub.targetC_in_call = false;
 		alert("This is the ending you chose: " + ending);
 	}
 	

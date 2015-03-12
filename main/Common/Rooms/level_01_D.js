@@ -49,14 +49,19 @@ var level_01_D = new Sprite();
 		level_01_D.image_target_D.frameWidth  = 24;
 		level_01_D.image_target_D.frameHeight = 64;
 		level_01_D.image_target_D.frameCount  = 2;
-		level_01_D.image_target_D.frameRate   = 2;
+		level_01_D.image_target_D.frameRate   = 0;
 		level_01_D.image_target_D.addAnimation("idle",0,3); 
 		level_01_D.image_target_D.update = function() {
 			// Background sway
 			level_01_D.image_target_D.x = level_01_D.image_background.x + 520;
 			level_01_D.image_target_D.y = level_01_D.image_background.y + 360;
 			// Animations
-			level_01_D.image_target_D.animation = "idle";
+			if(level_01_hub.targetD_in_call == true) {
+				level_01_D.image_target_D.frameRate = 0;
+			}else {
+				level_01_D.image_target_D.animation = "idle";
+				level_01_D.image_target_D.frameRate = 2;
+			}
 		};
 		
 		// This room's active sprites
@@ -101,6 +106,7 @@ var level_01_D = new Sprite();
 		level_01_D.button_call.click = function() {
 			world.addChild(black_screen);
 			level_01_D.startDialogue();
+			level_01_hub.targetD_in_call = true;
 		}
 		
 		level_01_D.button_fire = new TextBox("<< FIRE >>");

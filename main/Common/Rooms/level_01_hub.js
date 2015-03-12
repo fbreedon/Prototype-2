@@ -336,7 +336,10 @@ var level_01_hub = new Sprite();
 	level_01_hub.target_y = 0;
 	
 	level_01_hub.target_loop.update = function() {
-		if(level_01_hub.targetC_in_call == false) { // stops when in call
+		if(level_01_hub.targetA_in_call == false
+			&& level_01_hub.targetB_in_call == false
+			&& level_01_hub.targetC_in_call == false
+			&& level_01_hub.targetD_in_call == false) { // stops when in call
 			level_01_hub.target_loop.value++;
 			if(level_01_hub.target_loop.value == 3600) { // loop every minute
 				level_01_hub.target_loop.value = 0;

@@ -73,10 +73,15 @@ var level_02_B = new Sprite();
 			level_02_B.image_target_B.x = level_02_B.image_background.x + 540;
 			level_02_B.image_target_B.y = level_02_B.image_background.y + 330;
 			// Animation
-			if(level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1080) {	// 15 to 18 secs
+			if(level_02_hub.targetB_in_call == true) {
+				level_02_B.image_target_B.frameRate = 0;
+			}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1080)	// 15 to 18 secs
+				|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<1980)	// 30 to 33 secs
+				|| (level_02_hub.target_loop.value>=2580 && level_02_hub.target_loop.value<2880)) {	// 45 to 48 secs
 				level_02_B.image_target_B.animation = "watch";
 			}else if((level_02_hub.target_loop.value>=780 && level_02_hub.target_loop.value<900)	// 13 to 15 secs
 					 || (level_02_hub.target_loop.value>=1680 && level_02_hub.target_loop.value<1800)	// 28 to 30 secs
+					 || (level_02_hub.target_loop.value>=2580 && level_02_hub.target_loop.value<2700)	// 43 to 45 secs
 					 || (level_02_hub.target_loop.value>=3360 && level_02_hub.target_loop.value<3480)) {	// 56 to 58 secs
 				level_02_B.image_target_B.animation = "knuckles";
 			}else {
@@ -185,6 +190,7 @@ var level_02_B = new Sprite();
 		level_02_B.button_call.click = function() {
 			world.addChild(black_screen);
 			level_02_B.startDialogue();
+			level_02_hub.targetB_in_call = true;
 		}
 		
 		// Button to fire upon target
@@ -260,6 +266,7 @@ var level_02_B = new Sprite();
 		active_sprites.push(level_02_B.button_call);
 		active_sprites.push(level_02_B.button_fire);
 		
+		level_02_hub.targetB_in_call = false;
 		alert("This is the ending you chose: " + ending);
 	}
 	

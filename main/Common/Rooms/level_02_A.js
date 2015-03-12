@@ -67,7 +67,22 @@ var level_02_A = new Sprite();
 			level_02_A.image_target_A.y = 
 				level_02_A.image_background.y + level_02_A.image_target_A.y_move + 340;
 			// Animation
-			if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
+			if(level_02_hub.targetA_in_call == true) {
+				if(level_02_A.image_target_A.animation == "walk_back"
+					|| level_02_A.image_target_A.animation == "smoke_back") {
+					level_02_A.image_target_A.animation = "phone_back";
+					level_02_A.image_target_A.frameRate = 0;
+					level_02_A.image_target_A.x_move = level_02_hub.target_x;
+					level_02_A.image_target_A.y_move = level_02_hub.target_y;
+				}
+				if(level_02_A.image_target_A.animation == "walk_front"
+					|| level_02_A.image_target_A.animation == "smoke_front") {
+					level_02_A.image_target_A.animation = "phone_front";
+					level_02_A.image_target_A.frameRate = 0;
+					level_02_A.image_target_A.x_move = level_02_hub.target_x;
+					level_02_A.image_target_A.y_move = level_02_hub.target_y;
+				}
+			}else if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
 				|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
 				level_02_A.image_target_A.animation = "walk_back";
 				level_02_A.image_target_A.frameRate = 2;
@@ -163,6 +178,7 @@ var level_02_A = new Sprite();
 		level_02_A.button_call.click = function() {
 			world.addChild(black_screen);
 			level_02_A.startDialogue();
+			level_02_hub.targetA_in_call = true;
 		}
 		
 		// Button to fire upon target
@@ -237,6 +253,7 @@ var level_02_A = new Sprite();
 		active_sprites.push(level_02_A.button_call);
 		active_sprites.push(level_02_A.button_fire);
 		
+		level_02_hub.targetA_in_call = false;
 		alert("This is the ending you chose: " + ending);
 	}
 	

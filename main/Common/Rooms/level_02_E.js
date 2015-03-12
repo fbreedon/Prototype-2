@@ -1,4 +1,3 @@
-
 /***===============================***/
 /***       Level 01: target A      ***/
 /***===============================***/
@@ -62,8 +61,12 @@ var level_02_E = new Sprite();
 			level_02_E.image_target_E.x = level_02_E.image_background.x + 540;
 			level_02_E.image_target_E.y = level_02_E.image_background.y + 280;
 			// Animation
-			if((level_02_hub.target_loop.value>=1200 && level_02_hub.target_loop.value<1680)	// 20 to 28 secs
-				|| level_02_hub.target_loop.value>=3000 && level_02_hub.target_loop.value<3480) {	// 50 to 58 secs
+			if(level_02_hub.targetE_in_call == true) {
+				level_02_E.image_target_E.animation = "phone";
+				level_02_E.image_target_E.frameRate = 0;
+			}else if((level_02_hub.target_loop.value>=600 && level_02_hub.target_loop.value<1080)	// 10 to 18 secs
+					 || (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2280)	// 30 to 28 secs
+					 || (level_02_hub.target_loop.value>=3000 && level_02_hub.target_loop.value<3480)) {	// 50 to 58 secs
 				level_02_E.image_target_E.animation = "smoking";
 				level_02_E.image_target_E.frameRate = .8;
 			}else {
@@ -145,6 +148,7 @@ var level_02_E = new Sprite();
 		level_02_E.button_call.click = function() {
 			world.addChild(black_screen);
 			level_02_E.startDialogue();
+			level_02_hub.targetE_in_call = true;
 		}
 		
 		// Button to fire upon target
@@ -219,6 +223,7 @@ var level_02_E = new Sprite();
 		active_sprites.push(level_02_E.button_call);
 		active_sprites.push(level_02_E.button_fire);
 		
+		level_02_hub.targetE_in_call = false;
 		alert("This is the ending you chose: " + ending);
 	}
 	
