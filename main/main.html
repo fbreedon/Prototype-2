@@ -3,6 +3,11 @@
 <head>
 	<title>CMPM20: "Outline" Prototype</title>
 	<meta charset = "utf-8">
+	<style type="text/css"> 
+		body {background-color:black}
+		body{margin:0;padding:0}
+		#body{width:1080px; margin:auto} 
+	</style>
 	
 	<!-- Global source files -->
 	<script src="./Common/brine.js"></script>
@@ -38,8 +43,11 @@
 	<script src="main.js"></script>
 </head>
 
+ <div id="test">
 <body onload = "initGame('canvas');">
-<canvas id="canvas" width="1080" height="720" style="border:solid black;">
-	You'll see this if there's a problem.
-	</canvas>
+	<div id = "body">
+		<canvas id="canvas" width="1080" height="720" style="border:solid black;">
+			You'll see this if there's a problem.
+		</canvas>
+	</div>
 </body>

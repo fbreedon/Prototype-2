@@ -214,6 +214,7 @@ var level_01_hub = new Sprite();
 		/***===================================***/
 		// This room's audio objects		
 		level_01_hub.sound_boop01 = new Audio("./Common/Sounds/boop01.wav");
+		level_01_hub.sound_boop01.volume = 0.5;
 		
 		/***===     End of audio objects    ===***/
 		
