@@ -235,11 +235,67 @@ var level_02_A = new Sprite();
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		
-		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
-		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+var node = createNode  // Index: 0
+			("Hello?", 
+			 "Pretend to be from a church-- \nHello sir, We are part of local \nchurch and we we’re wondering if you or anyone \nyou know might be willing to volunteer or \ndonate to our establishment? We’re preparing for \nour next event and we’re both\n" , 1, 
+			 "Pretend to be his superior--\nLook, no time to explain, we need back up. Know anyone?", 2,
+			 "Be direct-- \nSo are you the hired muscle?\n", 3);
 		node.create();
-	}
+		
+		createNode     // Index: 1
+			("Na man. I’m sorry but I don’t have \nmuch to give right now. \nI’m trying to make ends meet.\n",
+			 "Assure him--\nDo not worry, the faithful are always \nlooked out for.", 4,
+			 "Ask about himself--\nThat is okay child, If I may ask, \nhow are you accomplishing this task?\n", 5,
+			 "Apologize--\nI am sorry to hear that. If you ever \nneed extra assistance do not be ashamed \nto come to us.\n", 6);
+	    
+		createNode   //Index: 2
+			("What? Where? Yeah I know people \nbut like… I need more information\n to go off of. What the hell is going on?\n",
+			"Ask about who he’s with-- \nWe need more men. Anyone with you?\n", 7,
+			"Ask about himself--\nWhat, exactly, are you doing right now?\n", 8,
+			"pretend it’s urgent--\nLook. We need you right now\n", 9);
+		
+		createNode	//Index: 3
+			("Hired muscle? Who the hell is this? \nWhat the actual fuck?\n",
+			"threaten him--\nDescribe to me who’s in charge and you \nwon’t be hurt. I can’t say much for \nthem, however.\n", 10,
+			"Ask about who he’s protecting--\nWho exactly are you protecting. \nWho are they to you?", 11, 
+			"press him for an answer-- \nYou didn’t answer my question. Answer it. Now", 12) 
+		
+		createNode //Index: 4
+			("Well, I can’t say I really feel \nlooked out for. Too much shi-- stuff \nhas happened for me to think \nthat way\n",
+			"-End call\n", -1);//ending 1
+			
+		createNode //Index: 5
+			("Is it your place to ask this? \nI do what I need to do to survive. \nThats all you need to know. \nYou’re no priest and this is no confessional\n", 
+			"-End call\n", -2);//ending 2
+		
+		createNode //Index: 6
+			("I’ve never come to you before \nwhy would I start now. I’m wasting my \ntime with this. Panhandle other people.\n", 
+			"-End call\n", -3);//ending 3
 
+		createNode //Index: 7
+			("Me? I’m only with Chuy making sure nothing goes wrong with this deal. I don’t know what I can do to help though you might have to call other people.", 
+			"End call\n",-4);//ending 4
+		
+		createNode //Index: 8
+			("I’m just watching over a deal. \nNothing has gone wrong so far but the \nboss doesn’t seem to be taking \nthis too seriously. Look I’m not sure \nif I’m in a position to help.\n",
+			"-End call\n", -5);//ending 5
+		
+		createNode //Index: 9
+			("Look I can’t. I’m not going to risk \nmy job nor my life for whatever \nthe fuck it is that’s happening over \nthere.\n", 
+			"End call\n",-6);//ending 6
+		
+		createNode //Index: 10
+			("The boss? You can’t… Yeah, the boss. \nThe boss is the one in the black \njacket and blue jeans…\n",
+			"-End call\n", -7);//ending 7
+		
+		createNode //Index: 11
+			("I’m… I’m protecting my bosses \nI can’t say much. Just. I have \na family. They aren’t worth it to me.\n", 
+			"End call\n", -8);//ending 8
+			
+		creatNode //Index: 12
+			("Well I sure as hell ain’t the boss. \nLook I’m no one. I don’t know what \nyou’re planning leave me out of it.", 
+			"-End call\n",-12);
+}
 	/***==============================***/
 	/***       room.endDialogue()     ***/
 	/***==============================***/
