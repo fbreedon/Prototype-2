@@ -227,16 +227,19 @@ var level_01_hub = new Sprite();
 	/***=================================***/
 	// Time limit for the level
 	level_01_hub.level_timer = new Sprite();
-	level_01_hub.level_timer.value = 14400;
+	level_01_hub.level_timer.value = 0;
 	level_01_hub.level_timer.update = function() {
 		if(room_manager.curr_room == level_01_hub
 			|| room_manager.curr_room == level_01_A
 			|| room_manager.curr_room == level_01_B
 			|| room_manager.curr_room == level_01_C
 			|| room_manager.curr_room == level_01_D) {
-			level_01_hub.level_timer.value--;
-			if(level_01_hub.level_timer.value < 0) {
-				level_01_hub.level_timer.value = 14400;
+			level_01_hub.level_timer.value++;
+			if(level_01_hub.level_timer.value > 7200) { // 2 minutes
+				level_01_hub.timer_text.color = "Red";
+			}
+			if(level_01_hub.level_timer.value > 10800) { // 3 minutes
+				level_01_hub.level_timer.value = 0;
 				alert("Game Over");
 				room_manager.curr_room.stopAudio();
 				world.removeChild(level_01_hub.level_timer);
@@ -246,18 +249,19 @@ var level_01_hub = new Sprite();
 		}
 	};
 	
+	world.addChild(level_01_hub.level_timer);
+	
 	// Timer text box
-	level_01_hub.timer_text = new TextBox("Time: ");
+	level_01_hub.timer_text = new TextBox("11:30 PM");
 	level_01_hub.timer_text.font = "Courier";
 	level_01_hub.timer_text.fontSize = 30;
 	level_01_hub.timer_text.color = "White";
-	level_01_hub.timer_text.x = 860;
+	level_01_hub.timer_text.x = 880;
 	level_01_hub.timer_text.y = 4;
 	level_01_hub.timer_text.update = function() {
-		level_01_hub.timer_text.text = "Time: " + Math.round(level_01_hub.level_timer.value/60);
+		level_01_hub.timer_text.text = 
+			"11:3" + Math.floor(level_01_hub.level_timer.value/3600) + " PM";
 	};
-	
-	world.addChild(level_01_hub.level_timer);
 	
 	/***=================================***/
 	/***       Animation time loop       ***/

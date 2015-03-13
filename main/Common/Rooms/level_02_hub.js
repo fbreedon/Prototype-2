@@ -258,9 +258,12 @@ var level_02_hub = new Sprite();
 			|| room_manager.curr_room == level_02_C
 			|| room_manager.curr_room == level_02_D
 			|| room_manager.curr_room == level_02_E) {
-			level_02_hub.level_timer.value--;
-			if(level_02_hub.level_timer.value < 0) {
-				level_02_hub.level_timer.value = 14400;
+			level_02_hub.level_timer.value++;
+			if(level_02_hub.level_timer.value > 10800) {
+				level_02_hub.timer_text.color = "Red";
+			}
+			if(level_02_hub.level_timer.value > 14400) {
+				level_02_hub.level_timer.value = 0;
 				alert("Game Over");
 				room_manager.curr_room.stopAudio();
 				world.removeChild(level_02_hub.level_timer);
@@ -273,14 +276,15 @@ var level_02_hub = new Sprite();
 	world.addChild(level_02_hub.level_timer);
 	
 	// Timer text box
-	level_02_hub.timer_text = new TextBox("Time: ");
+	level_02_hub.timer_text = new TextBox("2:10 PM");
 	level_02_hub.timer_text.font = "Courier";
 	level_02_hub.timer_text.fontSize = 30;
 	level_02_hub.timer_text.color = "White";
 	level_02_hub.timer_text.x = 860;
 	level_02_hub.timer_text.y = 4;
 	level_02_hub.timer_text.update = function() {
-		level_02_hub.timer_text.text = "Time: " + Math.round(level_02_hub.level_timer.value/60);
+		level_02_hub.timer_text.text = 
+			"2:1" + Math.round(level_02_hub.level_timer.value/3600) + " PM";
 	};
 	
 	/***=================================***/
