@@ -41,6 +41,20 @@ var level_02_B = new Sprite();
 		level_02_B.image_scope.y = 0;
 		level_02_B.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
+			
+		level_02_B.red_screen_end = new Sprite();
+		level_02_B.red_screen_end.width  = 1080;
+		level_02_B.red_screen_end.height = 720;
+		level_02_B.red_screen_end.alpha = 0;
+		level_02_B.red_screen_end.image = Textures.load
+			("./Common/Textures/red box.png");
+		level_02_B.red_screen_end.update = function() {
+			if(level_02_B.red_screen_end.alpha < 1) {
+				level_02_B.red_screen_end.alpha += 0.007;
+			}else {
+				changeRoom(level_02_end);
+			}
+		}
 		
 		level_02_B.image_ak47 = new Sprite();
 		level_02_B.image_ak47.width  = 32;
@@ -201,6 +215,7 @@ var level_02_B = new Sprite();
 		level_02_B.button_fire.x = 435;
 		level_02_B.button_fire.y = 345;
 		level_02_B.button_fire.visible = false;
+		level_02_B.button_fire.can_click = true;
 		level_02_B.button_fire.update = function() {
 			if(level_02_B.button_fire.mouseOver) {
 				level_02_B.button_fire.visible = true;
@@ -211,9 +226,17 @@ var level_02_B = new Sprite();
 			}
 		}
 		level_02_B.button_fire.click = function() {
-			level_02_B.stopAudio();
-			world.removeChild(red_screen);
-			changeRoom(level_02_end);
+			if(level_02_B.button_fire.can_click) {
+				level_02_B.stopAudio();
+				world.removeChild(red_screen);
+				world.removeChild(level_02_B.ret);
+				world.removeChild(level_02_B.button_call);
+				while(active_sprites.length > 0)
+					active_sprites.pop();
+				sound_ominous.play();
+				world.addChild(level_02_B.red_screen_end);
+				level_02_B.button_fire.can_click = false;
+			}
 		}
 		
 
@@ -227,6 +250,35 @@ var level_02_B = new Sprite();
 		world.addChild(level_02_B.button_call);
 		world.addChild(level_02_B.button_fire);
 		world.addChild(level_02_hub.timer_text);
+		
+		// Nice animation
+		level_02_B.top_border = new Sprite();
+		level_02_B.top_border.width  = 1080;
+		level_02_B.top_border.height = 720;
+		level_02_B.top_border.x = 0;
+		level_02_B.top_border.y = 0;
+		level_02_B.top_border.image = Textures.load("./Common/Textures/black box.png");
+		level_02_B.top_border.update = function() {
+			level_02_B.top_border.y -= 30;
+			if(level_02_B.top_border.y < -720)
+				world.removeChild(level_02_B.top_border);
+		}
+		
+		level_02_B.bottom_border = new Sprite();
+		level_02_B.bottom_border.width  = 1080;
+		level_02_B.bottom_border.height = 720;
+		level_02_B.bottom_border.x = 0;
+		level_02_B.bottom_border.y = 0;
+		level_02_B.bottom_border.image = Textures.load("./Common/Textures/black box.png");
+		level_02_B.bottom_border.update = function() {
+			level_02_B.bottom_border.y += 30;
+			if(level_02_B.bottom_border.y > 720)
+				world.removeChild(level_02_B.bottom_border);
+		}
+
+		world.addChild(level_02_B.top_border);
+		world.addChild(level_02_B.bottom_border);
+		sound_zoom.play();		
 		
 		// Active sprites at creation time
 		active_sprites.push(level_02_B.ret);
@@ -321,6 +373,7 @@ var level_02_B = new Sprite();
 		world.removeChild(level_02_B.button_call);
 		world.removeChild(level_02_B.button_fire);
 		world.removeChild(level_02_hub.timer_text);
+		world.removeChild(level_02_B.red_screen_end);
 		world.removeChild(red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();

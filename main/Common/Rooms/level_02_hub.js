@@ -59,7 +59,7 @@ var level_02_hub = new Sprite();
 		level_02_hub.button_notes.height = 182;
 		level_02_hub.button_notes.x = 50;
 		level_02_hub.button_notes.y = 540;
-		level_01_hub.button_notes.image = Textures.load
+		level_02_hub.button_notes.image = Textures.load
 			("./Common/Textures/notes up.png");
 		level_02_hub.button_notes.frameWidth  = 446;
 		level_02_hub.button_notes.frameHeight = 182;
@@ -77,7 +77,7 @@ var level_02_hub = new Sprite();
 			}else {
 				level_02_hub.button_notes.image = Textures.load
 					("./Common/Textures/notes up.png");
-				level_01_hub.button_notes.animation = "idle";
+				level_02_hub.button_notes.animation = "idle";
 			}
 		}
 		level_02_hub.button_notes.click = function() {
