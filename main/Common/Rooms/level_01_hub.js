@@ -108,6 +108,14 @@ var level_01_hub = new Sprite();
 		level_01_hub.image_sniper.y = 0;
 		level_01_hub.image_sniper.image = Textures.load
 			("./Common/Textures/sniper.png");
+		level_01_hub.image_sniper.frameWidth  = 1080;
+		level_01_hub.image_sniper.frameHeight = 720;
+		level_01_hub.image_sniper.frameCount  = 7;
+		level_01_hub.image_sniper.frameRate   = 6;
+		level_01_hub.image_sniper.addAnimation("idle",0,6);
+		level_01_hub.image_sniper.update = function() {
+			level_01_hub.image_sniper.animation = "idle";
+		};
 			
 		level_01_hub.image_comment = new TextBox("\"Here goes misc. comments\"");
 		level_01_hub.image_comment.font = "Courier";
@@ -129,6 +137,14 @@ var level_01_hub = new Sprite();
 		level_01_hub.button_notes.height = 182;
 		level_01_hub.button_notes.x = 50;
 		level_01_hub.button_notes.y = 540;
+		level_01_hub.button_notes.image = Textures.load
+			("./Common/Textures/notes up.png");
+		level_01_hub.button_notes.frameWidth  = 446;
+		level_01_hub.button_notes.frameHeight = 182;
+		level_01_hub.button_notes.frameCount  = 3;
+		level_01_hub.button_notes.frameRate   = 4;
+		level_01_hub.button_notes.addAnimation("idle",0,2);
+		level_01_hub.button_notes.animation = "idle";
 		level_01_hub.button_notes.mouseOver = false;
 		level_01_hub.button_notes.update = function() {
 			if(level_01_hub.button_notes.mouseOver) {
@@ -139,6 +155,7 @@ var level_01_hub = new Sprite();
 			}else {
 				level_01_hub.button_notes.image = Textures.load
 					("./Common/Textures/notes up.png");
+				level_01_hub.button_notes.animation = "idle";
 			}
 		}
 		level_01_hub.button_notes.click = function() {
