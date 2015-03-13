@@ -252,16 +252,22 @@ var level_01_hub = new Sprite();
 	level_01_hub.level_timer = new Sprite();
 	level_01_hub.level_timer.value = 0;
 	level_01_hub.level_timer.update = function() {
-		level_01_hub.level_timer.value++;
-		if(level_01_hub.level_timer.value > 7200) {
-			level_01_hub.timer_text.color = "Red";
-		}
-		if(level_01_hub.level_timer.value > 10800) {
-			level_01_hub.level_timer.value = 0;
-			room_manager.curr_room.stopAudio();
-			world.removeChild(level_01_hub.level_timer);
-			world.removeChild(level_01_hub.target_loop);
-			changeRoom(game_over_screen);
+		if(room_manager.curr_room == level_01_hub
+			|| room_manager.curr_room == level_01_A
+			|| room_manager.curr_room == level_01_B
+			|| room_manager.curr_room == level_01_C
+			|| room_manager.curr_room == level_01_D) {
+			level_01_hub.level_timer.value++;
+			if(level_01_hub.level_timer.value > 7200) { // 2 minutes
+				level_01_hub.timer_text.color = "Red";
+			}
+			if(level_01_hub.level_timer.value > 10800) { // 3 minutes
+				level_01_hub.level_timer.value = 0;
+				room_manager.curr_room.stopAudio();
+				world.removeChild(level_01_hub.level_timer);
+				world.removeChild(level_01_hub.target_loop);
+				changeRoom(game_over_screen);
+			}
 		}
 	};
 	
@@ -290,36 +296,48 @@ var level_01_hub = new Sprite();
 	level_01_hub.target_y = 0;
 	
 	level_01_hub.target_loop.update = function() {
-		if(level_01_hub.targetA_in_call == false
-			&& level_01_hub.targetB_in_call == false
-			&& level_01_hub.targetC_in_call == false
-			&& level_01_hub.targetD_in_call == false) { // stops when in call
-			level_01_hub.target_loop.value++;
-			if(level_01_hub.target_loop.value == 3600) { // loop every minute
-				level_01_hub.target_loop.value = 0;
+		if(room_manager.curr_room == level_01_hub
+			|| room_manager.curr_room == level_01_A
+			|| room_manager.curr_room == level_01_B
+			|| room_manager.curr_room == level_01_C
+			|| room_manager.curr_room == level_01_D) {
+			if(level_01_hub.targetA_in_call == false
+				&& level_01_hub.targetB_in_call == false
+				&& level_01_hub.targetC_in_call == false
+				&& level_01_hub.targetD_in_call == false) { // stops when in call
+				level_01_hub.target_loop.value++;
+				if(level_01_hub.target_loop.value == 3600) { // loop every minute
+					level_01_hub.target_loop.value = 0;
+				}
 			}
 		}
 		
 		// Target C position tracker
-		if(level_01_hub.targetA_in_call == false
-			&& level_01_hub.targetB_in_call == false
-			&& level_01_hub.targetC_in_call == false
-			&& level_01_hub.targetD_in_call == false) {
-			if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
-				|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
-				|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
-				|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
-				level_01_hub.target_x += .25;
-				level_01_hub.target_y -= .25;
-			}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
-					 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
-					 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
-					 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
-				level_01_hub.target_x -= .25;
-				level_01_hub.target_y += .25;
+		if(room_manager.curr_room == level_01_hub
+			|| room_manager.curr_room == level_01_A
+			|| room_manager.curr_room == level_01_B
+			|| room_manager.curr_room == level_01_C
+			|| room_manager.curr_room == level_01_D) {
+			if(level_01_hub.targetA_in_call == false
+				&& level_01_hub.targetB_in_call == false
+				&& level_01_hub.targetC_in_call == false
+				&& level_01_hub.targetD_in_call == false) {
+				if((level_01_hub.target_loop.value>=0 && level_01_hub.target_loop.value<300)
+					|| (level_01_hub.target_loop.value>=1350 && level_01_hub.target_loop.value<1650)
+					|| (level_01_hub.target_loop.value>=1800 && level_01_hub.target_loop.value<2100)
+					|| (level_01_hub.target_loop.value>=3150 && level_01_hub.target_loop.value<3450)) {
+					level_01_hub.target_x += .25;
+					level_01_hub.target_y -= .25;
+				}else if((level_01_hub.target_loop.value>=450 && level_01_hub.target_loop.value<750)
+						 || (level_01_hub.target_loop.value>=900 && level_01_hub.target_loop.value<1200)
+						 || (level_01_hub.target_loop.value>=2250 && level_01_hub.target_loop.value<2550)
+						 || (level_01_hub.target_loop.value>=2700 && level_01_hub.target_loop.value<3000)) {
+					level_01_hub.target_x -= .25;
+					level_01_hub.target_y += .25;
+				}
 			}
 		}
-	}
+	};
 	world.addChild(level_01_hub.target_loop);
 	
 	/***===============================***/

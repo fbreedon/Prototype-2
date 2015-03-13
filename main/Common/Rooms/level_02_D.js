@@ -296,7 +296,7 @@ var level_02_D = new Sprite();
 		sound_write.play();
 		
 		level_02_hub.targetD_in_call = false;
-		alert("This is the ending you chose: " + ending);
+		//alert("This is the ending you chose: " + ending);
 	}
 	
 	/***===================================***/

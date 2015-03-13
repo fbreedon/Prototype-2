@@ -381,7 +381,7 @@ var node = createNode  // Index: 0
 		sound_write.play();
 		
 		level_02_hub.targetA_in_call = false;
-		alert("This is the ending you chose: " + ending);
+		//alert("This is the ending you chose: " + ending);
 	}
 	
 	/***===================================***/

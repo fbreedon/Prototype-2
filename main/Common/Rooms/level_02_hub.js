@@ -339,15 +339,22 @@ var level_02_hub = new Sprite();
 	level_02_hub.level_timer = new Sprite();
 	level_02_hub.level_timer.value = 0;
 	level_02_hub.level_timer.update = function() {
-		level_02_hub.level_timer.value++;
-		if(level_02_hub.level_timer.value > 7200)
-			level_02_hub.timer_text.color = "Red";
-		if(level_02_hub.level_timer.value > 10800) {
-			level_02_hub.level_timer.value = 0;
-			level_02_hub.stopAudio();
-			world.removeChild(level_02_hub.level_timer);
-			world.removeChild(level_02_hub.target_loop);
-			changeRoom(game_over_screen);
+		if(room_manager.curr_room == level_02_hub
+			|| room_manager.curr_room == level_02_A
+			|| room_manager.curr_room == level_02_B
+			|| room_manager.curr_room == level_02_C
+			|| room_manager.curr_room == level_02_D
+			|| room_manager.curr_room == level_02_E) {
+			level_02_hub.level_timer.value++;
+			if(level_02_hub.level_timer.value > 10800) // 3 minutes
+				level_02_hub.timer_text.color = "Red";
+			if(level_02_hub.level_timer.value > 14400) { // 4 minutes
+				level_02_hub.level_timer.value = 0;
+				level_02_hub.stopAudio();
+				world.removeChild(level_02_hub.level_timer);
+				world.removeChild(level_02_hub.target_loop);
+				changeRoom(game_over_screen);
+			}
 		}
 	};
 	
@@ -376,31 +383,45 @@ var level_02_hub = new Sprite();
 	level_02_hub.target_y = 0;
 	
 	level_02_hub.target_loop.update = function() {
-		if(level_02_hub.targetA_in_call == false
-			&& level_02_hub.targetB_in_call == false
-			&& level_02_hub.targetC_in_call == false
-			&& level_02_hub.targetD_in_call == false
-			&& level_02_hub.targetE_in_call == false) { // stops when in call
-			level_02_hub.target_loop.value++;
-			if(level_02_hub.target_loop.value == 3600) { // loop every minute
-				level_02_hub.target_loop.value = 0;
+		if(room_manager.curr_room == level_02_hub
+			|| room_manager.curr_room == level_02_A
+			|| room_manager.curr_room == level_02_B
+			|| room_manager.curr_room == level_02_C
+			|| room_manager.curr_room == level_02_D
+			|| room_manager.curr_room == level_02_E) {
+			if(level_02_hub.targetA_in_call == false
+				&& level_02_hub.targetB_in_call == false
+				&& level_02_hub.targetC_in_call == false
+				&& level_02_hub.targetD_in_call == false
+				&& level_02_hub.targetE_in_call == false) { // stops when in call
+				level_02_hub.target_loop.value++;
+				if(level_02_hub.target_loop.value == 3600) { // loop every minute
+					level_02_hub.target_loop.value = 0;
+				}
 			}
 		}
 		
 		// Target A position tracker
-		if(level_02_hub.targetA_in_call == false
-			&& level_02_hub.targetB_in_call == false
-			&& level_02_hub.targetC_in_call == false
-			&& level_02_hub.targetD_in_call == false
-			&& level_02_hub.targetE_in_call == false) {
-			if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
-				|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
-				level_02_hub.target_x -= .5;
-				level_02_hub.target_y -= .25;
-			}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1200)		// 15 to 20 secs
-					 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3000)) {// 45 to 50 secs
-				level_02_hub.target_x += .5;
-				level_02_hub.target_y += .25;
+		if(room_manager.curr_room == level_02_hub
+			|| room_manager.curr_room == level_02_A
+			|| room_manager.curr_room == level_02_B
+			|| room_manager.curr_room == level_02_C
+			|| room_manager.curr_room == level_02_D
+			|| room_manager.curr_room == level_02_E) {
+			if(level_02_hub.targetA_in_call == false
+				&& level_02_hub.targetB_in_call == false
+				&& level_02_hub.targetC_in_call == false
+				&& level_02_hub.targetD_in_call == false
+				&& level_02_hub.targetE_in_call == false) {
+				if((level_02_hub.target_loop.value>=0 && level_02_hub.target_loop.value<300)			// 0 to 5 secs
+					|| (level_02_hub.target_loop.value>=1800 && level_02_hub.target_loop.value<2100)) {	// 30 to 35 secs
+					level_02_hub.target_x -= .5;
+					level_02_hub.target_y -= .25;
+				}else if((level_02_hub.target_loop.value>=900 && level_02_hub.target_loop.value<1200)		// 15 to 20 secs
+						 || (level_02_hub.target_loop.value>=2700 && level_02_hub.target_loop.value<3000)) {// 45 to 50 secs
+					level_02_hub.target_x += .5;
+					level_02_hub.target_y += .25;
+				}
 			}
 		}
 	}

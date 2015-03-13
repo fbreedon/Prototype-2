@@ -134,7 +134,7 @@ var level_02_folder = new Sprite();
 	
 	level_02_folder.text = new Array();
 	level_02_folder.text[0] = "\n\n\n\n\n                  CONFIDENTIAL	            \n\n"+
-							  "            Priority order: Chain of Command";
+							  "       Priority order: Chain of Command";
 	level_02_folder.text[1] = "\"Your target is an elusive son of a bitch.\n\n"+
 							 "He’s been masquerading as an upstanding member of\n"+
 							 "society but don’t let that fool you this person is\n"+
@@ -145,25 +145,30 @@ var level_02_folder = new Sprite();
 							 "tastes for his income bracket.\"";
 								
 							 
-	level_02_folder.text[2] = "\"He is a very devout church attendee and often gives\n"+
-							 "money to local charities. This makes you wonder if the\n"+
-							 "holymen know that a devil is walking amongst them.\"\n\n"+
-							 "He’s connected to numerous \“disappearances\” and is known\n"+
-							 "to be a prominent supplier of arms in the area.\n\n"+
+	level_02_folder.text[2] = "\"He is a very devout church attendee and often\n"+
+							 "gives money to local charities. This makes you\n"+
+							 "wonder if theholymen know that a devil is\n"+
+							  "walking amongst them.\"\n\n"+
+							 "He’s connected to numerous \“disappearances\” and\n"+
+							 "is known to be a prominent supplier of arms\n"+
+							 "in the area.\"\n\n"+
 							 "We’ve been able to pin this bastard to this residence\n"+
 							 "but haven’t been able to do anything about him.\n\n"+
 							 "That's where you come in. This one sounds tough but\n"+
 							 "your skills are tuned for situations just like this.\"\n";
 							 
 	level_02_folder.text[3] = "For anyone else we'd wait\n"+
-							 "for someone else to knock him off, but he's just too\n"+
-							 "influential for us to sit twiddling our thumbs while his\n"+
-							 "alcohol and tobacco addictions kill him off for us.\n\n"+
-							 "They've got gaurds posted, so your opporunity starts\n"+
-							 "at 2:10 when they get lazy before they switch posts.\n"+
-							 "Take 3 minutes to gather whatever info you can find,\n"+
-							 "and use that last minute to take the son of a bitch out.\n\n"+
-							 "He thinks he's above the law. But he's not above a bullet.\n\n"+
+							 "for someone else to knock him off, but he's just\n"+
+							 "too influential for us to sit twiddling our thumbs\n"+
+							 "while his alcohol and tobacco addictions kill\n"+
+							 "him for us.\"\n\n"+
+							 "They've got gaurds posted, so your opporunity\n"+
+							 "starts at 2:10 when they get lazy before they\n"+
+							 "switch posts. Take 3 minutes to gather whatever\n"+
+							 "info you can find, and use that last minute to\n"+
+							 "take the son of a bitch out.\n\n"+
+							 "He thinks he's above the law. But he's not above\n"+
+							 "a bullet.\n\n"+
 							 "He's not above you.\"";
 	
 	level_02_folder.clear = function() {
