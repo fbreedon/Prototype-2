@@ -4,13 +4,22 @@ var intro_screen = new Sprite();
 	intro_screen.create = function() {
 		// This room's passive sprites
 		intro_screen.text = new TextBox
-			("This is the prototype for \"Outline\"\n\n" +
-			 "In this demo we are showcasing one\n"+
-			 "scenario still in development\n\n"+
-			 "\"Outline\" is an atmospheric decision making\n"+
-			 "game based on ambiguity. The images in this game\n"+
-			 "depict a lone individual who manipulates the\n"+
-			 "fate of the unbeknownst...");
+			("Welcome to project \"Outline\".\n\n" +
+			 "You play the role of a contract killer.\n"+
+			 "At the beginning of each contract, you will\n"+
+			 "be given a general description of your target,\n"+
+			 "their motives, and clues to help you find them\n"+
+			 "and kill them. You also have the power to call\n"+
+			 "each target's cellphone to try and gain more\n"+
+			 "information, but be careful, as each target can\n"+
+			 "be called only once. You won't be able to shoot\n"+
+			 "anyone until a certain time given in the contract.\n"+
+			 "Then it's make or break. Make your choice carefully,\n"+
+			 "or you may end up killing an innocent person while\n"+
+			 "the real target walks away unscathed.\n\n"+
+			 "Watch the targets, gather information, and when\n"+
+			 "the clock strikes, take them out. That's all for \n"+
+			 "the debrief. Get out there.");
 		intro_screen.text.font = "Courier";
 		intro_screen.text.fontSize = 30;
 		intro_screen.text.color = "#FFFFFF";

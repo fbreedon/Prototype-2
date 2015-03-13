@@ -147,7 +147,10 @@ var level_01_folder = new Sprite();
 							 "no outings, now that his friend's out of the\n"+
 							 "picture.\n\n"+
 							 "This will be the last chance to do him in before\n"+
-							 "he disappears into the shadows for good.\"";
+							 "he disappears into the shadows for good.\n\n"+
+							 "You'll have two minutes to scope out the scene.\n"+
+							 "When the clock strikes 11:32 pm, you'll only have a\n"+
+							 "one minute window to strike.\"";
 							 
 	level_01_folder.text[3] = "\"As usual, your skills are invaluable to us.\n\n"+
 							 "We have no photo, we have no lead...\n\n"+

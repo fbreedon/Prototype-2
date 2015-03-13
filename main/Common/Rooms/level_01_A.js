@@ -170,6 +170,7 @@ var level_01_A = new Sprite();
 		level_01_A.button_fire.x = 435;
 		level_01_A.button_fire.y = 345;
 		level_01_A.button_fire.visible = false;
+		level_01_A.button_fire.can_click = true;
 		level_01_A.button_fire.update = function() {
 			if(level_01_A.button_fire.mouseOver) {
 				level_01_A.button_fire.visible = true;
@@ -180,22 +181,26 @@ var level_01_A = new Sprite();
 			}
 		}
 		level_01_A.button_fire.click = function() {
-			level_01_A.stopAudio();
-			world.removeChild(level_01_hub.level_timer);
-			world.removeChild(level_01_hub.target_loop);
-			world.removeChild(level_01_hub.timer_text);
-			world.removeChild(red_screen);
-			level_01_hub.ending_state = 1;
-			level_01_A.clear();
-			sound_ominous.play();
-			world.addChild(level_01_A.red_screen_end);
+			if(level_01_A.button_fire.can_click) {
+				level_01_A.stopAudio();
+				world.removeChild(level_01_hub.level_timer);
+				world.removeChild(level_01_hub.target_loop);
+				world.removeChild(level_01_hub.timer_text);
+				world.removeChild(red_screen);
+				level_01_hub.ending_state = 1;
+				sound_ominous.play();
+				world.addChild(level_01_A.red_screen_end);
+				world.removeChild(level_01_A.button_call);
+				world.removeChild(level_01_A.ret);
+				level_01_A.button_fire.can_click = false;
+			}
 		}
 		/***===    End of active sprites   ===***/
 		
 		/***====================================***/
 		/***          Room audio                ***/
 		/***====================================***/
-		
+		//
 
 		world.addChild(level_01_A.image_background);
 		world.addChild(level_01_A.image_target_A);
@@ -204,6 +209,38 @@ var level_01_A = new Sprite();
 		world.addChild(level_01_A.ret);
 		world.addChild(level_01_A.button_call);
 		world.addChild(level_01_A.button_fire);
+		world.addChild(level_01_hub.timer_text);
+		
+		/***==================================***/
+		/***       The scoping animation      ***/
+		/***==================================***/
+		// Nice animation
+		level_01_A.top_border = new Sprite();
+		level_01_A.top_border.width  = 1080;
+		level_01_A.top_border.height = 720;
+		level_01_A.top_border.x = 0;
+		level_01_A.top_border.y = 0;
+		level_01_A.top_border.image = Textures.load("./Common/Textures/black box.png");
+		level_01_A.top_border.update = function() {
+			level_01_A.top_border.y -= 30;
+			if(level_01_A.top_border.y < -720)
+				world.removeChild(level_01_A.top_border);
+		}
+		
+		level_01_A.bottom_border = new Sprite();
+		level_01_A.bottom_border.width  = 1080;
+		level_01_A.bottom_border.height = 720;
+		level_01_A.bottom_border.x = 0;
+		level_01_A.bottom_border.y = 0;
+		level_01_A.bottom_border.image = Textures.load("./Common/Textures/black box.png");
+		level_01_A.bottom_border.update = function() {
+			level_01_A.bottom_border.y += 30;
+			if(level_01_A.bottom_border.y > 720)
+				world.removeChild(level_01_A.bottom_border);
+		}
+		
+		world.addChild(level_01_A.top_border);
+		world.addChild(level_01_A.bottom_border);
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_A.ret);
@@ -374,6 +411,7 @@ var level_01_A = new Sprite();
 		world.removeChild(level_01_A.button_fire);
 		world.removeChild(level_01_A.red_screen_end);
 		world.removeChild(red_screen);
+		world.removeChild(level_01_hub.timer_text);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 	}
