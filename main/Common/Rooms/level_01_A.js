@@ -192,6 +192,8 @@ var level_01_A = new Sprite();
 				world.addChild(level_01_A.red_screen_end);
 				world.removeChild(level_01_A.button_call);
 				world.removeChild(level_01_A.ret);
+				while(active_sprites.length > 0)
+					active_sprites.pop();
 				level_01_A.button_fire.can_click = false;
 			}
 		}

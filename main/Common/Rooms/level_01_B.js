@@ -158,6 +158,7 @@ var level_01_B = new Sprite();
 		level_01_B.button_fire.x = 435;
 		level_01_B.button_fire.y = 345;
 		level_01_B.button_fire.visible = false;
+		level_01_B.button_fire.can_click = true;
 		level_01_B.button_fire.update = function() {
 			if(level_01_B.button_fire.mouseOver) {
 				level_01_B.button_fire.visible = true;
@@ -168,22 +169,29 @@ var level_01_B = new Sprite();
 			}
 		}
 		level_01_B.button_fire.click = function() {
-			level_01_B.stopAudio();
-			world.removeChild(level_01_hub.level_timer);
-			world.removeChild(level_01_hub.target_loop);
-			world.removeChild(level_01_hub.timer_text);
-			world.removeChild(red_screen);
-			level_01_hub.ending_state = 2;
-			sound_ominous.play();
-			world.addChild(level_01_B.red_screen_end);
+			if(level_01_B.button_fire.can_click) {
+				level_01_B.stopAudio();
+				world.removeChild(level_01_hub.level_timer);
+				world.removeChild(level_01_hub.target_loop);
+				world.removeChild(level_01_hub.timer_text);
+				world.removeChild(red_screen);
+				level_01_hub.ending_state = 2;
+				sound_ominous.play();
+				world.addChild(level_01_B.red_screen_end);
+				world.removeChild(level_01_B.button_call);
+				world.removeChild(level_01_B.ret);
+				while(active_sprites.length > 0 ) 
+					active_sprites.pop();
+				level_01_B.button_fire.can_click = false;
+			}
 		}
 		/***===    End of active sprites   ===***/
 		
 		/***====================================***/
 		/***          Room audio                ***/
 		/***====================================***/
-		level_01_A.sound_ominous = new Audio("./Common/Sounds/ominous.wav");
-		level_01_A.sound_ominous.volume = 0.7;
+		level_01_B.sound_ominous = new Audio("./Common/Sounds/ominous.wav");
+		level_01_B.sound_ominous.volume = 0.7;
 		
 		// Visible sprites at creation time
 		world.addChild(level_01_B.image_background);
@@ -195,6 +203,35 @@ var level_01_B = new Sprite();
 		world.addChild(level_01_B.button_call);
 		world.addChild(level_01_B.button_fire);
 		world.addChild(level_01_hub.timer_text);
+		
+		// Nice animation
+		level_01_B.top_border = new Sprite();
+		level_01_B.top_border.width  = 1080;
+		level_01_B.top_border.height = 720;
+		level_01_B.top_border.x = 0;
+		level_01_B.top_border.y = 0;
+		level_01_B.top_border.image = Textures.load("./Common/Textures/black box.png");
+		level_01_B.top_border.update = function() {
+			level_01_B.top_border.y -= 30;
+			if(level_01_B.top_border.y < -720)
+				world.removeChild(level_01_B.top_border);
+		}
+		
+		level_01_B.bottom_border = new Sprite();
+		level_01_B.bottom_border.width  = 1080;
+		level_01_B.bottom_border.height = 720;
+		level_01_B.bottom_border.x = 0;
+		level_01_B.bottom_border.y = 0;
+		level_01_B.bottom_border.image = Textures.load("./Common/Textures/black box.png");
+		level_01_B.bottom_border.update = function() {
+			level_01_B.bottom_border.y += 30;
+			if(level_01_B.bottom_border.y > 720)
+				world.removeChild(level_01_B.bottom_border);
+		}
+		
+		world.addChild(level_01_B.top_border);
+		world.addChild(level_01_B.bottom_border);
+		sound_zoom.play();
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_B.ret);

@@ -131,6 +131,7 @@ var level_01_D = new Sprite();
 		level_01_D.button_fire.x = 435;
 		level_01_D.button_fire.y = 345;
 		level_01_D.button_fire.visible = false;
+		level_01_D.button_fire.can_click = true;
 		level_01_D.button_fire.update = function() {
 			if(level_01_D.button_fire.mouseOver) {
 				level_01_D.button_fire.visible = true;
@@ -141,14 +142,21 @@ var level_01_D = new Sprite();
 			}
 		}
 		level_01_D.button_fire.click = function() {
-			level_01_D.stopAudio();
-			level_01_hub.ending_state = 4;
-			world.removeChild(level_01_hub.level_timer);
-			world.removeChild(level_01_hub.target_loop);
-			world.removeChild(level_01_hub.timer_text);
-			world.removeChild(red_screen);
-			sound_ominous.play();
-			world.addChild(level_01_D.red_screen_end);
+			if(level_01_D.button_fire.can_click) {
+				level_01_D.stopAudio();
+				level_01_hub.ending_state = 4;
+				world.removeChild(level_01_hub.level_timer);
+				world.removeChild(level_01_hub.target_loop);
+				world.removeChild(level_01_hub.timer_text);
+				world.removeChild(red_screen);
+				sound_ominous.play();
+				world.addChild(level_01_D.red_screen_end);
+				world.removeChild(level_01_D.ret);
+				world.removeChild(level_01_D.button_call);
+				while(active_sprites.length > 0)
+					active_sprites.pop();
+				level_01_D.button_fire.can_click = false;
+			}
 		}
 		
 		// Visible sprites at creation time
@@ -160,6 +168,35 @@ var level_01_D = new Sprite();
 		world.addChild(level_01_D.button_call);
 		world.addChild(level_01_D.button_fire);
 		world.addChild(level_01_hub.timer_text);
+		
+		// Nice animation
+		level_01_D.top_border = new Sprite();
+		level_01_D.top_border.width  = 1080;
+		level_01_D.top_border.height = 720;
+		level_01_D.top_border.x = 0;
+		level_01_D.top_border.y = 0;
+		level_01_D.top_border.image = Textures.load("./Common/Textures/black box.png");
+		level_01_D.top_border.update = function() {
+			level_01_D.top_border.y -= 30;
+			if(level_01_D.top_border.y < -720)
+				world.removeChild(level_01_D.top_border);
+		}
+		
+		level_01_D.bottom_border = new Sprite();
+		level_01_D.bottom_border.width  = 1080;
+		level_01_D.bottom_border.height = 720;
+		level_01_D.bottom_border.x = 0;
+		level_01_D.bottom_border.y = 0;
+		level_01_D.bottom_border.image = Textures.load("./Common/Textures/black box.png");
+		level_01_D.bottom_border.update = function() {
+			level_01_D.bottom_border.y += 30;
+			if(level_01_D.bottom_border.y > 720)
+				world.removeChild(level_01_D.bottom_border);
+		}
+		
+		world.addChild(level_01_D.top_border);
+		world.addChild(level_01_D.bottom_border);
+		sound_zoom.play();
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_D.ret);

@@ -29,6 +29,9 @@ sound_ominous.volume = 0.7;
 
 sound_shot = new Audio("./COmmon/Sounds/shot.wav");
 
+sound_zoom = new Audio("./Common/Sounds/zoom.wav");
+sound_zoom.volume = 0.7;
+
 /***===============================***/
 /*** Global objects initialization ***/
 /***===============================***/
@@ -88,7 +91,7 @@ world.addChild(room_manager);
 world.addChild(input_manager);
 
 // Set the first room in the game
-room_manager.curr_room = title_screen;
+room_manager.curr_room = level_01_hub;
 room_manager.curr_room.create();
 
 // Event listeners to be used in the game always
