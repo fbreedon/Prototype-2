@@ -197,11 +197,10 @@ var level_01_A = new Sprite();
 		}
 		/***===    End of active sprites   ===***/
 		
-		/***====================================***/
-		/***          Room audio                ***/
-		/***====================================***/
-		//
-
+		/***==============================***/
+		/***       World allocation       ***/
+		/***==============================***/
+		// Passive sprites at creation time
 		world.addChild(level_01_A.image_background);
 		world.addChild(level_01_A.image_target_A);
 		world.addChild(red_screen);
@@ -211,9 +210,8 @@ var level_01_A = new Sprite();
 		world.addChild(level_01_A.button_fire);
 		world.addChild(level_01_hub.timer_text);
 		
-		/***==================================***/
-		/***       The scoping animation      ***/
-		/***==================================***/
+		sound_zoom.play();
+
 		// Nice animation
 		level_01_A.top_border = new Sprite();
 		level_01_A.top_border.width  = 1080;
