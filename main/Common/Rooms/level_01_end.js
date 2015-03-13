@@ -93,7 +93,7 @@ var level_01_end = new Sprite();
 			}
 		}
 		level_01_end.button_continue.click = function() {
-			changeRoom(level_02_hub);
+			changeRoom(level_02_folder);
 		}
 		
 		/***===     End of active sprites   ===***/
