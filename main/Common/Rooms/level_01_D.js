@@ -165,7 +165,8 @@ var level_01_D = new Sprite();
 		world.addChild(red_screen);
 		world.addChild(level_01_D.image_scope);
 		world.addChild(level_01_D.ret);
-		world.addChild(level_01_D.button_call);
+		if(level_01_hub.targetD_cancall)
+			world.addChild(level_01_D.button_call);
 		world.addChild(level_01_D.button_fire);
 		world.addChild(level_01_hub.timer_text);
 		
@@ -200,7 +201,8 @@ var level_01_D = new Sprite();
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_D.ret);
-		active_sprites.push(level_01_D.button_call);
+		if(level_01_hub.targetD_cancall)
+			active_sprites.push(level_01_D.button_call);
 		active_sprites.push(level_01_D.button_fire);
 		
 		if(!level_01_D.bgm)
@@ -283,6 +285,7 @@ createNode("Right on, Bro! So, like, I know this \narea pretty well And like… 
 	
 	// End the dialogue
 	level_01_D.endDialogue = function(ending) {
+		level_01_hub.targetD_cancall = false;
 		world.removeChild(black_screen);
 		
 		world.addChild(level_01_D.ret);
@@ -290,6 +293,20 @@ createNode("Right on, Bro! So, like, I know this \narea pretty well And like… 
 		active_sprites.push(level_01_D.button_fire);
 		
 		level_01_hub.targetD_in_call = false;
+		
+		var image_wrote_note = new TextBox("\"I wrote a note...\"");
+		image_wrote_note.font = "Courier";
+		image_wrote_note.fontSize = 30;
+		image_wrote_note.color = "White";
+		image_wrote_note.x = 360;
+		image_wrote_note.y = 650;
+		image_wrote_note.update = function() {
+			image_wrote_note.alpha -= 0.01;
+			if(image_wrote_note.alpha == 0)
+				world.removeChild(image_wrote_note);
+		}
+		world.addChild(image_wrote_note);
+		sound_write.play();
 		level_01_D.pickEnding(ending);
 		clear_array();
 	}

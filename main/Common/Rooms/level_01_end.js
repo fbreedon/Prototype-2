@@ -54,6 +54,7 @@ var level_01_end = new Sprite();
 		level_01_end.some_text.fontSize = 30;
 		level_01_end.some_text.x = 100;
 		level_01_end.some_text.y = 150;
+		textType(level_01_end.some_text, 2);
 		
 		level_01_end.white_screen = new Sprite();
 		level_01_end.white_screen.width  = 1080;

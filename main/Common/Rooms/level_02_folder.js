@@ -53,6 +53,7 @@ var level_02_folder = new Sprite();
 			}
 		}
 		level_02_folder.button_next.click = function() {
+			sound_page.play();
 			world.removeChild(level_02_folder.button_next);
 			world.removeChild(level_02_folder.button_prev);
 			while(active_sprites.length > 0) active_sprites.pop();
@@ -82,6 +83,7 @@ var level_02_folder = new Sprite();
 			}
 		}
 		level_02_folder.button_prev.click = function() {
+			sound_page.play();
 			world.removeChild(level_02_folder.button_prev);
 			world.removeChild(level_02_folder.button_next);
 			world.removeChild(level_02_folder.button_continue);

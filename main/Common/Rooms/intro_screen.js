@@ -9,11 +9,12 @@ var intro_screen = new Sprite();
 			 "At the beginning of each contract, you will\n"+
 			 "be given a general description of your target,\n"+
 			 "their motives, and clues to help you find them\n"+
-			 "and kill them. You also have the power to call\n"+
-			 "each target's cellphone to try and gain more\n"+
-			 "information, but be careful, as each target can\n"+
-			 "be called only once. You won't be able to shoot\n"+
-			 "anyone until a certain time given in the contract.\n"+
+			 "and kill them.\n\n"+ 
+			 "You also have the power to call each target's cellphone\n"+
+			 "to try and gain more information, but be careful,\n"+
+			 "as each target can be called only once.\n\n"+
+			 "You won't be able to shoot anyone until a certain time\n"+ 
+			 "given in the contract.\n\n"+
 			 "Then it's make or break. Make your choice carefully,\n"+
 			 "or you may end up killing an innocent person while\n"+
 			 "the real target walks away unscathed.\n\n"+
@@ -23,6 +24,7 @@ var intro_screen = new Sprite();
 		intro_screen.text.font = "Courier";
 		intro_screen.text.fontSize = 30;
 		intro_screen.text.color = "#FFFFFF";
+		textType(intro_screen.text, 1);
 		
 		// This room's active sprites
 		intro_screen.next = new TextBox("Continue >>");

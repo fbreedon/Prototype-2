@@ -212,7 +212,8 @@ var level_01_C = new Sprite();
 		world.addChild(red_screen);
 		world.addChild(level_01_C.image_scope);
 		world.addChild(level_01_C.ret);
-		world.addChild(level_01_C.button_call);
+		if(level_01_hub.targetC_cancall)
+			world.addChild(level_01_C.button_call);
 		world.addChild(level_01_C.button_fire);
 		world.addChild(level_01_hub.timer_text);
 		
@@ -247,7 +248,8 @@ var level_01_C = new Sprite();
 		
 		// Active sprites at creation time
 		active_sprites.push(level_01_C.ret);
-		active_sprites.push(level_01_C.button_call);
+		if(level_01_hub.targetC_cancall)
+			active_sprites.push(level_01_C.button_call);
 		active_sprites.push(level_01_C.button_fire);
 		
 		// Play this room's BGM if it isn't yet playing
@@ -338,6 +340,7 @@ var level_01_C = new Sprite();
 	
 	// End the dialogue
 	level_01_C.endDialogue = function(ending) {
+		level_01_hub.targetC_cancall = false;
 		world.removeChild(black_screen);
 		
 		world.addChild(level_01_C.ret);
@@ -345,6 +348,20 @@ var level_01_C = new Sprite();
 		active_sprites.push(level_01_C.button_fire);
 		
 		level_01_hub.targetC_in_call = false;
+		
+		var image_wrote_note = new TextBox("\"I wrote a note...\"");
+		image_wrote_note.font = "Courier";
+		image_wrote_note.fontSize = 30;
+		image_wrote_note.color = "White";
+		image_wrote_note.x = 360;
+		image_wrote_note.y = 650;
+		image_wrote_note.update = function() {
+			image_wrote_note.alpha -= 0.01;
+			if(image_wrote_note.alpha == 0)
+				world.removeChild(image_wrote_note);
+		}
+		world.addChild(image_wrote_note);
+		sound_write.play();
 		level_01_C.pickEnding(ending);
 		clear_array();
 	}

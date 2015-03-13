@@ -37,7 +37,8 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 		node.Q.fontSize = 20;
 		node.Q.x = 250;
 		node.Q.y = 50;
-		
+		textType(node.Q, 2);
+
 	node.ans1 = new TextBox(ans1);
 		node.ans1.font = "Courier";
 		node.ans1.color = colorA;
@@ -140,7 +141,7 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 		active_sprites.push(node.ans1);
 		active_sprites.push(node.ans2);		
 		active_sprites.push(node.ans3);	
-		active_sprites.push(node.ans4);	
+		active_sprites.push(node.ans4);
 	}
 
 	node.clear  = function() {
@@ -161,4 +162,27 @@ function createNode(Q, ans1, call_1, ans2, call_2, ans3, call_3, ans4, call_4){
 	}
 	nodes.push(node);
 	return node;
+}
+
+function convoTextType(the_object, the_wait) {
+	the_object.visible = false;
+	the_object.spawn_em = false;
+	var the_string = the_object.text;
+	var curr = 0;
+	var wait = the_wait; 
+	the_object.update = function() {
+		if(curr < the_string.length+1 && wait == 0) {
+			the_object.text = the_string.substring(0, curr);
+			curr++;
+			wait = the_wait;
+			the_object.visible = true;
+		}else {
+			wait--;
+		}
+		if(curr >= the_string.length+1) {
+			the_object.spawn_em = true;
+		}
+		if(the_object.spawn_em)
+			alert("HUH?");
+	}
 }

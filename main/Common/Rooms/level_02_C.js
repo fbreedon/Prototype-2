@@ -209,7 +209,8 @@ var level_02_C = new Sprite();
 		world.addChild(red_screen);
 		world.addChild(level_02_C.image_scope);
 		world.addChild(level_02_C.ret);
-		world.addChild(level_02_C.button_call);
+		if(level_02_hub.targetC_cancall)
+			world.addChild(level_02_C.button_call);
 		world.addChild(level_02_C.button_fire);
 		world.addChild(level_02_hub.timer_text);
 		
@@ -244,7 +245,8 @@ var level_02_C = new Sprite();
 		
 		// Active sprites at creation time
 		active_sprites.push(level_02_C.ret);
-		active_sprites.push(level_02_C.button_call);
+		if(level_02_hub.targetC_cancall)
+			active_sprites.push(level_02_C.button_call);
 		active_sprites.push(level_02_C.button_fire);
 		
 		// Play this room's background audio if it isn't yet playing
@@ -330,6 +332,7 @@ var node = createNode  // Index: 0
 	// Ending the dialogue returns the room to the previous state
 	// also updates whatever necessary dependaing on your ending
 	level_02_C.endDialogue = function(ending) {
+		level_02_hub.targetC_cancall = false;
 		world.removeChild(black_screen);
 		
 		world.addChild(level_02_C.ret);
@@ -337,6 +340,20 @@ var node = createNode  // Index: 0
 		active_sprites.push(level_02_C.ret);
 		active_sprites.push(level_02_C.button_call);
 		active_sprites.push(level_02_C.button_fire);
+		
+		var image_wrote_note = new TextBox("\"I wrote a note...\"");
+		image_wrote_note.font = "Courier";
+		image_wrote_note.fontSize = 30;
+		image_wrote_note.color = "White";
+		image_wrote_note.x = 360;
+		image_wrote_note.y = 650;
+		image_wrote_note.update = function() {
+			image_wrote_note.alpha -= 0.01;
+			if(image_wrote_note.alpha == 0)
+				world.removeChild(image_wrote_note);
+		}
+		world.addChild(image_wrote_note);
+		sound_write.play();
 		
 		level_02_hub.targetC_in_call = false;
 		alert("This is the ending you chose: " + ending);

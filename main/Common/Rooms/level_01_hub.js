@@ -12,6 +12,11 @@ var level_01_hub = new Sprite();
 	level_01_hub.targetC_killed = false;
 	level_01_hub.targetD_killed = false;
 	
+	level_01_hub.targetA_cancall = true;
+	level_01_hub.targetB_cancall = true;
+	level_01_hub.targetC_cancall = true;
+	level_01_hub.targetD_cancall = true;
+	
 	/***==================================***/
 	/***          room.create()           ***/
 	/***==================================***/
@@ -87,6 +92,7 @@ var level_01_hub = new Sprite();
 			}
 		}
 		level_01_hub.button_notes.click = function() {
+			sound_page.play();
 			level_01_hub.readNotes();
 		}
 		
@@ -246,15 +252,15 @@ var level_01_hub = new Sprite();
 	level_01_hub.level_timer.value = 0;
 	level_01_hub.level_timer.update = function() {
 		level_01_hub.level_timer.value++;
-		if(level_01_hub.level_timer.value > 7200)
+		if(level_01_hub.level_timer.value > 7200) {
 			level_01_hub.timer_text.color = "Red";
+		}
 		if(level_01_hub.level_timer.value > 10800) {
 			level_01_hub.level_timer.value = 0;
-			alert("game over!!!! fuck franz");
 			room_manager.curr_room.stopAudio();
 			world.removeChild(level_01_hub.level_timer);
 			world.removeChild(level_01_hub.target_loop);
-			changeRoom(title_screen);
+			changeRoom(game_over_screen);
 		}
 	};
 	
@@ -269,7 +275,8 @@ var level_01_hub = new Sprite();
 	level_01_hub.timer_text.y = 4;
 	level_01_hub.timer_text.update = function() {
 		level_01_hub.timer_text.text = 
-			"11:3" + Math.floor(level_01_hub.level_timer.value/3600) + " PM";
+			"11:3" + Math.floor(level_01_hub.level_timer.value/3600) + ":" +
+			+ Math.floor(level_01_hub.level_timer.value/60) % 60 + " PM";
 	};
 	
 	/***=================================***/

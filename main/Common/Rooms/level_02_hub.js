@@ -4,6 +4,12 @@
 var level_02_hub = new Sprite();
 	// Is the BGM playing?
 	level_02_hub.bgm = false;
+	
+	level_02_hub.targetA_cancall = true;
+	level_02_hub.targetB_cancall = true;
+	level_02_hub.targetC_cancall = true;
+	level_02_hub.targetD_cancall = true;
+	level_02_hub.targetE_cancall = true;
 
 	/***==================================***/
 	/***          room.create()           ***/
@@ -81,6 +87,7 @@ var level_02_hub = new Sprite();
 			}
 		}
 		level_02_hub.button_notes.click = function() {
+			sound_page.play();
 			level_02_hub.readNotes();
 		}
 		
@@ -336,11 +343,10 @@ var level_02_hub = new Sprite();
 			level_02_hub.timer_text.color = "Red";
 		if(level_02_hub.level_timer.value > 10800) {
 			level_02_hub.level_timer.value = 0;
-			alert("game over!!!! fuck franz");
-			room_manager.curr_room.stopAudio();
+			level_02_hub.stopAudio();
 			world.removeChild(level_02_hub.level_timer);
 			world.removeChild(level_02_hub.target_loop);
-			changeRoom(title_screen);
+			changeRoom(game_over_screen);
 		}
 	};
 	
@@ -355,7 +361,8 @@ var level_02_hub = new Sprite();
 	level_02_hub.timer_text.y = 4;
 	level_02_hub.timer_text.update = function() {
 		level_02_hub.timer_text.text = 
-			"2:1" + Math.floor(level_02_hub.level_timer.value/3600) + " PM";
+			"2:1" + Math.floor(level_02_hub.level_timer.value/3600) + ":" +
+			Math.floor(level_02_hub.level_timer.value/60) % 60 + " PM";
 	};
 	
 	/***=================================***/

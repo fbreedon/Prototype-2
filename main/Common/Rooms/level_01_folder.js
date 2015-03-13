@@ -53,6 +53,7 @@ var level_01_folder = new Sprite();
 			}
 		}
 		level_01_folder.button_next.click = function() {
+			sound_page.play();
 			world.removeChild(level_01_folder.button_next);
 			world.removeChild(level_01_folder.button_prev);
 			while(active_sprites.length > 0) active_sprites.pop();
@@ -69,6 +70,7 @@ var level_01_folder = new Sprite();
 		}
 		
 		level_01_folder.button_prev = new TextBox("<< prev");
+		sound_page.play();
 		level_01_folder.button_prev.font = "Courier";
 		level_01_folder.button_prev.color = "White";
 		level_01_folder.button_prev.fontSize = 30;
