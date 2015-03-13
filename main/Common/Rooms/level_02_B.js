@@ -300,8 +300,7 @@ var level_02_B = new Sprite();
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		
-		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
-		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+		var node = createNode("The number you have dialed is no longer in service", "-End Call", -1)
 		node.create();
 	}
 

@@ -262,9 +262,66 @@ var level_02_C = new Sprite();
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		
-		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
-		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+var node = createNode  // Index: 0
+			("Hello?", 
+			 "Pretend to be from a church-- \nGood afternoon sir, We are part of local church \nand we we’re wondering if you or anyone \nyou know might be willing to volunteer \nor donate to our establishment? \nWe’re preparing for our next event and we’re \nboth understaffed and underfunded. \nAny help from our faithful is much appreciated.\n" , 1, 
+			 "Pretend to be a supplier-- \nHey, the next shipment will be in soon. \nI gotta know where to make the drop, \ncops got to the usual spot. \nYou got a backup?\n", 2,
+			 "Be direct-- \nI hear you’re a man with connections.\n",3);
 		node.create();
+		
+		createNode     // Index: 1
+			("Oh yeahh. Thats the Saint Mary’ss \nriight? Yeahhh. You guysh are good \npeople, ya know? And I’ll be \nshure to donate this Ssunday when \nI attend, Like I always do. \nDon’t chu worry about that.\n",
+			 "Thank him for his patronage-- \nThank you very much. We look \nforward to meeting our gracious benefactor\n", 4,
+			 "Ask him if he’s okay-- \nSir, are you okay? \nYou don’t sound very good\n", 5,
+			 "Doubt him-- \nIt’s alright sir, our church accepts \neveryone. Please do not feel inclined to \ndonate if you are not in a position to.\n", 6);
+	    
+		createNode   //Index: 2
+			("Look. I don’t know how you got thiss number but this is not one for buisness… Thiss is a personal phone. How did you even get thiss numberr?",
+			"Continue the act--\nLook, Thats beside the point. \nI need to know where we stand on \nthis issue.", 7,
+			"Apologize--\nAll right, all right, \nI'll make sure not to use \nthis number any more\n.", 8,
+			"Provoke--\nI didn’t realize there was a \ndifference between business and personal \nwith you.", 9);
+		
+		createNode	//Index: 3
+			("I have ssssooo many connections. \nBut…. how did you get thiss number. \nThiss one isn’t really for this type of talkss. \nThiss is more for like. Private sstuff, \nya feel me, holmes?\n",
+			"Ask about the connections-- \nGreat. So who exactly do you know?\n", 10,
+			"Ask about his phone-- \nWhat do you mean by this is \na private phone?\n", 11, 
+			"Ask about himself-- \nWho is this then?\n", 12);
+		
+		createNode //Index: 4
+			("Yeah… No problemm. I’mm always glad \nto help the church in any way. \nI was raised with the belieff that if \nI had something to give back I would \ndo itt. Yeah. I’ll write the check \nasss ssoon as I can and send it over.\n",
+			"-End call\n", -1);//ending 1
+			
+		createNode //Index: 5
+			("Me? Yeahh I’m fine. You know, just \nrelaxing. You have to enjoy the small \nthings in this crazy life. Don’t worry \nabout it… You guys are always worrying \nabout these things.\n", 
+			"-End call\n", -2);//ending 2
+		
+		createNode //Index: 6
+			("You don’t believe me? I thought \nyou called because you knew \nwho I was. I have means. Believe me, \nI have means. Are you in a position \nto deny help?\n", 
+			"-End call\n", -3);//ending 3
+
+		createNode //Index: 7
+			("I don’t rreally care where it ees you sstand. \nWe have people, you have people. \nThis stuff will be figured out. Now. \nDon’t call me again.\n",
+			"-End call\n",-4);//ending 4
+		
+		createNode //Index: 8
+			("Isss all good now. Asss long as you know never. \nEver. Call this again. Necesitas mas? \nNo? Didn’t think so.\n",
+			"-End call\n", -5);//ending 5
+		
+		createNode //Index: 9
+			("I didn’t realize I was talking \nto a fucking amateur. Just make sure you \nget your “sshipment” into the right hands.\n", 
+			"-End call\n",-6);//ending 6
+		
+		createNode //Index: 10
+			("What do you mean who do I know? \nI know eeeeveryone. Look. \nRight now I’m in the middle of sssomething. \nClosing ssome deal or something, ese.\nI’ll make ssure you get the right people\n",
+			"-End call\n", -7);//ending 7
+		
+		createNode //Index: 11
+			("Oh you ssee, Thisss is one of \nmy phone is for, like, me, ese. \nI have another for sseriouss sstuff. \nOh, ssspeaking of important sstuff, \nI have to pay attention to these guyss… \nI keep ssaying that I don’t care but--\n",
+			"-End call\n", -8);//ending 8
+			
+		creatNode //Index: 12
+			("Who is this? How do you not \nknow who you’re calling, \nholmes. I guessss I should say how \ndo you not know who I am? \nWhatever, holmes.\n", 
+			"-End call\n", -9);//ending 9
 	}
 
 	/***==============================***/

@@ -346,7 +346,7 @@ var node = createNode  // Index: 0
 			
 		creatNode //Index: 12
 			("Well I sure as hell ain’t the boss. \nLook I’m no one. I don’t know what \nyou’re planning leave me out of it.", 
-			"-End call\n",-12);
+			"-End call\n",-9);
 }
 	/***==============================***/
 	/***       room.endDialogue()     ***/
