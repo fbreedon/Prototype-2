@@ -38,6 +38,20 @@ var level_01_C = new Sprite();
 		level_01_C.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
 			
+		level_01_C.red_screen_end = new Sprite();
+		level_01_C.red_screen_end.width  = 1080;
+		level_01_C.red_screen_end.height = 720;
+		level_01_C.red_screen_end.alpha = 0;
+		level_01_C.red_screen_end.image = Textures.load
+			("./Common/Textures/red box.png");
+		level_01_C.red_screen_end.update = function() {
+			if(level_01_C.red_screen_end.alpha < 1) {
+				level_01_C.red_screen_end.alpha += 0.007;
+			}else {
+				changeRoom(level_01_end);
+			}
+		}
+			
 		// Target C Sprite
 		level_01_C.image_target_C = new Sprite();
 		level_01_C.image_target_C.width  = 32;
@@ -180,7 +194,8 @@ var level_01_C = new Sprite();
 			world.removeChild(level_01_hub.timer_text);
 			world.removeChild(red_screen);
 			level_01_hub.ending_state = 3;
-			changeRoom(level_01_end);
+			sound_ominous.play(0);
+			world.addChild(level_01_C.red_screen_end);
 		}
 		
 		// Visible sprites at creation time
@@ -372,6 +387,7 @@ var level_01_C = new Sprite();
 		world.removeChild(level_01_C.ret);
 		world.removeChild(level_01_C.button_call);
 		world.removeChild(level_01_C.button_fire);
+		world.removeChild(level_01_C.red_screen_end);
 		world.removeChild(red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();

@@ -55,6 +55,24 @@ var level_01_end = new Sprite();
 		level_01_end.some_text.x = 100;
 		level_01_end.some_text.y = 150;
 		
+		level_01_end.white_screen = new Sprite();
+		level_01_end.white_screen.width  = 1080;
+		level_01_end.white_screen.height = 720;
+		level_01_end.white_screen.do_update = true;
+		level_01_end.white_screen.image = Textures.load("./Common/Textures/white box.png");
+		level_01_end.white_screen.update = function() {
+			if(level_01_end.white_screen.do_update) {
+				if(level_01_end.white_screen.alpha > 0.00)
+					level_01_end.white_screen.alpha -= 0.01;
+				else {
+					world.addChild(level_01_end.some_text);
+					world.addChild(level_01_end.button_continue);
+					active_sprites.push(level_01_end.button_continue);
+					level_01_end.white_screen.do_update = false;
+				}
+			}
+		}
+		
 		/***=== End of passive sprites ===***/
 		
 		/***==============================***/
@@ -81,14 +99,18 @@ var level_01_end = new Sprite();
 		/***===     End of active sprites   ===***/
 		
 		/***===================================***/
+		/***            Room audio             ***/
+		/***===================================***/
+		// This room's audio objects
+		sound_shot.play();
+		
+		/***===================================***/
 		/***          World allocating         ***/
 		/***===================================***/
 		// Visible sprites at creation time
-		world.addChild(level_01_end.some_text);
-		world.addChild(level_01_end.button_continue);
+		world.addChild(level_01_end.white_screen);
 		
 		// Active sprites at creation time
-		active_sprites.push(level_01_end.button_continue);
 	}
 	
 	/***===============================***/
@@ -98,4 +120,7 @@ var level_01_end = new Sprite();
 	level_01_end.clear = function() {
 		world.removeChild(level_01_end.some_text);
 		world.removeChild(level_01_end.button_continue);
+		
+		while(active_sprites.length > 0)
+			active_sprites.pop();
 	}

@@ -43,6 +43,20 @@ var level_01_A = new Sprite();
 		level_01_A.image_scope.y = 0;
 		level_01_A.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
+			
+		level_01_A.red_screen_end = new Sprite();
+		level_01_A.red_screen_end.width  = 1080;
+		level_01_A.red_screen_end.height = 720;
+		level_01_A.red_screen_end.alpha = 0;
+		level_01_A.red_screen_end.image = Textures.load
+			("./Common/Textures/red box.png");
+		level_01_A.red_screen_end.update = function() {
+			if(level_01_A.red_screen_end.alpha < 1) {
+				level_01_A.red_screen_end.alpha += 0.007;
+			}else {
+				changeRoom(level_01_end);
+			}
+		}
 		
 		// Target A sprite
 		level_01_A.image_target_A = new Sprite();
@@ -141,6 +155,7 @@ var level_01_A = new Sprite();
 				level_01_A.button_call.color = "Red";
 			}
 		}
+
 		level_01_A.button_call.click = function() {
 			world.addChild(black_screen);
 			room_manager.curr_room.startDialogue();
@@ -171,8 +186,15 @@ var level_01_A = new Sprite();
 			world.removeChild(level_01_hub.timer_text);
 			world.removeChild(red_screen);
 			level_01_hub.ending_state = 1;
-			changeRoom(level_01_end);
+			level_01_A.clear();
+			sound_ominous.play();
+			world.addChild(level_01_A.red_screen_end);
 		}
+		/***===    End of active sprites   ===***/
+		
+		/***====================================***/
+		/***          Room audio                ***/
+		/***====================================***/
 		
 
 		world.addChild(level_01_A.image_background);
@@ -350,6 +372,7 @@ var level_01_A = new Sprite();
 		world.removeChild(level_01_A.ret);
 		world.removeChild(level_01_A.button_call);
 		world.removeChild(level_01_A.button_fire);
+		world.removeChild(level_01_A.red_screen_end);
 		world.removeChild(red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();

@@ -21,10 +21,17 @@ red_screen.alpha  = 0.30;
 red_screen.visible = false;
 red_screen.image  = Textures.load("./Common/Textures/red box.png");
 
+/***============================***/
+/***   Global audio objects     ***/
+/***============================***/
+sound_ominous = new Audio("./Common/Sounds/ominous.wav");
+sound_ominous.volume = 0.7;
+
+sound_shot = new Audio("./COmmon/Sounds/shot.wav");
+
 /***===============================***/
 /*** Global objects initialization ***/
 /***===============================***/
-
 // Create global sprite array
 var active_sprites = new Array();
 

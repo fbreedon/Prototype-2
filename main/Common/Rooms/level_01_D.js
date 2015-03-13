@@ -37,6 +37,21 @@ var level_01_D = new Sprite();
 		level_01_D.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
 			
+			
+		level_01_D.red_screen_end = new Sprite();
+		level_01_D.red_screen_end.width  = 1080;
+		level_01_D.red_screen_end.height = 720;
+		level_01_D.red_screen_end.alpha = 0;
+		level_01_D.red_screen_end.image = Textures.load
+			("./Common/Textures/red box.png");
+		level_01_D.red_screen_end.update = function() {
+			if(level_01_D.red_screen_end.alpha < 1) {
+				level_01_D.red_screen_end.alpha += 0.007;
+			}else {
+				changeRoom(level_01_end);
+			}
+		}
+			
 		// Target D Sprite
 		level_01_D.image_target_D = new Sprite();
 		level_01_D.image_target_D.width  = 32;
@@ -132,7 +147,8 @@ var level_01_D = new Sprite();
 			world.removeChild(level_01_hub.target_loop);
 			world.removeChild(level_01_hub.timer_text);
 			world.removeChild(red_screen);
-			changeRoom(level_01_end);
+			sound_ominous.play();
+			world.addChild(level_01_D.red_screen_end);
 		}
 		
 		// Visible sprites at creation time
@@ -316,6 +332,7 @@ createNode("Right on, Bro! So, like, I know this \narea pretty well And like… 
 		world.removeChild(level_01_D.button_call);
 		world.removeChild(level_01_D.button_fire);
 		world.removeChild(level_01_D.red_screen);
+		world.removeChild(level_01_D.red_screen_end);
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 	}

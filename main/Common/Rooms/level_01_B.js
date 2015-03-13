@@ -37,6 +37,20 @@ var level_01_B = new Sprite();
 		level_01_B.image_scope.y = 0;
 		level_01_B.image_scope.image = Textures.load
 			("./Common/Textures/scope.png");
+			
+		level_01_B.red_screen_end = new Sprite();
+		level_01_B.red_screen_end.width  = 1080;
+		level_01_B.red_screen_end.height = 720;
+		level_01_B.red_screen_end.alpha = 0;
+		level_01_B.red_screen_end.image = Textures.load
+			("./Common/Textures/red box.png");
+		level_01_B.red_screen_end.update = function() {
+			if(level_01_B.red_screen_end.alpha < 1) {
+				level_01_B.red_screen_end.alpha += 0.007;
+			}else {
+				changeRoom(level_01_end);
+			}
+		}
 				
 		// Car Sprite
 		level_01_B.image_car = new Sprite();
@@ -160,8 +174,16 @@ var level_01_B = new Sprite();
 			world.removeChild(level_01_hub.timer_text);
 			world.removeChild(red_screen);
 			level_01_hub.ending_state = 2;
-			changeRoom(level_01_end);
+			sound_ominous.play();
+			world.addChild(level_01_B.red_screen_end);
 		}
+		/***===    End of active sprites   ===***/
+		
+		/***====================================***/
+		/***          Room audio                ***/
+		/***====================================***/
+		level_01_A.sound_ominous = new Audio("./Common/Sounds/ominous.wav");
+		level_01_A.sound_ominous.volume = 0.7;
 		
 		// Visible sprites at creation time
 		world.addChild(level_01_B.image_background);
@@ -252,6 +274,7 @@ var level_01_B = new Sprite();
 		world.removeChild(level_01_B.ret);
 		world.removeChild(level_01_B.button_call);
 		world.removeChild(level_01_B.button_fire);
+		world.removeChild(level_01_B.red_screen_end);
 		world.removeChild(red_screen);
 		while(active_sprites.length > 0)
 			active_sprites.pop();

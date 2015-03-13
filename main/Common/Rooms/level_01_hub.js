@@ -375,7 +375,7 @@ var level_01_hub = new Sprite();
 	// Play special audio for this room
 	level_01_hub.playAudio = function() {
 		// Room ambiance
-		level_01_hub.sound_background = new Audio("./Common/Sounds/ambiance01.wav");
+		level_01_hub.sound_background = new Audio("./Common/Sounds/ambiance02.wav");
 		level_01_hub.sound_background.volume = 0.5;
 		
 		// Play and loop room ambiance
