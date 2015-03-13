@@ -321,7 +321,7 @@ var node = createNode  // Index: 0
 			("Oh you ssee, Thisss is one of \nmy phone is for, like, me, ese. \nI have another for sseriouss sstuff. \nOh, ssspeaking of important sstuff, \nI have to pay attention to these guyss… \nI keep ssaying that I don’t care but--\n",
 			"-End call\n", -8);//ending 8
 			
-		creatNode //Index: 12
+		createNode //Index: 12
 			("Who is this? How do you not \nknow who you’re calling, \nholmes. I guessss I should say how \ndo you not know who I am? \nWhatever, holmes.\n", 
 			"-End call\n", -9);//ending 9
 	}

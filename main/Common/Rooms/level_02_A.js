@@ -346,7 +346,7 @@ var node = createNode  // Index: 0
 			("I’m… I’m protecting my bosses \nI can’t say much. Just. I have \na family. They aren’t worth it to me.\n", 
 			"End call\n", -8);//ending 8
 			
-		creatNode //Index: 12
+		createNode //Index: 12
 			("Well I sure as hell ain’t the boss. \nLook I’m no one. I don’t know what \nyou’re planning leave me out of it.", 
 			"-End call\n",-9);
 }

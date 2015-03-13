@@ -261,9 +261,66 @@ var level_02_D = new Sprite();
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		
-		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
-		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+var node = createNode  // Index: 0
+			("Bueno?", 
+			 "Pretend to be from a church-- \nGood afternoon sir, We are part of local church \nand we we’re wondering if you or anyone \nyou know might be willing to volunteer \nor donate to our establishment? \nWe’re preparing for our next event and we’re \nboth understaffed and underfunded. \nAny help from our faithful is much appreciated.\n" , 1, 
+			 "Pretend to be a supplier-- \nHey, the next shipment will be in soon. \nI gotta know where to make the drop, \ncops got to the usual spot. \nYou got a backup?\n", 2,
+			 "Be direct-- \nI hear you’re a man with connections.\n",3);
 		node.create();
+		
+		createNode     // Index: 1
+			("I don’t always donate to the church, \nbut when I do, I donate to your church. \nI’ll make sure to bring some money along with \nme this Sunday\n",
+			 "Thank him for his patronage-- \nThank you very much. We look \nforward to meeting our gracious benefactor\n", 4,
+			 "Ask about others-- \nWe thank you for your faith. \nMight I ask if any family members or friends of \nyours would donate or volunteer as well?\n", 5,
+			 "Ask him about his faith-- \nThat is very gracious. \nHave you always been a part of our flock?", 6);
+	    
+		createNode   //Index: 2
+			("What? I was not aware of any scheduled drops today... \nThis is a private phone, don’t contact me here, \nit is not safe. For now, go through the usual routes.\n",
+			"Provoke-- \nLike I said… The usual routes are taken. \nWhere do I go?", 7,
+			"Be apologetic-- \nI’m very sorry about the inconvenience. \nI won’t make this mistake again.\n", 8,
+			"Doubt him-- \nPrivate phone? That is not what I was told.\n", 9);
+		
+		createNode	//Index: 3
+			("Connections yes. I have many connections. Connections to my faith. Connections to my loved ones. What do you mean in particular.\n",
+			"Provoke--\nDon’t act coy with me. \nYou know what I mean\n", 10,
+			"Be vague-- \nYou know… the connections... For when I need stuff?\n", 11, 
+			"Back out--\nNever mind, I must have gotten \nthe wrong number\n", 12);
+		
+		createNode //Index: 4
+			("Anything my humble self can do for those in need. \nI hope the next generation will be equally generous. \nGood day, sir",
+			"-End call\n", -1);//ending 1
+			
+		createNode //Index: 5
+			("I know a few men who would sacrifice some comfort \nto aid the church. The younger folk, I’m not so sure about. \nSo many have lost faith… Excuse me, I tend to drift. \nMust be my age.\n", 
+			"-End call\n", -2);//ending 2
+		
+		createNode //Index: 6
+			("Ah yes… For a very… very long time. \nSometime the thought of the afterlife is the only \nthing that keeps me going. A place where I could\n be forgiven for all that I have done \nin my life. I’m sorry… You are not a priest \nand I tend to ramble in my old age\n", 
+			"-End call\n", -3);//ending 3
+
+		createNode //Index: 7
+			("Hah. Youth these days. They think they can \nget away with so much. This is your problem not ours. \nGo ahead and deal with it yourself. \nI have my own problems.\n",
+			"-End call\n",-4);//ending 4
+		
+		createNode //Index: 8
+			("That's a better tone. I apologize for our lack \nof communication as well as your… predicament. \nHowever, there is not much we can accomplish. \nI’ll see what I can do and I’ll make sure \nthe appropriate people see to your problem.\n",
+			"-End call\n", -5);//ending 5
+		
+		createNode //Index: 9
+			("Well then, you need to talk to your superiors more. \nNow… Go about your business in a more professional \nmanner or I will make sure your job will always \nbe on the line\n", 
+			"-End call\n",-6);//ending 6
+		
+		createNode //Index: 10
+			("No. I don’t. I would like to ask that \nyou do not call my private phone. \nNow if you’ll excuse me.\n",
+			"-End call\n", -7);//ending 7
+		
+		createNode //Index: 11
+			("No, I don’t know. I suggest you call the appropriate people \nnext time. This is not the phone for business. \nIf you have reached me at a much earlier time… \nI might have been a connection, but not now.\n",
+			"-End call\n", -8);//ending 8
+			
+		createNode //Index: 12
+			("Is that so? We’ll I apologize that you \ndid not find who you were seeking. Perhaps in \nanother life I may have been the correct person.\n", 
+			"-End call\n", -9);//ending 9
 	}
 
 	/***==============================***/

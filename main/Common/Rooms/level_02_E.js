@@ -255,9 +255,66 @@ var level_02_E = new Sprite();
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		
-		var node = createNode("Hello?", "Go to index 1", 1, "Go to ending 1", -1, "Go to ending 2", -2);
-		createNode("You clicked index 1", "Go to ending 3", -3, "Go to ending 4", -4);
+var node = createNode  // Index: 0
+			("Yeah, what is it?", 
+			 "Pretend to be from a church-- \nGood afternoon sir, We are part of local church \nand we we’re wondering if you or anyone \nyou know might be willing to volunteer \nor donate to our establishment? \nWe’re preparing for our next event and we’re \nboth understaffed and underfunded. \nAny help from our faithful is much appreciated.\n" , 1, 
+			 "\n\nPretend to be a supplier-- \nHey, the next shipment will be in soon. \nI gotta know where to make the drop, \ncops got to the usual spot. \nYou got a backup?\n", 2,
+			 "Be direct-- \nI hear you’re a man with connections.\n",3);
 		node.create();
+		
+		createNode     // Index: 1
+			("Uh, sorry, I don’t really go to Church. \nUh, I know some people who go a lot though. \nI could ask them\n",
+			 "Ask about himself--\nIt’s not too late for you to start attending service. \nWe accept all wanderers into our flock. \nMaybe your companions could bring you in?\n", 4,
+			 "Ask about the others--\nYes, that would be most generous of you. \nCould you tell me about these companions of yours?\n", 5,
+			 "Provoke him--\nIt’s okay. Not everyone finds God’s \nembrace before death. If you ever wish to repent we \nwill always be here.\n", 6);
+	    
+		createNode   //Index: 2
+			("I don’t know why you called me of all people. \nAren’t there better people to call about this? \nYeah. We have people. Lots of them, \nthey're busy right now.\n",
+			"Ask about himself--\nSo then what’s your job.\n", 7,
+			"Ask about the people-- \nHow dependable are your men.\n", 8,
+			"Question him--\nSo then who should I have called?\n", 9);
+		
+		createNode	//Index: 3
+			("Aye, you heard correct. Now… \nWho are you and why do need me.\n",
+			"Ask about his contacts--\nWho, exactly, do you work with?\n", 10,
+			"Ask about what he does--\nWhat’s your business?", 11, 
+			"Ask about himself--\nI need to know who you are before \nI can trust you.", 12);
+		
+		createNode //Index: 4
+			("No. It’s alright. I’m not one for… well… Jesus and all of that. I’m far beyond that…. Far beyond saving. But don’t worry. I’ll make sure to pass your messages.",
+			"-End call\n", -1);//ending 1
+			
+		createNode //Index: 5
+			("They’re… business partners. I’ll make sure to \npass your message. I am sorry I cannot help.\n", 
+			"-End call\n", -2);//ending 2
+		
+		createNode //Index: 6
+			("Tch. This is one of the reasons I hate religion. \nAlways so high and mighty. No. I won’t repent. \nNot to people like you.\n", 
+			"-End call\n", -3);//ending 3
+
+		createNode //Index: 7
+			("I have many jobs. One of them is telling \nblokes like you what to do. So get out there \nand do your job like you always do. This shit isn’t \nmy problem.\n",
+			"-End call\n",-4);//ending 4
+		
+		createNode //Index: 8
+			("They’re dependable. I know them all personally and \nthey will make sure the job gets done. \nDon’t get them killed all right?\n",
+			"-End call\n", -5);//ending 5
+		
+		createNode //Index: 9
+			("It doesn’t matter now. You called me so now you’re listening to me. Look. \nI’ll send you your guys. Call my subordinate for \nthe location I’m talking business right now.\n", 
+			"-End call\n", -6);//ending 6
+		
+		createNode //Index: 10
+			("Well… I can’t give specifics…. but let’s say I \nhave what is essentially an at ready militia. \nLook. I’ll be sure to call you later and then \nwe’ll get details worked out. I’ll also have to get \nthe name of the person who referred you to me.\n",
+			"-End call\n", -7);//ending 7
+		
+		createNode //Index: 11
+			("I’m in a lot of different businesses and \ncurrently working on making a new one. \nLook. Just call me later. I’m busy right now. \nWe’ll get everything settled and then maybe \nyou can tell me who referred you to me.\n",
+			"-End call\n", -8);//ending 8
+			
+		createNode //Index: 12
+			("Know who I am? You’re the one who called me… \nwith no explanation asking me questions. Here I am trying \nto be the nice guy listening to your needs \nand providing a service that not many people \nprovide and I’m being asked questions. \nYou want my life story? Well you aren’t getting it.\n", 
+			"-End call\n",-9);//ending 9
 	}
 
 	/***==============================***/
