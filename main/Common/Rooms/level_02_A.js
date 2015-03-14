@@ -224,6 +224,7 @@ var level_02_A = new Sprite();
 				while(active_sprites.length > 0)
 					active_sprites.pop();
 				level_02_A.button_fire.can_click = false;
+				level_02_hub.ending_state = 1;
 			}
 		}
 		

@@ -197,6 +197,7 @@ var level_02_D = new Sprite();
 				active_sprites.pop();
 			sound_ominous.play();
 			world.addChild(level_02_D.red_screen_end);
+			level_02_hub.ending_state = 4;
 		}
 
 		world.addChild(level_02_D.image_background);

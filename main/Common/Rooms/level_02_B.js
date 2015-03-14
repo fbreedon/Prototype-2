@@ -236,6 +236,7 @@ var level_02_B = new Sprite();
 				sound_ominous.play();
 				world.addChild(level_02_B.red_screen_end);
 				level_02_B.button_fire.can_click = false;
+				level_02_hub.ending_state = 2;
 			}
 		}
 		

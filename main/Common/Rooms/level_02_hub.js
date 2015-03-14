@@ -2,6 +2,8 @@
 /***      Level 01: "Shadowman"      ***/
 /***=================================***/
 var level_02_hub = new Sprite();
+	level_02_hub.ending_state;
+	
 	// Is the BGM playing?
 	level_02_hub.bgm = false;
 	
