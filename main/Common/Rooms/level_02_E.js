@@ -324,6 +324,8 @@ var node = createNode  // Index: 0
 	// Ending the dialogue returns the room to the previous state
 	// also updates whatever necessary dependaing on your ending
 	level_02_E.endDialogue = function(ending) {
+		while(nodes.length > 0)
+			nodes.pop();
 		level_02_hub.targetE_cancall = false;
 		
 		world.removeChild(black_screen);

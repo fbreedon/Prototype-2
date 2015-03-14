@@ -6,6 +6,7 @@
 
 var game_over_screen = new Sprite();
 	game_over_screen.create = function() {
+		room_manager.curr_room.clear();
 		level_01_hub.level_timer.value = 0;
 		level_02_hub.level_timer.value = 0;
 		

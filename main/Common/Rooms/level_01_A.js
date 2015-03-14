@@ -278,19 +278,19 @@ var level_01_A = new Sprite();
 			 "Tell me... why are you standing on that ledge then?", 6);
 	    
 		createNode   //Index: 2
-			("Who? I wasn't expecting anyone to come here... When are you going to get here?",
+			("Who? I wasn't expecting anyone to come here... \nWhen are you going to get here?",
 			"I'll be there soon, friend, do not \nworry and sit tight and do not\n draw any unnecessary attention\n", 7,
-			"Soon... soon... In the mean time, you stay safe, I hear they are on to us.\n", 8,
+			"Soon... soon... In the mean time, you stay safe, \nI hear they are on to us.\n", 8,
 			"I don't know. I might have to just send one \nof my cronies to give you this instead. \nThis shit ain't worth my time", 9);
 		
 		createNode	//Index: 3
 			("I think you have the wrong person entirely\n",
 			"No... I definitely have the right person.\n", 10,
 			"My mistake, I must have dailed \nincorrectly when calling a colleague of mine\n", 11, 
-			"-End call\n", -9) //ending 9 (sorry it's out of order 
+			"-End call\n", -9) //ending 9 (sorry it's out of order )
 		
 		createNode //Index: 4
-			("I'm... I don't know who I am anymore \nwI... I don't want to... \n Just nevermind. \nForget about me \n","-End call\n", -1);//ending 1
+			("I'm... I don't know who I am anymore \nI... I don't want to... \n Just nevermind. \nForget about me \n","-End call\n", -1);//ending 1
 			
 		createNode //Index: 5
 			("What!? How do you know? \nI haven't told anyone... Wh-who told you? \nI don't need anyone... Just leave me.\n", "-End call\n", -2);//ending 2
@@ -319,6 +319,8 @@ var level_01_A = new Sprite();
 	// Ending the dialogue returns the room to the previous state
 	// also updates whatever necessary dependaing on your ending
 	level_01_A.endDialogue = function(ending) {
+		while(nodes.length > 0)
+			nodes.pop();
 		level_01_hub.targetA_cancall = false;
 		world.removeChild(black_screen);
 		
@@ -358,7 +360,7 @@ var level_01_A = new Sprite();
 				level_01_hub.targetA_ending_info += "\nTarget A:He doesn’t know what he’s here for? \nIs he feigning ignorance?";
 				break;
 			case 4:
-				level_01_hub.targetA_ending_info += "\nTarget A:I thought most members of the mob used that…Maybe not.";
+				level_01_hub.targetA_ending_info += "\nTarget A:I thought most members of the mob used that… Maybe not.";
 				break;
 			case 5:
 				level_01_hub.targetA_ending_info += "\nTarget A:Was he expecting someone else?";
@@ -367,13 +369,13 @@ var level_01_A = new Sprite();
 				level_01_hub.targetA_ending_info += "\nTarget A:Did I blow my cover? Possibly but…";
 				break;
 			case 7:
-				level_01_hub.targetA_ending_info += "\nTarget A:";
+				level_01_hub.targetA_ending_info += "\nTarget A:Seems to be lost in thought.\nBut is he really waiting for someone?";
 				break;
 			case 8:
-				level_01_hub.targetA_ending_info += "\nTarget A:";
+				level_01_hub.targetA_ending_info += "\nTarget A:Claims to not have had a partner\nsounds aloof.";
 				break;
 			case 9:
-				level_01_hub.targetA_ending_info += "\nTarget A:";
+				level_01_hub.targetA_ending_info += "\nTarget A:I seem to have confused him...";
 				break;
 				}
 	}

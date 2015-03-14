@@ -2,6 +2,7 @@
 var title_screen = new Sprite();
 	// Create this room
 	title_screen.create = function() {
+		correctlyshot = 0;
 		// This room's passive sprites
 		title_screen.image_background = new Sprite();
 		title_screen.image_background.width  = 1080;

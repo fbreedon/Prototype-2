@@ -285,6 +285,8 @@ createNode("Right on, Bro! So, like, I know this \narea pretty well And like… 
 	
 	// End the dialogue
 	level_01_D.endDialogue = function(ending) {
+		while(nodes.length > 0)
+			nodes.pop();
 		level_01_hub.targetD_cancall = false;
 		world.removeChild(black_screen);
 		
