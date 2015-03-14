@@ -310,9 +310,9 @@ var node = createNode  // Index: 0
 		
 		createNode	//Index: 3
 			("Hired muscle? Who the hell is this? \nWhat the actual fuck?\n",
-			"threaten him--\nDescribe to me who’s in charge and you \nwon’t be hurt. I can’t say much for \nthem, however.\n", 10,
+			"Threaten him--\nDescribe to me who’s in charge and you \nwon’t be hurt. I can’t say much for \nthem, however.\n", 10,
 			"Ask about who he’s protecting--\nWho exactly are you protecting. \nWho are they to you?", 11, 
-			"press him for an answer-- \nYou didn’t answer my question. Answer it. Now", 12) 
+			"Press him for an answer-- \nYou didn’t answer my question. Answer it. Now", 12) 
 		
 		createNode //Index: 4
 			("Well, I can’t say I really feel \nlooked out for. Too much shi-- stuff \nhas happened for me to think \nthat way\n",
@@ -328,7 +328,7 @@ var node = createNode  // Index: 0
 
 		createNode //Index: 7
 			("Me? I’m only with Chuy making sure nothing goes wrong with this deal. I don’t know what I can do to help though you might have to call other people.", 
-			"End call\n",-4);//ending 4
+			"-End call\n",-4);//ending 4
 		
 		createNode //Index: 8
 			("I’m just watching over a deal. \nNothing has gone wrong so far but the \nboss doesn’t seem to be taking \nthis too seriously. Look I’m not sure \nif I’m in a position to help.\n",
@@ -336,7 +336,7 @@ var node = createNode  // Index: 0
 		
 		createNode //Index: 9
 			("Look I can’t. I’m not going to risk \nmy job nor my life for whatever \nthe fuck it is that’s happening over \nthere.\n", 
-			"End call\n",-6);//ending 6
+			"-End call\n",-6);//ending 6
 		
 		createNode //Index: 10
 			("The boss? You can’t… Yeah, the boss. \nThe boss is the one in the black \njacket and blue jeans…\n",
@@ -344,7 +344,7 @@ var node = createNode  // Index: 0
 		
 		createNode //Index: 11
 			("I’m… I’m protecting my bosses \nI can’t say much. Just. I have \na family. They aren’t worth it to me.\n", 
-			"End call\n", -8);//ending 8
+			"-End call\n", -8);//ending 8
 			
 		createNode //Index: 12
 			("Well I sure as hell ain’t the boss. \nLook I’m no one. I don’t know what \nyou’re planning leave me out of it.", 

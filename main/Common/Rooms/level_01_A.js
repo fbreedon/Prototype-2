@@ -299,19 +299,19 @@ var level_01_A = new Sprite();
 			("I'm.. I'm... I don't know \nwhy I'm here... Wait!? \nYou can see me!? \nHow do you know me!?\n", "-End call\n", -3);//ending 3
 
 		createNode //Index: 7
-			("Don't do anything to...? I... \nI think you have the wrong \nperson. I knew it...\n", "End call\n",-4);//ending 4
+			("Don't do anything to...? I... \nI think you have the wrong \nperson. I knew it...\n", "-End call\n",-4);//ending 4
 		
 		createNode //Index: 8
 			("On to \"us\"? what \"us\"? \nThere IS no us! There's only\n me and you--\n...and you aren't who I thought \nyou were... Just. Forget all of that.\n","-End call\n", -5);//ending 6
 		
 		createNode //Index: 9
-			("Woah. You... you have the wrong \nperson completely... but don't... \nJust. Look, I never heard \nanything okay?\n", "End call\n",-6);//ending 6
+			("Woah. You... you have the wrong \nperson completely... but don't... \nJust. Look, I never heard \nanything okay?\n", "-End call\n",-6);//ending 6
 		
 		createNode //Index:10
 			("I... don't know what you mean. \nI have enough on my mind... \njust... leave me be\n","-End call\n", -7);//ending 7
 		
 		createNode //Index:11
-			("That's fine. Its not like \nI wanted anyone to call me any ways... \nGood luck with your partner and all. \nI didn't have any of that\n", "End call\n", -8);//ending 8
+			("That's fine. Its not like \nI wanted anyone to call me any ways... \nGood luck with your partner and all. \nI didn't have any of that\n", "-End call\n", -8);//ending 8
 	}
 	/***==============================***/
 	/***       room.endDialogue()     ***/

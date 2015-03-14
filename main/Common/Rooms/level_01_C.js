@@ -282,15 +282,15 @@ var level_01_C = new Sprite();
 	//1A #2
 	createNode
 		("Fuck you man. I don’t have \nto answer to you or anyone. \nNow sod off.\n",
-		"End call\n", -1);
+		"-End call\n", -1);
 	//1B #3
 	createNode
 		("Woah woah woah! Gee, where \nare my manners… Let me answer your \nquestion right quick. No need to \ndo anything rash now. \nSo uhhh like… I’m not expecting any \npackages I'm just here walking around. \nSo I’ll just... \n",
-		"End call\n", -2);
+		"-End call\n", -2);
 	//1C #4
 	createNode
 		("Joking little shit aren’t ya? \nYa better not do this shit again. \nNever know what some people might do. \nFucking package? The fuck would I want \na package here…\n",
-		"End call\n", -3);
+		"-End call\n", -3);
 
 	//2 #5
 	createNode
@@ -302,17 +302,17 @@ var level_01_C = new Sprite();
 	//2A #6
 	createNode
 		("I ain’t jokin'. Now sod off before \nI decide to find whoever’s on the \nother end of this. Trust me you don’t \nwant that to happen.\n",
-		"End call\n", -4);
+		"-End call\n", -4);
 
 	//2B #7
 	createNode
 		("I hear ya. Women sometimes, \nget pissed at you for no reason. \nMine is always finding a reason \nto be mad at me. First its the cooking, \nnext it’s I don’t walk enough... \nCall her soon, mate, best not mess \naround with that.\n",
-		"End call\n", -5);
+		"-End call\n", -5);
 
 	//2C #8
 	createNode
 		("I’m the guy who picked up \nhis phone for an idiot who doesn’t know how \nto dial a number correctly. I have \ntoo much on my plate and I don’t \nhave to explain myself to you or anyone \nelse...sod will ya?\n",
-		"End call\n", -6);
+		"-End call\n", -6);
 
 	//3 #9
 	createNode
@@ -324,17 +324,17 @@ var level_01_C = new Sprite();
 	//3A #10
 	createNode
 		("Shady? Do I…. I mean, does he really \nlook shady? Maybe he’s just there \nthinking over some stuff enjoying the \nview...  How do you know he’s really \nup to anything? Well… I have to go \nnow... Sorry I couldn’t help more, mate.\n",
-		"End call\n", -7);
+		"-End call\n", -7);
 
 	//3B #11
 	createNode
 		("Packages? This would be a weird \nplace for packages… I’ll keep a \nlook out if I’m in the area. \nDon’t worry about it, mate. I’ll alert \nthe appropriate people If I see anything\n",
-		"End call\n", -8);
+		"-End call\n", -8);
 
 	//3C #12
 	createNode
 		("Familiar with the area? Not so much, \nI recently settled down here with my wife. \nWe don’t know the area very much \nbut we’ve heard good things about \nthe neighborhood. It’s probably because of \nyou guys right? Maybe I might volunteer \none day…. But for now I still \nhave a lot on my mind, mate.\n",
-		"End call\n", -9);
+		"-End call\n", -9);
 
 	}
 	
