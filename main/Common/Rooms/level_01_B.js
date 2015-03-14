@@ -280,6 +280,7 @@ var level_01_B = new Sprite();
 		world.addChild(image_wrote_note);
 		sound_write.play();
 		level_01_hub.targetB_has_called = true;
+		level_01_hub.targetB_ending_info = "Target B: His phone seems to be off";
 		clear_array();
 	}
 	

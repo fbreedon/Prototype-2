@@ -390,7 +390,7 @@ var level_01_C = new Sprite();
 				level_01_hub.targetC_ending_info += "\nTarget C:Is he really just enjoying the view?";
 				break;
 			case 8:
-				level_01_hub.targetC_ending_info += "Target C: something";
+				level_01_hub.targetC_ending_info += "Target C: Say's he'll alert the \"proper\" people \nif he sees anything";
 				break;
 			case 9:
 				level_01_hub.targetC_ending_info += "\nTarget C: He has a wife. He’s new to the Area?";

@@ -356,7 +356,39 @@ var node = createNode  // Index: 0
 		sound_write.play();
 		
 		level_02_hub.targetC_in_call = false;
-		//alert("This is the ending you chose: " + ending);
+		level_02_C.pickEnding(ending);
+	}
+
+	level_02_C.pickEnding = function(ending) {
+		switch(ending){
+			case 1:
+				level_02_hub.targetC_ending_info += "\nTarget C: Says he was raised with his belief. \nSounded weird.";
+				break;
+			case 2: 
+				level_02_hub.targetC_ending_info += "\nTarget C: Says he's relaxing and \"enjoys the small things\"";
+				break;
+			case 3:
+				level_02_hub.targetC_ending_info += "\nTarget C: Thinks he is well known.";
+				break;
+			case 4:
+				level_02_hub.targetC_ending_info += "\nTarget C: \"We have people... Don't call me again\"";
+				break;
+			case 5:
+				level_02_hub.targetC_ending_info += "\nTarget C: \"don't call me again\"";
+				break;
+			case 6:
+				level_02_hub.targetC_ending_info += "\nTarget C: \"... fucking ametuer.... get shipment into the right hands\"";
+				break;
+			case 7:
+				level_02_hub.targetC_ending_info += "\nTarget C: He's in the middle of a deal of some sort\n";
+				break;
+			case 8:
+				level_02_hub.targetC_ending_info += "\nTarget C: Has a private phone. Doing something important.";
+				break;
+			case 9:
+				level_02_hub.targetC_ending_info += "\nTarget C: Surprised I don't know him.";
+				break;
+				}
 	}
 	
 	/***===================================***/

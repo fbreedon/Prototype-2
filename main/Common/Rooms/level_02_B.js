@@ -316,9 +316,7 @@ var level_02_B = new Sprite();
 		world.removeChild(black_screen);
 		
 		world.addChild(level_02_B.ret);
-		world.addChild(level_02_B.button_call);
 		active_sprites.push(level_02_B.ret);
-		active_sprites.push(level_02_B.button_call);
 		active_sprites.push(level_02_B.button_fire);
 		
 		var image_wrote_note = new TextBox("\"I wrote a note...\"");
@@ -336,9 +334,10 @@ var level_02_B = new Sprite();
 		sound_write.play();
 		
 		level_02_hub.targetB_in_call = false;
-		//alert("This is the ending you chose: " + ending);
+		level_02_hub.targetB_ending_info = "Target B: He doesn't seem to have a phone...";
 	}
-	
+
+
 	/***===================================***/
 	/***         room.playAudio()          ***/
 	/***===================================***/

@@ -333,9 +333,7 @@ var node = createNode  // Index: 0
 		world.removeChild(black_screen);
 		
 		world.addChild(level_02_D.ret);
-		world.addChild(level_02_D.button_call);
 		active_sprites.push(level_02_D.ret);
-		active_sprites.push(level_02_D.button_call);
 		active_sprites.push(level_02_D.button_fire);
 		
 		var image_wrote_note = new TextBox("\"I wrote a note...\"");
@@ -353,7 +351,41 @@ var node = createNode  // Index: 0
 		sound_write.play();
 		
 		level_02_hub.targetD_in_call = false;
-		//alert("This is the ending you chose: " + ending);
+		level_02_D.pickEnding(ending);
+		clear_array();
+		
+	}
+	
+	level_02_D.pickEnding = function(ending) {
+		switch(ending){
+			case 1:
+				level_02_hub.targetD_ending_info += "\nTarget D: Is supposedly faithful";
+				break;
+			case 2: 
+				level_02_hub.targetD_ending_info += "\nTarget D: Believes that the younger generation has lost their faith";
+				break;
+			case 3:
+				level_02_hub.targetD_ending_info += "\nTarget D: Does he really hope he gets forgiven?";
+				break;
+			case 4:
+				level_02_hub.targetD_ending_info += "\nTarget D: \"I have my own problems\"";
+				break;
+			case 5:
+				level_02_hub.targetD_ending_info += "\nTarget D: Not much he can do to help\n Appreciated the change in tone";
+				break;
+			case 6:
+				level_02_hub.targetD_ending_info += "\nTarget D: Told \"me\" to be more professional";
+				break;
+			case 7:
+				level_02_hub.targetD_ending_info += "\nTarget D: Has a private phone";
+				break;
+			case 8:
+				level_02_hub.targetD_ending_info += "\nTarget D: Might have been able to help earlier?";
+				break;
+			case 9:
+				level_02_hub.targetD_ending_info += "\nTarget D: \"Perhaps in another life?\n";
+				break;
+				}
 	}
 	
 	/***===================================***/

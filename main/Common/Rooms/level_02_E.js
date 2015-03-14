@@ -328,9 +328,7 @@ var node = createNode  // Index: 0
 		world.removeChild(black_screen);
 		
 		world.addChild(level_02_E.ret);
-		world.addChild(level_02_E.button_call);
 		active_sprites.push(level_02_E.ret);
-		active_sprites.push(level_02_E.button_call);
 		active_sprites.push(level_02_E.button_fire);
 		
 		var image_wrote_note = new TextBox("\"I wrote a note...\"");
@@ -348,7 +346,39 @@ var node = createNode  // Index: 0
 		sound_write.play();
 		
 		level_02_hub.targetE_in_call = false;
-		//alert("This is the ending you chose: " + ending);
+		level_02_E.pickEnding(ending);
+	}
+	
+		level_02_E.pickEnding = function(ending) {
+		switch(ending){
+			case 1:
+				level_02_hub.targetE_ending_info += "\nTarget E: Doesn't seem religious";
+				break;
+			case 2: 
+				level_02_hub.targetE_ending_info += "\nTarget E: Says he has business partners";
+				break;
+			case 3:
+				level_02_hub.targetE_ending_info += "\nTarget E: Hates religion";
+				break;
+			case 4:
+				level_02_hub.targetE_ending_info += "\nTarget E: Has many jobs?";
+				break;
+			case 5:
+				level_02_hub.targetE_ending_info += "\nTarget E: Thinks his men are dependable but... who are they?";
+				break;
+			case 6:
+				level_02_hub.targetE_ending_info += "\nTarget E: He's talking business";
+				break;
+			case 7:
+				level_02_hub.targetE_ending_info += "\nTarget E: Has an at ready militia?";
+				break;
+			case 8:
+				level_02_hub.targetE_ending_info += "\nTarget E: Currently on business?";
+				break;
+			case 9:
+				level_02_hub.targetE_ending_info += "\nTarget E: \"provides a service\" that not many others do.";
+				break;
+				}
 	}
 	
 	/***===================================***/

@@ -292,7 +292,7 @@ var level_02_A = new Sprite();
 var node = createNode  // Index: 0
 			("Hello?", 
 			 "Pretend to be from a church-- \nHello sir, We are part of local \nchurch and we we’re wondering if you or anyone \nyou know might be willing to volunteer or \ndonate to our establishment? We’re preparing for \nour next event and we’re both\n" , 1, 
-			 "Pretend to be his superior--\nLook, no time to explain, we need back up. Know anyone?", 2,
+			 "Pretend to be his superior--\nLook, no time to explain, we need back up. Know anyone?\n", 2,
 			 "Be direct-- \nSo are you the hired muscle?\n", 3);
 		node.create();
 		
@@ -361,9 +361,7 @@ var node = createNode  // Index: 0
 		world.removeChild(black_screen);
 		
 		world.addChild(level_02_A.ret);
-		world.addChild(level_02_A.button_call);
 		active_sprites.push(level_02_A.ret);
-		active_sprites.push(level_02_A.button_call);
 		active_sprites.push(level_02_A.button_fire);
 		
 		var image_wrote_note = new TextBox("\"I wrote a note...\"");
@@ -381,7 +379,40 @@ var node = createNode  // Index: 0
 		sound_write.play();
 		
 		level_02_hub.targetA_in_call = false;
-		//alert("This is the ending you chose: " + ending);
+		level_02_A.pickEnding(ending);
+		clear_array();
+	}
+	
+	level_02_A.pickEnding = function(ending) {
+		switch(ending){
+			case 1:
+				level_02_hub.targetA_ending_info += "\nTarget A: Doesn't have much to give...\n\"too much stuff has happend\"";
+				break;
+			case 2: 
+				level_02_hub.targetA_ending_info += "\nTarget A: Doesn't have much to give...\n\"I do what I need to to survive\".";
+				break;
+			case 3:
+				level_02_hub.targetA_ending_info += "\nTarget A: Doesn't have much to give... \n\"Panhandle other people\"";
+				break;
+			case 4:
+				level_02_hub.targetA_ending_info += "\nTarget A: With a guy named Chuy watching over a deal";
+				break;
+			case 5:
+				level_02_hub.targetA_ending_info += "\nTarget A: Says his boss isn't serious right now";
+				break;
+			case 6:
+				level_02_hub.targetA_ending_info += "\nTarget A: Won't risk his life";
+				break;
+			case 7:
+				level_02_hub.targetA_ending_info += "\nTarget A: Says the boss is wearing \na black jacket and blue jeans.";
+				break;
+			case 8:
+				level_02_hub.targetA_ending_info += "\nTarget A: Has a family.\n \they aren't worth it\"";
+				break;
+			case 9:
+				level_02_hub.targetA_ending_info += "\nTarget A: Isn't the boss?";
+				break;
+				}
 	}
 	
 	/***===================================***/
@@ -403,6 +434,7 @@ var node = createNode  // Index: 0
 		
 		level_02_A.bgm = true;
 	}
+
 	
 	/***=================================***/
 	/***         room.stopAudio()        ***/

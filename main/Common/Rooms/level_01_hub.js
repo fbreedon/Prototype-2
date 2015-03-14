@@ -345,7 +345,6 @@ var level_01_hub = new Sprite();
 	/***===============================***/
 	// This function pulls up notes
 	level_01_hub.readNotes = function() {
-		
 		// Clear the sprites array of the buttons behind the notes...
 		level_01_hub.button_notes.mouseOver = false;
 		while(active_sprites.length > 0)
@@ -386,12 +385,12 @@ var level_01_hub = new Sprite();
 		
 		level_01_hub.close_notes.click = function() {
 			// Get rid of all the notes stuff...
-			world.removeChild(black_screen);
-			world.removeChild(black_screen);
-			world.removeChild(black_screen);
 			world.removeChild(level_01_hub.close_notes);
 			world.removeChild(level_01_hub.close_notes.notes);
 			world.removeChild(level_01_hub.notes_page);
+			world.removeChild(black_screen);
+			world.removeChild(black_screen);
+			world.removeChild(black_screen);
 			world.removeChild(level_01_hub.notes_page.notes);
 			while(active_sprites.length > 0) active_sprites.pop();
 			
@@ -404,10 +403,10 @@ var level_01_hub = new Sprite();
 		}
 
 		// Put the note objects onto the world...
+		world.addChild(level_01_hub.notes_page);
 		world.addChild(black_screen);
 		world.addChild(black_screen);
 		world.addChild(black_screen); // This was called multiple times to darken effect
-		world.addChild(level_01_hub.notes_page);
 		world.addChild(level_01_hub.notes_page.notes);
 		world.addChild(level_01_hub.close_notes);
 		
@@ -489,6 +488,16 @@ var level_01_hub = new Sprite();
 		world.removeChild(level_01_hub.button_iconC);
 		world.removeChild(level_01_hub.button_iconD);
 		world.removeChild(level_01_hub.timer_text);
+		
+		/*world.removeChild(black_screen);
+		world.removeChild(black_screen);
+		world.removeChild(black_screen);
+		world.removeChild(level_01_hub.close_notes);
+		world.removeChild(level_01_hub.close_notes.notes);
+		world.removeChild(level_01_hub.notes_page);
+		world.removeChild(level_01_hub.notes_page.notes);*/
+
+		
 		while(active_sprites.length > 0)
 			active_sprites.pop();
 		

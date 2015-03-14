@@ -289,6 +289,18 @@ var level_02_hub = new Sprite();
 		level_02_hub.notes_page.y = 0;
 		level_02_hub.notes_page.image = Textures.load("./Common/Textures/notes page.png");
 		
+		level_02_hub.notes_page.notes = new TextBox("Notes on targets:\n\n" +
+		level_02_hub.targetA_ending_info + "\n" +
+		level_02_hub.targetB_ending_info + "\n" +
+		level_02_hub.targetC_ending_info + "\n" +
+		level_02_hub.targetD_ending_info + "\n" +
+		level_02_hub.targetE_ending_info);
+		level_02_hub.notes_page.notes.font = "Courier";
+		level_02_hub.notes_page.notes.fontSize = 30;
+		level_02_hub.notes_page.notes.color = "White";
+		level_02_hub.notes_page.notes.x = 100;
+		level_02_hub.notes_page.notes.y = 100;
+		
 		level_02_hub.close_notes = new TextBox("<< close");
 		level_02_hub.close_notes.font = "Courier";
 		level_02_hub.close_notes.fontSize = 30;
@@ -310,6 +322,7 @@ var level_02_hub = new Sprite();
 			world.removeChild(black_screen);
 			world.removeChild(level_02_hub.close_notes);
 			world.removeChild(level_02_hub.notes_page)
+			world.removeChild(level_02_hub.notes_page.notes);
 			while(active_sprites.length > 0) active_sprites.pop();
 			
 			// Put the normal stuff back on...
@@ -322,10 +335,12 @@ var level_02_hub = new Sprite();
 		}
 
 		// Put the note objects onto the world...
-		world.addChild(black_screen);
-		world.addChild(black_screen);
-		world.addChild(black_screen); // This was called multiple times to darken effect
+ // This was called multiple times to darken effect
 		world.addChild(level_02_hub.notes_page);
+		world.addChild(black_screen);
+		world.addChild(black_screen);
+		world.addChild(black_screen);
+		world.addChild(level_02_hub.notes_page.notes);
 		world.addChild(level_02_hub.close_notes);
 		
 		// Push the active sprites onto the array as well...
@@ -464,14 +479,24 @@ var level_02_hub = new Sprite();
 	/***       Information seen        ***/
 	/***===============================***/
 	level_02_hub.targetA_in_call = false;
+	level_02_hub.targetA_has_called = false;
+	level_02_hub.targetA_ending_info = "";
 	
 	level_02_hub.targetB_in_call = false;
+	level_02_hub.targetB_has_called = false;
+	level_02_hub.targetB_ending_info = "";
 	
 	level_02_hub.targetC_in_call = false;
+	level_02_hub.targetC_has_called = false;
+	level_02_hub.targetC_ending_info = "";
 	
 	level_02_hub.targetD_in_call = false;
+	level_02_hub.targetD_has_called = false;
+	level_02_hub.targetD_ending_info = "";
 	
 	level_02_hub.targetE_in_call = false;
+	level_02_hub.targetE_has_called = false;
+	level_02_hub.targetE_ending_info = "";
 
 	/***===============================***/
 	/***        Clear this room        ***/
