@@ -207,7 +207,7 @@ var level_02_D = new Sprite();
 		world.addChild(red_screen);
 		world.addChild(level_02_D.image_scope);
 		world.addChild(level_02_D.ret);
-		if(level_01_hub.targetD_cancall)
+		if(level_02_hub.targetD_cancall)
 			world.addChild(level_02_D.button_call);
 		world.addChild(level_02_D.button_fire);
 		world.addChild(level_02_hub.timer_text);
@@ -243,7 +243,7 @@ var level_02_D = new Sprite();
 		
 		// Active sprites at creation time
 		active_sprites.push(level_02_D.ret);
-		if(level_01_hub.targetD_cancall)
+		if(level_02_hub.targetD_cancall)
 			active_sprites.push(level_02_D.button_call);
 		active_sprites.push(level_02_D.button_fire);
 		
@@ -330,7 +330,7 @@ var node = createNode  // Index: 0
 	// Ending the dialogue returns the room to the previous state
 	// also updates whatever necessary dependaing on your ending
 	level_02_D.endDialogue = function(ending) {
-		level_01_hub.targetD_cancall = false;
+		level_02_hub.targetD_cancall = false;
 		world.removeChild(black_screen);
 		
 		world.addChild(level_02_D.ret);
