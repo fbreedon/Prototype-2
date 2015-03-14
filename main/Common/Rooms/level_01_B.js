@@ -253,7 +253,7 @@ var level_01_B = new Sprite();
 			active_sprites.pop();
 		
 		var node = createNode("The number you have reached is currently unavailable, \nplease hang up and try again.", 
-			"\n\n\n\n\n\n\End call", -1);
+			"\n\n\n\n\n\n\-End call", -1);
 		node.create();
 	}
 		
