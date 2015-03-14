@@ -279,7 +279,7 @@ var node = createNode  // Index: 0
 			 "Doubt him-- \nIt’s alright sir, our church accepts \neveryone. Please do not feel inclined to \ndonate if you are not in a position to.\n", 6);
 	    
 		createNode   //Index: 2
-			("Look. I don’t know how you got thiss number but this is not one for buisness… Thiss is a personal phone. How did you even get thiss numberr?",
+			("Look. I don’t know how you got thiss number but this is \nnot one for buisness… Thiss is a personal phone. \nHow did you even get thiss numberr?",
 			"Continue the act--\nLook, Thats beside the point. \nI need to know where we stand on \nthis issue.", 7,
 			"Apologize--\nAll right, all right, \nI'll make sure not to use \nthis number any more\n.", 8,
 			"Provoke--\nI didn’t realize there was a \ndifference between business and personal \nwith you.", 9);
@@ -337,9 +337,7 @@ var node = createNode  // Index: 0
 		world.removeChild(black_screen);
 		
 		world.addChild(level_02_C.ret);
-		world.addChild(level_02_C.button_call);
 		active_sprites.push(level_02_C.ret);
-		active_sprites.push(level_02_C.button_call);
 		active_sprites.push(level_02_C.button_fire);
 		
 		var image_wrote_note = new TextBox("\"I wrote a note...\"");
@@ -378,13 +376,13 @@ var node = createNode  // Index: 0
 				level_02_hub.targetC_ending_info += "\nTarget C: \"don't call me again\"";
 				break;
 			case 6:
-				level_02_hub.targetC_ending_info += "\nTarget C: \"... fucking ametuer.... get shipment into the right hands\"";
+				level_02_hub.targetC_ending_info += "\nTarget C: \"... fucking ametuer.... \nget shipment into the right hands\"";
 				break;
 			case 7:
 				level_02_hub.targetC_ending_info += "\nTarget C: He's in the middle of a deal of some sort\n";
 				break;
 			case 8:
-				level_02_hub.targetC_ending_info += "\nTarget C: Has a private phone. Doing something important.";
+				level_02_hub.targetC_ending_info += "\nTarget C: Has a private phone. \nDoing something important.";
 				break;
 			case 9:
 				level_02_hub.targetC_ending_info += "\nTarget C: Surprised I don't know him.";

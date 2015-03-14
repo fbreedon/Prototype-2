@@ -6,6 +6,9 @@
 
 var game_over_screen = new Sprite();
 	game_over_screen.create = function() {
+		level_01_hub.level_timer.value = 0;
+		level_02_hub.level_timer.value = 0;
+		
 		game_over_screen.image_GAMEOVER = new TextBox("CONTRACT\n    CLOSED");
 		game_over_screen.image_GAMEOVER.font = "Courier";
 		game_over_screen.image_GAMEOVER.fontSize = 150;

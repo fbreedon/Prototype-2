@@ -4,6 +4,9 @@
 // Size up how the player did here
 var final_screen = new Sprite();
 	final_screen.create = function() {
+		level_01_hub.level_timer.value = 0;
+		level_02_hub.level_timer.value = 0;
+		
 		final_screen.image_text = new TextBox("Thank you for playing");
 		final_screen.image_text.font = "Courier";
 		final_screen.image_text.fontSize = 60;
@@ -74,13 +77,13 @@ var final_screen = new Sprite();
 		
 		switch(correctlyshot){
 			case 0:
-				endingstring = "\nNot one mark..."
+				endingstring = " Not one mark..."
 				break;
 			case 1:
-				endingstring = "\nYou could have done better...";
+				endingstring = " You could have done better...";
 				break;
 			case 2:
-				endingstring = "\nyour judgement is impeccable";
+				endingstring = " your judgement is impeccable";
 				break;
 		}
 		
@@ -90,7 +93,7 @@ var final_screen = new Sprite();
 		final_screen.image_result.color = "White";
 		final_screen.image_result.font = "Courier";
 		final_screen.image_result.fontSize = 30;
-		final_screen.image_result.x = -480;
+		final_screen.image_result.x = -530;
 		final_screen.image_result.y = 400;
 		textType(final_screen.image_result, 10);
 		

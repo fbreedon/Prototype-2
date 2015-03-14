@@ -13,7 +13,7 @@ var title_screen = new Sprite();
 		title_screen.image_background.alpha = title_screen.image_alpha;
 			
 		title_screen.data= new TextBox
-			("iDeek v.1.2");
+			("iDeek v.1.5");
 		title_screen.data.font = "Courier";
 		title_screen.data.fontSize = 20;
 		title_screen.data.color = "#FFFFFF";

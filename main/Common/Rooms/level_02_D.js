@@ -363,7 +363,7 @@ var node = createNode  // Index: 0
 				level_02_hub.targetD_ending_info += "\nTarget D: Is supposedly faithful";
 				break;
 			case 2: 
-				level_02_hub.targetD_ending_info += "\nTarget D: Believes that the younger generation has lost their faith";
+				level_02_hub.targetD_ending_info += "\nTarget D: Believes that the younger generation \nhas lost their faith";
 				break;
 			case 3:
 				level_02_hub.targetD_ending_info += "\nTarget D: Does he really hope he gets forgiven?";
