@@ -8,6 +8,8 @@ world.width  = 1080;
 world.height = 720;
 world.image  = Textures.load("./Common/Textures/black box.png");
 		
+var correctlyshot = 0;
+		
 var black_screen = new Sprite();
 black_screen.width  = 1080;
 black_screen.height = 720;

@@ -36,6 +36,7 @@ var level_02_end = new Sprite();
 				"\n\n In other news...";
 				break;
 			case 3:
+				correctlyshot += 1;
 				level_02_end.string = "MAN SHOT IN HIS OWN HOME\n" +
 				"At 3 PM, Police were called to Juan Sanchez \nby a distraught father, Lazarus Sanchez...\n"+
 				"Juan Sanchez was a beloved member of the community \nalong with his father...\n" +

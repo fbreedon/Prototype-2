@@ -72,9 +72,21 @@ var final_screen = new Sprite();
 		final_screen.image_judge.fontSize = 25;
 		textType(final_screen.image_judge, 1);
 		
+		switch(correctlyshot){
+			case 0:
+				endingstring = "\nNot one mark..."
+				break;
+			case 1:
+				endingstring = "\nYou could have done better...";
+				break;
+			case 2:
+				endingstring = "\nyour judgement is impeccable";
+				break;
+		}
+		
 		final_screen.image_result = new TextBox
 			("                                                    " + // These spaces are vital for timing
-			 ". . . . okay"); 
+			 ". . . . " + endingstring); 
 		final_screen.image_result.color = "White";
 		final_screen.image_result.font = "Courier";
 		final_screen.image_result.fontSize = 30;

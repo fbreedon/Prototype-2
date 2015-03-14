@@ -25,6 +25,7 @@ var level_01_end = new Sprite();
 					"\n\n In other news.... ";
 				break;
 			case 2:
+				correctlyshot += 1;
 				level_01_end.string = "\"MAN FOUND SHOT NEAR CAR ON THE HIGHWAY OVERPASS\"\n"+
 				"...The weird thing is that no one knew who he was. \nThis man has no record of ever even existing..."+
 				"\n\n In other news....";
