@@ -78,22 +78,13 @@ var final_screen = new Sprite();
 		switch(correctlyshot){
 			case 0:
 <<<<<<< HEAD
-				endingstring = "Not one mark..."
+				endingstring = "Not one mark...";
 				break;
 			case 1:
 				endingstring = "You could have done better...";
 				break;
 			case 2:
-				endingstring = "your judgement is impeccable";
-=======
-				endingstring = " Not one mark..."
-				break;
-			case 1:
-				endingstring = " You could have done better...";
-				break;
-			case 2:
-				endingstring = " your judgement is impeccable";
->>>>>>> origin/master
+				endingstring = "Your judgement is impeccable";
 				break;
 		}
 		
