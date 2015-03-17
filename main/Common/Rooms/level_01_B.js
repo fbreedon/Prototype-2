@@ -259,6 +259,8 @@ var level_01_B = new Sprite();
 		
 	// End the dialogue
 	level_01_B.endDialogue = function(ending) {
+		while(nodes.length > 0)
+			nodes.pop();
 		level_01_hub.targetB_cancall = false;
 		world.removeChild(black_screen);
 		

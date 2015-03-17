@@ -2,6 +2,7 @@
 var title_screen = new Sprite();
 	// Create this room
 	title_screen.create = function() {
+		correctlyshot = 0;
 		// This room's passive sprites
 		title_screen.image_background = new Sprite();
 		title_screen.image_background.width  = 1080;
@@ -13,7 +14,7 @@ var title_screen = new Sprite();
 		title_screen.image_background.alpha = title_screen.image_alpha;
 			
 		title_screen.data= new TextBox
-			("iDeek v.1.2");
+			("iDeek v.1.5");
 		title_screen.data.font = "Courier";
 		title_screen.data.fontSize = 20;
 		title_screen.data.color = "#FFFFFF";

@@ -263,7 +263,7 @@ var level_01_hub = new Sprite();
 			}
 			if(level_01_hub.level_timer.value > 10800) { // 3 minutes
 				level_01_hub.level_timer.value = 0;
-				room_manager.curr_room.stopAudio();
+				level_01_hub.stopAudio();
 				world.removeChild(level_01_hub.level_timer);
 				world.removeChild(level_01_hub.target_loop);
 				changeRoom(game_over_screen);
