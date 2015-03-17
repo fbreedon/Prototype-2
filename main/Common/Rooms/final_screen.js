@@ -74,18 +74,18 @@ var final_screen = new Sprite();
 		
 		switch(correctlyshot){
 			case 0:
-				endingstring = "\nNot one mark..."
+				endingstring = "Not one mark...";
 				break;
 			case 1:
-				endingstring = "\nYou could have done better...";
+				endingstring = "You could have done better...";
 				break;
 			case 2:
-				endingstring = "\nyour judgement is impeccable";
+				endingstring = "Your judgement is impeccable";
 				break;
 		}
 		
 		final_screen.image_result = new TextBox
-			("                                                    " + // These spaces are vital for timing
+			("                                           " + // These spaces are vital for timing
 			 ". . . . " + endingstring); 
 		final_screen.image_result.color = "White";
 		final_screen.image_result.font = "Courier";
